@@ -38,7 +38,6 @@ img: ":about.jpg"
 
 {%- comment -%} Please delete below and place your page content here {%- endcomment -%}
 
-{%- include util/auto-content-generator.liquid -%}
-{{ Yes, this is Gary Page.}}
+
+
 What About I put my text here and such.
-{{ website_info_text_second }}
