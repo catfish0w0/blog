@@ -6,8 +6,10 @@
 layout: default
 # About page
 ---
+
 {%- include multi_lng/get-lng-by-url.liquid -%}
 {%- assign lng = get_lng -%}
+
 <div class="multipurpose-container about-container">
   <div class="row about-main">
     <div class="col-md-3 about-img">
@@ -50,9 +52,6 @@ layout: default
           <div class="how-it-started">
             <h6>HOW IT ALL STARTED</h6>
             <h2>The Story Behind and the Process</h2>            
-          </div>
-          <div class="how-it-started-content">
-            <p>I have work so hard</p>
           </div>
         </div>
         {{ content }}
