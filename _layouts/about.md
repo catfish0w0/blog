@@ -46,12 +46,12 @@ layout: default
   <div class="row">
     <div class="col-md-12">
       <div class="about-msg markdown-style">
-        <div>
-          <div>
+        <div class="about-me-container">
+          <div class="how-it-started">
             <h6>HOW IT ALL STARTED</h6>
             <h2>The Story Behind and the Process</h2>            
           </div>
-          <div>
+          <div class="how-it-started-content">
             <p>I have work so hard</p>
           </div>
         </div>
