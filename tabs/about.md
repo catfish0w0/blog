@@ -4,7 +4,7 @@ layout: about
 lng_pair: id_about
 
 # image for page specific usage
-img: ":about.jpg"
+img: "/assets/img/about/about.jpg"
 # publish date (used for seo)
 # if not specified, site.time will be used.
 #date: 2022-03-03 12:32:00 +0000
@@ -35,6 +35,7 @@ img: ":about.jpg"
 # to disable this page, simply set published: false or delete this file
 #published: false
 ---
+can ar.
 
 {%- comment -%} Please delete below and place your page content here {%- endcomment -%}
 
