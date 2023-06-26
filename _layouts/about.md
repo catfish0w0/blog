@@ -46,6 +46,15 @@ layout: default
   <div class="row">
     <div class="col-md-12">
       <div class="about-msg markdown-style">
+        <div>
+          <div>
+            <h6>HOW IT ALL STARTED</h6>
+            <h2>The Story Behind and the Process</h2>            
+          </div>
+          <div>
+            <p>I have work so hard</p>
+          </div>
+        </div>
         {{ content }}
         {%- if site.data.conf.main.contact_form.enable and site.data.conf.others.about.show_contact_form_button %}
           <a href="javascript:void(0);" class="btn-base " onclick="ContactForm.show();" role="button">{{ site.data.lang[lng].contact_form.button_name }}</a>
