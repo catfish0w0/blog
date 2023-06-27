@@ -51,33 +51,39 @@ layout: default
         <div class="center-container">
             <main class="row2 middle-xs about-container2">
                 <div class="col-md-3a col-xs-12a about-left">
-                    <h6>how it all started</h6>
-                    <h4>The Story Behind and The Process</h4>
+                  <h6>how it all started</h6>
+                  <h4>The Story Behind and The Process</h4>
                 </div>
                 <div class="col-md-9a col-xs-12a about-right">
-                    <p>
-                      Back in 2017, during my college years, I explored coding for the first time in an elective course called "Intro to Java" at Tacoma Community College. Though it didn't immediately ignite a strong passion, it laid the foundation for my future endeavors.
+                  <p>
+                      In 2017, I took my first dive into coding with an introductory Java course at Tacoma Community College. While it didn't immediately ignite a strong passion within me, it left a positive impression of the coding industry and sparked my curiosity to explore more CS classes during my time at UCLA.
                       <br>
-                      After transferring to UCLA as a chemical engineering major, I embarked on internships and work experiences within the chemical engineering field. While I gained valuable skills and experiences, my interest in the software aspect of engineering started to grow stronger. I realized that I yearned for more creative freedom and the ability to have a broader impact through software development.
-                    </p>
+                      <br>
+                      After transferring to UCLA as a chemical engineering major, I had the opportunity to participate in internships and research experiences within the chemical engineering field. However, my fascination with computer science persisted, prompting me to enroll in courses such as CS 31, CS 32, and CS 33 at UCLA. These courses allowed me to immerse myself in the captivating world of algorithms and software design.
+                  </p>
                 </div>
                 <div class="col-md-3a col-xs-12a about-left">
-                    <h6>Providing various services</h6>
-                    <h4>Improving the web since 2013</h4>
+                  <h6>Providing various services</h6>
+                  <h4>Improving the web since 2013</h4>
                 </div>
                 <div class="col-md-9a col-xs-12a about-right">
-                    <p>
-
-                    </p>
+                  <p>
+                      Following my graduation, I secured a job as a System Engineer at an HVAC company in New York. While this position provided me with valuable skills and experiences in the HVAC industry, my interest in software engineering continued to flourish. I began self-studying Java once again and successfully built a couple of full-stack web applications using React for the frontend and Spring MVC and Go for the backend. These projects served as excellent preparation for my desired career shift.
+                      <br>
+                      <br>
+                      Currently, I am pursuing a Master's degree in Computer Science at Georgia Tech, fully dedicated to expanding my knowledge and honing my skills in this exhilarating discipline. My studies are focused on advanced topics such as artificial intelligence, machine learning, and software architecture.
+                      <br>
+                      <br>
+                      I am eager to further explore the limitless possibilities that computer science offers and apply my skills to solve real-world problems. With each step forward, I am excited to see where this journey takes me and how I can contribute to the ever-evolving field of technology.
+                  </p>
                 </div>
-            </main>
+          </main>
         </div>
         {{ content }}
         {%- if site.data.conf.main.contact_form.enable and site.data.conf.others.about.show_contact_form_button %}
-          <a href="javascript:void(0);" class="btn-base " onclick="ContactForm.show();" role="button">{{ site.data.lang[lng].contact_form.button_name }}</a>
+        <a href="javascript:void(0);" class="btn-base " onclick="ContactForm.show();" role="button">{{ site.data.lang[lng].contact_form.button_name }}</a>
         {% endif -%}
       </div>
     </div>
-
   </div>
 </div>
