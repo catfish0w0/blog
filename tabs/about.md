@@ -35,10 +35,7 @@ img: ":about.jpg"
 # to disable this page, simply set published: false or delete this file
 #published: false
 ---
-can ar.
 
 {%- comment -%} Please delete below and place your page content here {%- endcomment -%}
-
-
 
 What About I put my text here and such.
