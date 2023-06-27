@@ -74,7 +74,6 @@ layout: default
                 </div>
                 <div class="col-md-9a col-xs-12a about-right">
                   <p>
-                      <br>
                       Currently, I am pursuing a Master's degree in Computer Science at Georgia Tech, fully dedicated to expanding my knowledge and honing my skills in this exhilarating discipline. I will be studying on other interesting topics such as <b>artificial intelligence</b>, <b>machine learning</b>, and <b>software architecture</b>.
                       <br>
                       <br>
@@ -89,6 +88,34 @@ layout: default
                       <br>
                       Feel Free <a class="text-red" href="/contact">Get in touch</a> for any questions you have!!
                   </p>
+                </div>
+                <div class="col-md-3a col-xs-6a">
+                  <div class="service2 text-center">
+                      <img src="../assets//img/about/DA.png" alt="">
+                      <h6>Data Startcure and Algorithm</h6>
+                      <small>What can be more fun than solving algorithm puzzles??</small>
+                  </div>
+                </div>
+                <div class="col-md-3a col-xs-6a">
+                    <div class="service2 text-center">
+                        <img src="../assets//img/about/operating-system.png" alt="">
+                        <h6>Operating System</h6>
+                        <small>windows, ios, Android</small>
+                    </div>
+                </div>
+                <div class="col-md-3a col-xs-6a">
+                    <div class="service2 text-center">
+                        <img src="../assets//img/about/web-development.png" alt="">
+                        <h6>Full Stack Development</h6>
+                        <small>FrontEnd, Backend, Full-stack</small>
+                    </div>
+                </div>
+                <div class="col-md-3a col-xs-6a">
+                    <div class="service2 text-center">
+                        <img src="../assets//img/about/database.png" alt="">
+                        <h6>Database Engineering</h6>
+                        <small>SQL, MySQL, NoSQL</small>
+                    </div>
                 </div>
           </main>
         </div>
