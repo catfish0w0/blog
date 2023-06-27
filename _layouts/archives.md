@@ -13,7 +13,7 @@ layout: default
   <div class="archives">
     <iframe id="inlineFrameExample"
         title="Inline Frame Example"
-        width="300"
+        width="100%"
         height="200"
         src="https://prod.dy07wostgx6nr.amplifyapp.com/">
       </iframe>
