@@ -6,17 +6,17 @@
 layout: default
 # The Archives of posts.
 ---
+
 {%- include multi_lng/get-pages-by-lng.liquid pages = site.posts -%}
 {%- assign postsByYear = lng_pages | sort: 'date' | reverse | group_by_exp:"post", "post.date | date: site.data.lang[lng].date.year" -%}
+
 <div class="multipurpose-container">
   <h1>{{ site.data.lang[lng].archives.page_header }}</h1>
   <div class="archives">
     <iframe id="inlineFrameExample"
-        title="Inline Frame Example"
-        width="100%"
-        height="200"
         src="https://prod.dy07wostgx6nr.amplifyapp.com/">
-      </iframe>
+    </iframe>
+<!--     
     {%- for year in postsByYear %}
     <div class="year">
       <h6>{{ year.name }}</h6>
@@ -42,6 +42,6 @@ layout: default
       </div>
       {% endfor -%}
     </div>
-    {%- endfor %}
+    {%- endfor %} -->
   </div>
 </div>
