@@ -58,7 +58,6 @@ layout: default
                     <p>
                       Back in 2017, during my college years, I explored coding for the first time in an elective course called "Intro to Java" at Tacoma Community College. Though it didn't immediately ignite a strong passion, it laid the foundation for my future endeavors.
                       <br>
-                      <br>
                       After transferring to UCLA as a chemical engineering major, I embarked on internships and work experiences within the chemical engineering field. While I gained valuable skills and experiences, my interest in the software aspect of engineering started to grow stronger. I realized that I yearned for more creative freedom and the ability to have a broader impact through software development.
                     </p>
                 </div>
