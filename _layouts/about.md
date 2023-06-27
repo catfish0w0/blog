@@ -59,22 +59,32 @@ layout: default
                       In 2017, I took my first dive into coding with an introductory Java course at Tacoma Community College. While it didn't immediately ignite a strong passion within me, it left a positive impression of the coding industry and sparked my curiosity to explore more CS classes during my time at UCLA.
                       <br>
                       <br>
-                      After transferring to UCLA as a chemical engineering major, I had the opportunity to participate in internships and research experiences within the chemical engineering field. However, my fascination with computer science persisted, prompting me to enroll in courses such as CS 31, CS 32, and CS 33 at UCLA. These courses allowed me to immerse myself in the captivating world of algorithms and software design.
+                      After transferring to UCLA as a chemical engineering major, I had the opportunity to participate in internships and research experiences within the chemical engineering field. I also enrolled in courses such as CS 31, CS 32, and CS 33 at UCLA. These courses allowed me to immerse myself in the captivating world of algorithms and software design.
+                      <br>
+                      <br>
+                      Following my graduation, I secured a job as a System Engineer at an HVAC company in New York. While this position provided me with valuable skills and experiences in the HVAC industry, my interest in software engineering continued to flourish. I began self-studying Java once again and successfully built a couple of full-stack web applications using React for the frontend and Spring MVC and Go for the backend. These projects served as excellent preparation for my desired career shift.
                   </p>
                 </div>
                 <div class="col-md-3a col-xs-12a about-left">
-                  <h6>Providing various services</h6>
-                  <h4>Improving the web since 2013</h4>
+                  <h6>Continued Studying</h6>
+                  <h4>Improving Myself as a Software Engineer</h4>
                 </div>
                 <div class="col-md-9a col-xs-12a about-right">
                   <p>
-                      Following my graduation, I secured a job as a System Engineer at an HVAC company in New York. While this position provided me with valuable skills and experiences in the HVAC industry, my interest in software engineering continued to flourish. I began self-studying Java once again and successfully built a couple of full-stack web applications using React for the frontend and Spring MVC and Go for the backend. These projects served as excellent preparation for my desired career shift.
-                      <br>
                       <br>
                       Currently, I am pursuing a Master's degree in Computer Science at Georgia Tech, fully dedicated to expanding my knowledge and honing my skills in this exhilarating discipline. My studies are focused on advanced topics such as artificial intelligence, machine learning, and software architecture.
                       <br>
                       <br>
                       I am eager to further explore the limitless possibilities that computer science offers and apply my skills to solve real-world problems. With each step forward, I am excited to see where this journey takes me and how I can contribute to the ever-evolving field of technology.
+                      <br>
+                      <br>
+                      As mentioned above, I'm specialized in HTML, CSS, and React JS on the frontend. I'm also pretty comfortable with Spring MVC, Spring Boot, Hybernate, Golang, Maven, Docker, Github, C++, Python... etc. For more details about my completed projects check out my &nbsp;<a class="text-red" target="_blank" rel="noopener noreferrer" href="https://github.com/florinpop17">Github</a>.
+                      <br>
+                      <br>
+                      See the <a class="text-red" href="/timeline">Timeline</a> for an overview of my progress and accomplishments so far.
+                      <br>
+                      <br>
+                      <a class="text-red" href="/contact">Get in touch</a> for any questions you have!!
                   </p>
                 </div>
           </main>
