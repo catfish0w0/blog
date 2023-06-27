@@ -75,19 +75,19 @@ layout: default
                 <div class="col-md-9a col-xs-12a about-right">
                   <p>
                       <br>
-                      Currently, I am pursuing a Master's degree in Computer Science at Georgia Tech, fully dedicated to expanding my knowledge and honing my skills in this exhilarating discipline. My studies are focused on advanced topics such as artificial intelligence, machine learning, and software architecture.
+                      Currently, I am pursuing a Master's degree in Computer Science at Georgia Tech, fully dedicated to expanding my knowledge and honing my skills in this exhilarating discipline. I will be studying on other interesting topics such as <b>artificial intelligence</b>, <b>machine learning</b>, and <b>software architecture</b>.
                       <br>
                       <br>
                       I am eager to further explore the limitless possibilities that computer science offers and apply my skills to solve real-world problems. With each step forward, I am excited to see where this journey takes me and how I can contribute to the ever-evolving field of technology.
                       <br>
                       <br>
-                      As mentioned above, I'm specialized in HTML, CSS, and React JS on the frontend. I'm also pretty comfortable with Spring MVC, Spring Boot, Hybernate, Golang, Maven, Docker, Github, C++, Python... etc. For more details about my completed projects check out my &nbsp;<a class="text-red" target="_blank" rel="noopener noreferrer" href="https://github.com/florinpop17">Github</a>.
+                      As mentioned above, I'm specialized in <b>HTML</b>, <b>CSS</b>, and <b>React JS</b> on the frontend. I'm also pretty comfortable with <b>Spring MVC</b>, <b>Spring Boot</b>, <b>Hybernate</b>, <b>Golang</b>, <b>Maven</b>, <b>Docker</b>, <b>Github</b>, <b>C++</b>, <b>Python</b>... etc. For more details about my completed projects check out my &nbsp;<a class="text-red" target="_blank" rel="noopener noreferrer" href="https://github.com/florinpop17">Github</a>.
                       <br>
                       <br>
                       See the <a class="text-red" href="/timeline">Timeline</a> for an overview of my progress and accomplishments so far.
                       <br>
                       <br>
-                      <a class="text-red" href="/contact">Get in touch</a> for any questions you have!!
+                      Feel Free <a class="text-red" href="/contact">Get in touch</a> for any questions you have!!
                   </p>
                 </div>
           </main>
