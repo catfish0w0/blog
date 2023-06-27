@@ -14,6 +14,7 @@ layout: default
   <h1>{{ site.data.lang[lng].archives.page_header }}</h1>
   <div class="archives">
     <iframe id="inlineFrameExample"
+          width="100%"
         src="https://prod.dy07wostgx6nr.amplifyapp.com/">
     </iframe>
 <!--     
