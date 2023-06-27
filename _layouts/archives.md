@@ -13,8 +13,8 @@ layout: default
 <div class="multipurpose-container">
   <h1>{{ site.data.lang[lng].archives.page_header }}</h1>
   <div class="archives">
-    <iframe id="inlineFrameExample"
-          width="100%"
+    <iframe
+        scrolling="no"
         src="https://prod.dy07wostgx6nr.amplifyapp.com/">
     </iframe>
 <!--     
