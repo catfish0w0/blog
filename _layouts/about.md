@@ -52,7 +52,7 @@ layout: default
             <main class="row2 middle-xs about-container2">
                 <div class="col-md-3a col-xs-12a about-left">
                     <h6>how it all started</h6>
-                    <h4>The Story Behind</h4>
+                    <h4>The Story Behind and The Process</h4>
                 </div>
                 <div class="col-md-9a col-xs-12a about-right">
                     <p>
