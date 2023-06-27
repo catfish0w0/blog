@@ -11,6 +11,12 @@ layout: default
 <div class="multipurpose-container">
   <h1>{{ site.data.lang[lng].archives.page_header }}</h1>
   <div class="archives">
+    <iframe id="inlineFrameExample"
+        title="Inline Frame Example"
+        width="300"
+        height="200"
+        src="https://prod.dy07wostgx6nr.amplifyapp.com/">
+      </iframe>
     {%- for year in postsByYear %}
     <div class="year">
       <h6>{{ year.name }}</h6>
