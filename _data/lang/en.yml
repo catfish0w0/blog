@@ -115,7 +115,7 @@ post-list:
   upside_down_tabs:
     tab:
       all: All
-      categories: Categorie
+      categories: Categories
       tags: Tags
       years: Years
       clear: Clear
