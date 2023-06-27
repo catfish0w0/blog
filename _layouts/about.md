@@ -56,13 +56,16 @@ layout: default
                 </div>
                 <div class="col-md-9a col-xs-12a about-right">
                   <p>
-                      In 2017, I took my first dive into coding with an introductory Java course at Tacoma Community College. While it didn't immediately ignite a strong passion within me, it left a positive impression of the coding industry and sparked my curiosity to explore more CS classes during my time at UCLA.
+                      In 2017, I took my first dive into coding with an introductory Java course at Tacoma Community College. While it didn't immediately ignite a strong passion within me, it left me a great impression in coding and sparked my curiosity to explore more CS topics during my time at UCLA.
                       <br>
                       <br>
-                      After transferring to UCLA as a chemical engineering major, I had the opportunity to participate in internships and research experiences within the chemical engineering field. I also enrolled in courses such as CS 31, CS 32, and CS 33 at UCLA. These courses allowed me to immerse myself in the captivating world of algorithms and software design.
+                      After transferring to UCLA as a chemical engineering major, I decided to take the plunge and enroll in some additional courses. I signed up for CS 31, CS 32, and CS 33 at UCLA. The courses itself were quite challenging! However, those courses provided me with a solid foundation in the realm of algorithms and software design.
                       <br>
                       <br>
-                      Following my graduation, I secured a job as a System Engineer at an HVAC company in New York. While this position provided me with valuable skills and experiences in the HVAC industry, my interest in software engineering continued to flourish. I began self-studying Java once again and successfully built a couple of full-stack web applications using React for the frontend and Spring MVC and Go for the backend. These projects served as excellent preparation for my desired career shift.
+                      Following my graduation, I secured a job as a System Engineer at an HVAC company in New York. While this position provided me with valuable engineering skills and experiences, my interest in software engineering continued to flourish. 
+                      <br>
+                      <br>
+                      I began self-studying Java once again and successfully built a couple of full-stack web applications using React for the frontend and Spring MVC and Go for the backend. These projects served as excellent preparation for my desired career shift.
                   </p>
                 </div>
                 <div class="col-md-3a col-xs-12a about-left">
