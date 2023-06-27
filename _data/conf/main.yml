@@ -187,6 +187,8 @@ side_nav_close_limit: 767px
 side_and_top_nav_buttons:
   - home:
     icon: "fa fa-home"
+  - about:
+    icon: "fa fa-user-o"
   - post-list:
     icon: "fa fa-pencil-square-o"
   - archives:
@@ -195,8 +197,6 @@ side_and_top_nav_buttons:
     icon: "fa fa-cog"
   - links:
     icon: "fa fa-link"
-  - about:
-    icon: "fa fa-user-o"
 
 # side nav toggle feature
 # when side nav is not visible and if you click top nav toggle button, side nav slides from left to right (disables top nav buttons)
@@ -333,7 +333,7 @@ cookie_consent:
     # https://developers.google.com/analytics/devguides/collection/gtagjs
     anonymize_ip: true
     ads_data_redaction: true
-    cookie_flags: 'SameSite=None;Secure'
+    cookie_flags: "SameSite=None;Secure"
   groups:
     # google gtag default settings with categories
     # settings below categories will be set with gtag("consent", "default", ...)
