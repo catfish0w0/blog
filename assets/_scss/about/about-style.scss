@@ -138,11 +138,12 @@
 }
 .about-left h6 {
   color: #777;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
+
 .about-left h4 {
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin: 10px 0;
 }
 .about-right p {
@@ -185,9 +186,9 @@
       max-width: 83.33333333%;
   }
   .col-md-3a {
-      -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
-      max-width: 25%;
+      -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+      max-width: 20%;
   }
   .col-md-9a {
       -ms-flex-preferred-size: 75%;
