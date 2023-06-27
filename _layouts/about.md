@@ -91,28 +91,28 @@ layout: default
                 </div>
                 <div class="col-md-3a col-xs-6a">
                   <div class="service2 text-center">
-                      <img src="./assets//img/about/DA.png" alt="">
+                      <img src="./assets/img/about/DA.png" alt="">
                       <h6>Data Startcure and Algorithm</h6>
                       <small>What can be more fun than solving algorithm puzzles??</small>
                   </div>
                 </div>
                 <div class="col-md-3a col-xs-6a">
                     <div class="service2 text-center">
-                        <img src="./assets//img/about/operating-system.png" alt="">
+                        <img src="./assets/img/about/operating-system.png" alt="">
                         <h6>Operating System</h6>
                         <small>windows, ios, Android</small>
                     </div>
                 </div>
                 <div class="col-md-3a col-xs-6a">
                     <div class="service2 text-center">
-                        <img src="./assets//img/about/web-development.png" alt="">
+                        <img src="./assets/img/about/web-development.png" alt="">
                         <h6>Full Stack Development</h6>
                         <small>FrontEnd, Backend, Full-stack</small>
                     </div>
                 </div>
                 <div class="col-md-3a col-xs-6a">
                     <div class="service2 text-center">
-                        <img src="./assets//img/about/database.png" alt="">
+                        <img src="./assets/img/about/database.png" alt="">
                         <h6>Database Engineering</h6>
                         <small>SQL, MySQL, NoSQL</small>
                     </div>
