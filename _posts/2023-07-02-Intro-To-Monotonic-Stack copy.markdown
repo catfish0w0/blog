@@ -42,93 +42,132 @@ date: 2023-07-02 00:51:06 +0900
 
 <!-- outline-end -->
 
-## What is monotonic Stack??
+#### What is monotonic Stack??
 
-&ensp;Monostack is a **Stack**. You are right, you did not hear me wrong. Monostack is basically just the data structure stack. It does not have any difference in implementation in code. The only thing that differs is the use of the Stack.
+Monostack is a **Stack**. You are right, you did not hear me wrong. Monostack is basically just the data structure stack. It does not have any difference in implementation in code. The only thing that differs is the use of the Stack.
 
-&ensp;Monostack is a stack that follows specific ordering. To understand it thoroughly, it consists of 4 different types of monostack: increasing stack, non decreasing stack, decreasing stack, non increasing stack.
-
-## What can monotonic Stack do??
-
-&ensp;It has 2 common uses cases
-
-&ensp;1. finding the next greater/smaller/greater equals/smaller equals element
-&ensp;2. finding the prev greater/smaller/greater equals/smaller equals element
-
-&ensp;For example: For example:
-&ensp;[3, 7, 8, 4]  
-&ensp;The previous smaller element of 7 is 3. The next smaller element of 8 is 4. <br>
-&ensp;The previous smaller element of 8 is 7. The next smaller element of 7 is 4. <br>
-&ensp;The previous smaller element of 4 is 3. <br>
-&ensp;There is no previous less element for 3. There is no next smaller element for 3 and 4. <br>
+Monostack is a stack that follows specific ordering. To understand it thoroughly, it consists of 4 different types of monostack: increasing stack, non decreasing stack, decreasing stack, non increasing stack.
 
 ## When && Why do we have MonoStack??
 
-&ensp;Monostack exists because it utilizes the advantage of Stack on offering/polling/peeking top element in O(1) time Complexity.
-and we can simply apply it based on this current usecase!
+The Monostack exists because it leverages the advantages of a Stack, offering fast operations for pushing, polling, and peeking the top element with O(1) time complexity. By applying certain ordering in offering and polling conditions, it becomes highly efficient in finding the desired elements.
 
-#### Questions usecase:
+#### How/What can monotonic Stack do??
 
-**Basic Question 1: Find the first right side greater element in the array.**
+It has 2 common uses cases:
 
-&ensp;Entity:
-&ensp;Input: int[] array
-&ensp;Output: int[] outputNextGreaterArray
+1. finding the **next greater/smaller/greater equals/smaller equals element**
+2. finding the **prev greater/smaller/greater equals/smaller equals element**
 
-&ensp;Assumption:
+For example: For example:
+[3, 7, 8, 4]  
+The previous smaller element of 7 is 3.&ensp; The next smaller element of 8 is 4.
 
-&ensp;1. it is an int array
-&ensp;2. unsorted
+The previous smaller element of 8 is 7.&ensp; The next smaller element of 7 is 4.
 
-Example
-&emsp;&emsp; 1, 7, 2, 3, 6, 2, 10
-&ensp;return [ -1 1 1 2 3 1 1 //left side first smaller element, use decreasing stack from left to right
-&ensp;return [ -1 -1 7 7 7 6 -1 // left side first larger element
+The previous smaller element of 4 is 3.
 
-&ensp;**Method 1 Brute Force:**
-&ensp;for each element,
+There is no previous less element for 3.&ensp; There is no next smaller element for 3 and 4.
+
+Increasing MonoStack, use case: find the next smaller element:
+
+```Java
+for (int i = 0; i < array.length; i++) {
+   // if the new seeing current element less than the top element, that means it violates the increasing order
+   // so we will poll it from the stack, by that time,
+   // we know that the next smaller element for the polled element is the current array[i]!
+   while (!stack.isEmpty() && array[i] <= stack.peekFirst()) {
+      // if the element smaller than or equal to the stack top element, poll him down
+      stack.pollFirst();
+   }
+// Dont forget, offer back
+stack.offerFirst(array[i]);
+}
+```
+
+Other different types:
+
+Decreasing monostack:
+
+Just change to this !stack.isEmpty() && array[i] >= stack.peekFirst()
+
+non-increasing monostack:
+
+Just change to this !stack.isEmpty() && array[i] > stack.peekFirst();
+
+non decreasing monostack:
+
+Just change to this !stack.isEmpty() && array[i] < stack.
+
+##### Questions usecase:
+
+**Basic Question 1: Find the next greater element in the array.**
+
+Entity:
+
+Input: int[] array
+
+Output: int[] outputNextGreaterArray
+
+Assumption:
+
+1. it is an int array
+2. unsorted
+
+Example:
+1, 7, 2, 3, 6, 2, 10
+
+return [ 7 10 -1 2 2 -1 -1 //left side first smaller element, use decreasing stack from left to right
+
+**Method 1 Brute Force:**
+for each element,
 &emsp;find the first one that is larger than him from left to right.
 
-&ensp;**Method 2 MonoStack:**
-&ensp;Use increasing monostack or decreasing monostack are okay.
-&ensp;&emsp;&emsp;1, 7, 2, 3, 6, 2, 10
-&ensp;increasing stack: -1 -1 7 7// not working, because for 3, supposed we have 7 to say
-&ensp;decreasing stack -1, -1, 7, 7, 7, 6, -1
+**Method 2 MonoStack:**
 
-&ensp;when to update?
-&ensp;Code:
+What is inefficient in the above approach??
+
+Everytime we are finding the next element in the array, we traverse almost the whole array to find the next greater element. This requires O(n^2) of time to check through. So what we can do is to find the next greater element in one time using monostack, since by only maintaining a stack with decreasing order, we can find the next greater element in O(1) time for each element.
+
+Which kind of monoStack should we be using??
+&emsp;&emsp;1, 7, 2, 3, 6, 2, 10
+
+**increasing stack:** if you go through the example, you will see it does not work, because if you offer first 2 to the stack, you will need to poll 7 out, but there is a next greater element for 7, and that polling would not allow us to update the element. So the increasing mono stack does not help us solve the problem.
+
+**decreasing stack:** -1, -1, 7, 7, 7, 6, -1
+
+when to update?
+Code:
 
 ```Java
 public int[] firstLargerElementFromLeft(int[] array) {
 
    int[] result = new int[array.length];
-   Deque<Integer> stack = new LinkedList<>(); // decreasing monoStack
+   Deque<Integer> monoStack = new LinkedList<>(); // decreasing monoStack
+
+   //it is easier to update when we find the next greater element for the specific element.
+   Arrays.fill(result, -1);
 
    for (int i = 0; i < array.length; i++) {
-      while (!stack.isEmpty() && array[i] >= stack.peekFirst()) {
-         stack.pollFirst();
+      while (!monoStack.isEmpty() && array[i] > array[monoStack.peekFirst()]) {
+         int prevElementIndex = monoStack.pollFirst();
+         result[prevElementIndex] = array[i];
       }
-      if (!stack.isEmpty()) { // if it has element inside
-         // the first element in the stack is the first that is > the current element.
-         result[i] = stack.peekFirst());
-      } else {
-         result[i] = -1;
-      }
-      stack.offerFirst(array[i]);
+      monoStack.offerFirst(i);
    }
    return result;
 }
 ```
 
 **Basic Question 2: Find the distance of each element with the next first right side greater element in the array.**
-&ensp;Most of the time, the usecase is not that simple. In most interview questions or leecodes, we are using the relationship between the next first greater element or finding the distance in between.
+Most of the time, the usecase is not that simple. In most interview questions or leecodes, we are using the relationship between the next first greater element or finding the distance in between.
 
-&ensp;The concept from the last question can be used. But the actual element that we store in the stack might be different.
+The concept from the last question can be used. But the actual element that we store in the stack might be different.
 
-&ensp;There are two common ways to handle this.
+There are two common ways to handle this.
 
-&ensp;1. Use a wrapper class and the stack store Wrapper object
-&ensp;2. Seeing an array, and then we can use the index.
+1. Use a wrapper class and the stack store Wrapper object
+2. Seeing an array, and then we can use the index.
 
 ```Java
 // first way
@@ -143,17 +182,36 @@ class Wrapper {
       stack.pollFirst();
    }
    stack.offerFirst(i);
+
+// Code for finding the distance between current and next greater element.
+public int[] distanceBetweenNextGreaterElement(int[] array) {
+
+   int[] distance = new int[array.length];
+   Deque<Integer> monoStack = new LinkedList<>(); // decreasing monoStack
+
+   for (int i = 0; i < array.length; i++) {
+      while (!monoStack.isEmpty() && array[i] > array[monoStack.peekFirst()]) {
+         int prevElementIndex = monoStack.pollFirst();
+         result[prevElementIndex] = i - prevElementIndex + 1;
+      }
+      monoStack.offerFirst(i);
+   }
+   return result;
+}
 ```
 
 **[Daily Temperature:](https://leetcode.com/problems/daily-temperatures/)**
 
-&ensp;Problem Statement:
-&ensp;we are given an array of temperature, array[i] is the temperature at day i.
-&ensp;return back an array such that the ith day wait result[i] day to get a warmer day.
-&ensp;if it does not have a warmer day, result[i] should be 0.
+Problem Statement:
 
-&ensp;**Method 1 Brute Force:**
-&ensp;for every day
-&emsp;Look up to the right.
+we are given an array of temperature, array[i] is the temperature at day i.
 
-&ensp;**Method 2 MonoStack:**
+return back an array such that the ith day wait result[i] day to get a warmer day.
+
+if it does not have a warmer day, result[i] should be 0.
+
+**Method 1 Brute Force:**
+for every day
+Look up to the right.
+
+**Method 2 MonoStack:**
