@@ -67,4 +67,21 @@ There is no previous less element for 3. There is no next smaller element for 3 
 Monostack exists because it utilizes the advantage of Stack on offering/polling/peeking top element in O(1) time Complexity.
 and we can simply apply it based on this current usecase!
 
-[leetcode2023](./leetcode_questions/2021-08-10-Test-page1.markdown)
+### Basic Question:
+
+**Find the first right side greater element in the array.**
+
+Entity:
+Input: int[] array
+Output: int[] outputNextGreaterArray
+
+Assumption:
+
+1. it is int array
+2. unsorted
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1, 7, 2, 3, 6, 2, 10
+return [ -1 1 1 2 3 1 1 //left side first smaller element, use decreasing stack from left to right
+return [ -1 -1 7 7 7 6 -1 // left side first larger element, use
+Increasing stack from the left side seems like it does not work.
+Decreasing Stack from the right side
