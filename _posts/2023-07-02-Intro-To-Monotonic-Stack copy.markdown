@@ -388,8 +388,10 @@ public int[] nextGreaterElements(int[] array) {
       while (!stack.isEmpty() && array[i] >= stack.peekFirst()) {
          stack.pollFirst();
       }
+      // if the stack is empty, that means the current element is the largest among the circular array
       if (stack.isEmpty()) {
          result[i] = -1;
+      // else just look up the stack top, which means it is the next larger element.
       } else {
          result[i] = stack.peekFirst();
       }
@@ -402,4 +404,4 @@ public int[] nextGreaterElements(int[] array) {
 (No Next Greater Element 3, because it is unrelated to monostack topics)\
 **[Next Greater Element 4:](https://leetcode.com/problems/next-greater-element-iv/)**\
 Problem Statement:\
-Given a circular integer array array (i.e., the next element of nums[nums.length - 1] is nums[0]), return the next greater number for every element in array.
+Given an array, find the second largest Element for each element in the array.
