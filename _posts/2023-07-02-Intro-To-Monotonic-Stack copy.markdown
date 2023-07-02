@@ -62,16 +62,12 @@ It has 2 common uses cases:
 For example: For example:
 [3, 7, 8, 4]  
 The previous smaller element of 7 is 3.&ensp; The next smaller element of 8 is 4.
-
 The previous smaller element of 8 is 7.&ensp; The next smaller element of 7 is 4.
-
 The previous smaller element of 4 is 3.
-
 There is no previous less element for 3.&ensp; There is no next smaller element for 3 and 4.
 
-Increasing MonoStack, use case: find the next smaller element:
-
 ```Java
+//Increasing MonoStack, use case: find the next smaller element:
 for (int i = 0; i < array.length; i++) {
    // if the new seeing current element less than the top element, that means it violates the increasing order
    // so we will poll it from the stack, by that time,
@@ -88,25 +84,20 @@ stack.offerFirst(array[i]);
 Other different types:
 
 Decreasing monostack:
-
 Just change to this !stack.isEmpty() && array[i] >= stack.peekFirst()
 
 non-increasing monostack:
-
 Just change to this !stack.isEmpty() && array[i] > stack.peekFirst();
 
 non decreasing monostack:
-
 Just change to this !stack.isEmpty() && array[i] < stack.
 
-##### Questions usecase:
+##### Practice Questions:
 
 **Basic Question 1: Find the next greater element in the array.**
 
 Entity:
-
 Input: int[] array
-
 Output: int[] outputNextGreaterArray
 
 Assumption:
@@ -115,12 +106,14 @@ Assumption:
 2. unsorted
 
 Example:
-1, 7, 2, 3, 6, 2, 10
 
+1, 7, 2, 3, 6, 2, 10
 return [ 7 10 -1 2 2 -1 -1 //left side first smaller element, use decreasing stack from left to right
 
 **Method 1 Brute Force:**
+
 for each element,
+
 &emsp;find the first one that is larger than him from left to right.
 
 **Method 2 MonoStack:**
