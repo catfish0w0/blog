@@ -66,3 +66,5 @@ There is no previous less element for 3. There is no next smaller element for 3 
 
 Monostack exists because it utilizes the advantage of Stack on offering/polling/peeking top element in O(1) time Complexity.
 and we can simply apply it based on this current usecase!
+
+[leetcode2023](../leetcode_questions/2021-08-10-Test-page1.markdown)
