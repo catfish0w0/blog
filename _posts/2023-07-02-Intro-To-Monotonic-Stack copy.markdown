@@ -40,13 +40,11 @@ date: 2023-07-02 00:51:06 +0900
 
 <!-- outline-start -->
 
-This is an example page to display markdown related styles for Mr. Green Jekyll Theme.
-
 <!-- outline-end -->
 
 ## What is monotonic Stack??
 
-Monostack is a Stack. You are right, you did not hear me wrong. Monostack is basically just the data structure stack. It does not have any difference in implementation in code. The only thing that differs is the use of the Stack.
+Monostack is a **Stack**. You are right, you did not hear me wrong. Monostack is basically just the data structure stack. It does not have any difference in implementation in code. The only thing that differs is the use of the Stack.
 
 Monostack is a stack that follows specific ordering. To understand it thoroughly, it consists of 4 different types of monostack: increasing stack, non decreasing stack, decreasing stack, non increasing stack.
 
@@ -58,161 +56,13 @@ It has 2 common uses cases
 2. finding the prev greater/smaller/greater equals/smaller equals element
 
 For example: For example:
-[3, 7, 8, **4**]  
-The previous smaller element of 7 is 3. The next smaller element of 8 is 4.
-The previous smaller element of 8 is 7. The next smaller element of 7 is 4.
-The previous smaller element of 4 is 3.
-There is no previous less element for 3. There is no next smaller element for 3 and 4.
+[3, 7, 8, 4]  
+The previous smaller element of 7 is 3. The next smaller element of 8 is 4. <br>
+The previous smaller element of 8 is 7. The next smaller element of 7 is 4. <br>
+The previous smaller element of 4 is 3. <br>
+There is no previous less element for 3. There is no next smaller element for 3 and 4. <br>
 
 ## When && Why do we have MonoStack??
 
 Monostack exists because it utilizes the advantage of Stack on offering/polling/peeking top element in O(1) time Complexity.
 and we can simply apply it based on this current usecase!
-
-### Headings (centered)
-
-{:data-align="center"}
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
----
-
-### Paragraphs
-
-#### Paragraph
-
-**William Shakespeare**, Let me not to the marriage of true minds
-Admit impediments. Love is not love
-Which alters when it alteration finds,
-Or bends with the remover to remove.
-O no, it is an ever-fixed mark
-That looks on tempests and is never shaken;
-It is the star to every wand'ring barque,
-Whose worth's unknown, although his height be taken.
-Love's not Time's fool, though rosy lips and cheeks
-Within his bending sickle's compass come;
-Love alters not with his brief hours and weeks,
-But bears it out even to the edge of doom.
-If this be error and upon me proved,
-I never writ, nor no man ever loved.
-
-#### Texts
-
-Quoted text `Hello world`
-
-Bold text **Hello world**
-
-Italic text _Hello world_
-
-kbd text <kbd>Hello world</kbd>
-
-#### Blockquote
-
-> **William Shakespeare**, Let me not to the marriage of true minds
-> Admit impediments. Love is not love
-> Which alters when it alteration finds,
-> Or bends with the remover to remove.
-> O no, it is an ever-fixed mark
-> That looks on tempests and is never shaken;
-> It is the star to every wand'ring barque,
-> Whose worth's unknown, although his height be taken.
-> Love's not Time's fool, though rosy lips and cheeks
-> Within his bending sickle's compass come;
-> Love alters not with his brief hours and weeks,
-> But bears it out even to the edge of doom.
-> If this be error and upon me proved,
-> I never writ, nor no man ever loved.
-
-### Link
-
-This is [Mr. Green Jekyll Theme](https://github.com/MrGreensWorkshop/MrGreen-JekyllTheme), a simple theme built for [Jekyll](https://jekyllrb.com/).
-
-\* Hello world! This is **[{{ site.data.owner[site.data.conf.main.default_lng].brand }}]({{ site.url }})**
-
-### Picture
-
-![such a lovely place](:post_pic1.jpg)
-
-### Picture (centered)
-
-![such a lovely place](:post_pic1.jpg){:data-align="center"}
-
-### Lists
-
-- Apple
-- Banana
-- Orange
-
-1. Fruits
-   1. Apples
-      - Granny Smith
-      - Mutsu
-   1. Bananas
-      - Cavendish
-      - Red
-1. Vegetables
-
----
-
-### Tables
-
-#### Small Table (centered)
-
-| Fruits(not aligned) | Alignment (centered) | num (right align) |
-| ------------------- | :------------------: | ----------------: |
-| Apple               |       centered       |              9999 |
-| Banana              |  centered long text  |               999 |
-| Orange              |       centered       |                99 |
-| Lemon               |       centered       |                 9 |
-
-{:data-align="center"}
-
-#### Wide Table (centered)
-
-scroll enabled when page is narrow
-
-| Fruits | num (left align) | num (right align) | num  | num  | num  |
-| ------ | :--------------- | ----------------: | ---- | ---- | ---- |
-| Apple  | 1111             |              1111 | 2222 | 3333 | 4444 |
-| Banana | 111              |               111 | 222  | 333  | 444  |
-| Orange | 11               |                11 | 22   | 33   | 44   |
-| Lemon  | 1                |                 1 | 2    | 3    | 4    |
-
-{:data-align="center"}
-
-#### Wider Table
-
-scroll enabled when page is narrow
-
-| Fruits | num (left align) | num (right align) | num  | num  | num  | num  | num  | num  |
-| ------ | :--------------- | ----------------: | ---- | ---- | ---- | ---- | ---- | ---- |
-| Apple  | 1111             |              1111 | 2222 | 3333 | 4444 | 5555 | 6666 | 7777 |
-| Banana | 111              |               111 | 222  | 333  | 444  | 555  | 666  | 777  |
-| Orange | 11               |                11 | 22   | 33   | 44   | 55   | 66   | 77   |
-| Lemon  | 1                |                 1 | 2    | 3    | 4    | 5    | 6    | 7    |
-
-### Code
-
-#### Highlight
-
-{% highlight python %}
-for i in range(5, 10):
-print(i)
-{% endhighlight %}
-
-#### Quote
-
-```python
-for i in range(5, 10):
-  print(i)
-```
