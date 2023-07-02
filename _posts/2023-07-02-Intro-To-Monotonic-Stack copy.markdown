@@ -59,11 +59,11 @@ It has 2 common uses cases:
 1. finding the **next greater/smaller/greater equals/smaller equals element**
 2. finding the **prev greater/smaller/greater equals/smaller equals element**
 
-For example: For example:
-[3, 7, 8, 4]  
-The previous smaller element of 7 is 3.&ensp; The next smaller element of 8 is 4.
-The previous smaller element of 8 is 7.&ensp; The next smaller element of 7 is 4.
-The previous smaller element of 4 is 3.
+For example: For example:\
+[3, 7, 8, 4]\
+The previous smaller element of 7 is 3.&ensp; The next smaller element of 8 is 4.\
+The previous smaller element of 8 is 7.&ensp; The next smaller element of 7 is 4.\
+The previous smaller element of 4 is 3.\
 There is no previous less element for 3.&ensp; There is no next smaller element for 3 and 4.
 
 ```Java
@@ -83,37 +83,35 @@ stack.offerFirst(array[i]);
 
 Other different types:
 
-Decreasing monostack:
+Decreasing monostack:\
 Just change to this !stack.isEmpty() && array[i] >= stack.peekFirst()
 
-non-increasing monostack:
+non-increasing monostack:\
 Just change to this !stack.isEmpty() && array[i] > stack.peekFirst();
 
-non decreasing monostack:
+non decreasing monostack:\
 Just change to this !stack.isEmpty() && array[i] < stack.
 
 ##### Practice Questions:
 
 **Basic Question 1: Find the next greater element in the array.**
 
-Entity:
-Input: int[] array
-Output: int[] outputNextGreaterArray
+Entity:\
+Input: int[] array\
+Output: int[] outputNextGreaterArray\
 
 Assumption:
 
 1. it is an int array
 2. unsorted
 
-Example:
-
-1, 7, 2, 3, 6, 2, 10
-return [ 7 10 -1 2 2 -1 -1 //left side first smaller element, use decreasing stack from left to right
+Example:\
+1, 7, 2, 3, 6, 2, 10\
+return [ 7 10 -1 2 2 -1 -1 //left side first smaller element, use decreasing stack from left to right\
 
 **Method 1 Brute Force:**
 
-for each element,
-
+For each element,\
 &emsp;find the first one that is larger than him from left to right.
 
 **Method 2 MonoStack:**
@@ -122,14 +120,13 @@ What is inefficient in the above approach??
 
 Everytime we are finding the next element in the array, we traverse almost the whole array to find the next greater element. This requires O(n^2) of time to check through. So what we can do is to find the next greater element in one time using monostack, since by only maintaining a stack with decreasing order, we can find the next greater element in O(1) time for each element.
 
-Which kind of monoStack should we be using??
+Which kind of monoStack should we be using??\
 &emsp;&emsp;1, 7, 2, 3, 6, 2, 10
 
 **increasing stack:** if you go through the example, you will see it does not work, because if you offer first 2 to the stack, you will need to poll 7 out, but there is a next greater element for 7, and that polling would not allow us to update the element. So the increasing mono stack does not help us solve the problem.
 
 **decreasing stack:** -1, -1, 7, 7, 7, 6, -1
 
-when to update?
 Code:
 
 ```Java
@@ -153,6 +150,7 @@ public int[] firstLargerElementFromLeft(int[] array) {
 ```
 
 **Basic Question 2: Find the distance of each element with the next first right side greater element in the array.**
+
 Most of the time, the usecase is not that simple. In most interview questions or leecodes, we are using the relationship between the next first greater element or finding the distance in between.
 
 The concept from the last question can be used. But the actual element that we store in the stack might be different.
@@ -197,14 +195,11 @@ public int[] distanceBetweenNextGreaterElement(int[] array) {
 
 Problem Statement:
 
-we are given an array of temperature, array[i] is the temperature at day i.
-
-return back an array such that the ith day wait result[i] day to get a warmer day.
-
-if it does not have a warmer day, result[i] should be 0.
+we are given an array of temperature, array[i] is the temperature at day i. return back an array such that the ith day wait result[i] day to get a warmer day. if it does not have a warmer day, result[i] should be 0.
 
 **Method 1 Brute Force:**
-for every day
-Look up to the right.
+
+for every day\
+&emsp;Look up to the right.
 
 **Method 2 MonoStack:**
