@@ -93,7 +93,7 @@ Just change to this !stack.isEmpty() && array[i] < stack.
 
 ##### Practice Questions:
 
-**Basic Question 1: Find the next greater element in the array.**\
+**Basic Question 1: Find the next greater element in the array.**
 Entity:\
 Input: int[] array\
 Output: int[] outputNextGreaterArray
@@ -150,7 +150,7 @@ public int[] firstLargerElementFromLeft(int[] array) {
 }
 ```
 
-**Basic Question 2: Find the distance of each element with the next first right side greater element in the array.**\
+**Basic Question 2: Find the distance of each element with the next first right side greater element in the array.**
 
 Most of the time, the usecase is not that simple. In most interview questions or leecodes, we are using the relationship between the next first greater element or finding the distance in between.
 
@@ -195,6 +195,15 @@ public int[] distanceBetweenNextGreaterElement(int[] array) {
 **Problem Statement:**\
 we are given an array of temperature, array[i] is the temperature at day i. return back an array such that the ith day wait result[i] day to get a warmer day. if it does not have a warmer day, result[i] should be 0.
 
+Entity:\
+Input: int[] temperatures\
+Output: int[] nextWarmerDay
+
+Assumption:
+
+1. the temperature of each day are stored in int[] array, index means the ith day
+2. no need to calculate for the last forcasted days
+
 **Method 1 Brute Force:**
 
 for every day\
@@ -208,8 +217,7 @@ Again, what is inefficient in the above approach?
 
 1. we can easily spot that the array[i] is the temperature of the day, and we want to find the next day that is warmer(greater in value) for every ith day. This is basically asking the previous question in a different wording. So we can use decreasing monoStack to assit our traversal and find the results.
 
-TC: O(n)
-SC: O(n)
+TC: O(n)&emsp;C: O(n)
 
 ```Java
 public int[] dailyTemperatures(int[] temperatures) {
@@ -364,12 +372,12 @@ Consider the sequence [1, 2, 3, 4, 3]. Instead of storing it directly, we store 
 By making this clever adjustment, we ensure that elements can interact in a way that gives us the desired results. It's like flipping the sequence to create a seamless connection between elements, just like a well-orchestrated dance routine!
 
 [1, 2, 3, 4, 3]\
- i\
+&emsp;&emsp;&emsp;&ensp;i\
 case 0: if stack is empty, we put result[i] = -1, and put our current element back to the stack\
 case 1: if the stack top element < current, pop it out, because it is not our target.\
 case 2: if the stack top elemetn > target, store it in result[i] && i--.\
- and do we need to put it back to the stack??\
- the answer is yes, because it can be larger than the current one.
+&emsp;&emsp;and do we need to put it back to the stack??\
+&emsp;&emsp;the answer is yes, because it can be larger than the current one.
 
 TC: O(n)&emsp;SC:O(n)
 
