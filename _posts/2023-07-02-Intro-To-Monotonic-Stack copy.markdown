@@ -67,9 +67,9 @@ There is no previous less element for 3. There is no next smaller element for 3 
 Monostack exists because it utilizes the advantage of Stack on offering/polling/peeking top element in O(1) time Complexity.
 and we can simply apply it based on this current usecase!
 
-### Basic Question:
+#### Questions usecase:
 
-**Find the first right side greater element in the array.**
+**Basic Question 1: Find the first right side greater element in the array.**
 
 Entity:
 Input: int[] array
@@ -77,9 +77,10 @@ Output: int[] outputNextGreaterArray
 
 Assumption:
 
-1. it is int array
+1. it is an int array
 2. unsorted
 
+Example
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1, 7, 2, 3, 6, 2, 10
 <br>
 return [ -1 1 1 2 3 1 1 //left side first smaller element, use decreasing stack from left to right
@@ -88,11 +89,11 @@ return [ -1 -1 7 7 7 6 -1 // left side first larger element
 
 **Method 1 Brute Force:**
 for each element,
-find the first one that is larger than him from left to right.
+&nbsp;&nbsp;&nbsp;&nbsp;find the first one that is larger than him from left to right.
 
 **Method 2 MonoStack:**
 Use increasing monostack or decreasing monostack are okay.
-1, 7, 2, 3, 6, 2, 10
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1, 7, 2, 3, 6, 2, 10
 increasing stack: -1 -1 7 7// not working, because for 3, supposed we have 7 to say
 decreasing stack -1, -1, 7, 7, 7, 6, -1
 
@@ -119,4 +120,30 @@ public int[] firstLargerElementFromLeft(int[] array) {
    }
    return result;
 }
+```
+
+**Basic Question 2: Find the distance of each element with the next first right side greater element in the array.**
+Most of the time, the usecase is not that simple. In most interview questions or leecodes, we are using the relationship between the next first greater element or finding the distance in between.
+
+The concept from the last question can be used. But the actual element that we store in the stack might be different.
+
+There are two common ways to handle this.
+
+1. Use a wrapper class and the stack store Wrapper object
+
+```Java
+Deque<Wrapper> monoStack;
+class Wrapper {
+   int index;
+   int value;
+}
+```
+
+2. Seeing an array, and then we can use the index.
+
+```Java
+   while (!stack.isEmpty() && array[i] > array[stack.peekFirst()]) {
+      stack.pollFirst();
+   }
+   stack.offerFirst(i);
 ```
