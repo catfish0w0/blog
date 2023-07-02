@@ -81,7 +81,42 @@ Assumption:
 2. unsorted
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1, 7, 2, 3, 6, 2, 10
+<br>
 return [ -1 1 1 2 3 1 1 //left side first smaller element, use decreasing stack from left to right
-return [ -1 -1 7 7 7 6 -1 // left side first larger element, use
-Increasing stack from the left side seems like it does not work.
-Decreasing Stack from the right side
+<br>
+return [ -1 -1 7 7 7 6 -1 // left side first larger element
+
+**Method 1 Brute Force:**
+for each element,
+find the first one that is larger than him from left to right.
+
+**Method 2 MonoStack:**
+Use increasing monostack or decreasing monostack are okay.
+1, 7, 2, 3, 6, 2, 10
+increasing stack: -1 -1 7 7// not working, because for 3, supposed we have 7 to say
+decreasing stack -1, -1, 7, 7, 7, 6, -1
+
+when to update?
+Code:
+
+```Java
+public int[] firstLargerElementFromLeft(int[] array) {
+
+   int[] result = new int[array.length];
+   Deque<Integer> stack = new LinkedList<>(); // decreasing monoStack
+
+   for (int i = 0; i < array.length; i++) {
+      while (!stack.isEmpty() && array[i] >= stack.peekFirst()) {
+         stack.pollFirst();
+      }
+      if (!stack.isEmpty()) { // if it has element inside
+         // the first element in the stack is the first that is > the current element.
+         result[i] = stack.peekFirst());
+      } else {
+         result[i] = -1;
+      }
+      stack.offerFirst(array[i]);
+   }
+   return result;
+}
+```
