@@ -59,7 +59,7 @@ It has 2 common uses cases:
 1. finding the **next greater/smaller/greater equals/smaller equals element**
 2. finding the **prev greater/smaller/greater equals/smaller equals element**
 
-For example: For example:\
+For example:\
 [3, 7, 8, 4]\
 The previous smaller element of 7 is 3.&ensp; The next smaller element of 8 is 4.\
 The previous smaller element of 8 is 7.&ensp; The next smaller element of 7 is 4.\
@@ -81,15 +81,15 @@ stack.offerFirst(array[i]);
 }
 ```
 
-Other different types:
+###### Other different types of monoStack:
 
-Decreasing monostack:\
+**Decreasing monostack:**\
 Just change to this !stack.isEmpty() && array[i] >= stack.peekFirst()
 
-non-increasing monostack:\
+**non-increasing monostack:**\
 Just change to this !stack.isEmpty() && array[i] > stack.peekFirst();
 
-non decreasing monostack:\
+**non decreasing monostack:**\
 Just change to this !stack.isEmpty() && array[i] < stack.
 
 ##### Practice Questions:
@@ -98,7 +98,7 @@ Just change to this !stack.isEmpty() && array[i] < stack.
 
 Entity:\
 Input: int[] array\
-Output: int[] outputNextGreaterArray\
+Output: int[] outputNextGreaterArray
 
 Assumption:
 
@@ -121,8 +121,8 @@ What is inefficient in the above approach??
 Everytime we are finding the next element in the array, we traverse almost the whole array to find the next greater element. This requires O(n^2) of time to check through. So what we can do is to find the next greater element in one time using monostack, since by only maintaining a stack with decreasing order, we can find the next greater element in O(1) time for each element.
 
 Which kind of monoStack should we be using??\
-&emsp;&emsp;1, 7, 2, 3, 6, 2, 10
-
+Let's go through an example to find out!\
+&emsp;&emsp;1, 7, 2, 3, 6, 2, 10\
 **increasing stack:** if you go through the example, you will see it does not work, because if you offer first 2 to the stack, you will need to poll 7 out, but there is a next greater element for 7, and that polling would not allow us to update the element. So the increasing mono stack does not help us solve the problem.
 
 **decreasing stack:** -1, -1, 7, 7, 7, 6, -1
@@ -153,9 +153,8 @@ public int[] firstLargerElementFromLeft(int[] array) {
 
 Most of the time, the usecase is not that simple. In most interview questions or leecodes, we are using the relationship between the next first greater element or finding the distance in between.
 
-The concept from the last question can be used. But the actual element that we store in the stack might be different.
-
-There are two common ways to handle this.
+The concept from the last question can be used. But the actual element that we store in the stack might be different.\
+There are two common ways to handle this.\
 
 1. Use a wrapper class and the stack store Wrapper object
 2. Seeing an array, and then we can use the index.
