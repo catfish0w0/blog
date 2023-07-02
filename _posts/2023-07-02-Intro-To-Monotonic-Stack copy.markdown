@@ -54,13 +54,12 @@ The Monostack exists because it leverages the advantages of a Stack, offering fa
 
 #### How/What can monotonic Stack do??
 
-It has 2 common uses cases:\
+It has 2 common uses cases:
 
 1. finding the **next greater/smaller/greater equals/smaller equals element**
 2. finding the **prev greater/smaller/greater equals/smaller equals element**
 
-For example:\
-[3, 7, 8, 4]\
+For example: &ensp;[3, 7, 8, 4]\
 The previous smaller element of 7 is 3.&ensp; The next smaller element of 8 is 4.\
 The previous smaller element of 8 is 7.&ensp; The next smaller element of 7 is 4.\
 The previous smaller element of 4 is 3.\
@@ -99,13 +98,12 @@ Entity:\
 Input: int[] array\
 Output: int[] outputNextGreaterArray
 
-Assumption:\
+Assumption:
 
 1. it is an int array
 2. unsorted
 
-Example:\
-1, 7, 2, 3, 6, 2, 10\
+Example: 1, 7, 2, 3, 6, 2, 10\
 return [ 7 10 -1 2 2 -1 -1 //left side first smaller element, use decreasing stack from left to right\
 
 **Method 1 Brute Force:**
@@ -157,7 +155,7 @@ public int[] firstLargerElementFromLeft(int[] array) {
 Most of the time, the usecase is not that simple. In most interview questions or leecodes, we are using the relationship between the next first greater element or finding the distance in between.
 
 The concept from the last question can be used. But the actual element that we store in the stack might be different.\
-There are two common ways to handle this.\
+There are two common ways to handle this.
 
 1. Use a wrapper class and the stack store Wrapper object
 2. Seeing an array, and then we can use the index.
@@ -194,7 +192,7 @@ public int[] distanceBetweenNextGreaterElement(int[] array) {
 ```
 
 **[Daily Temperature:](https://leetcode.com/problems/daily-temperatures/)**\
-Problem Statement:\
+**Problem Statement:**\
 we are given an array of temperature, array[i] is the temperature at day i. return back an array such that the ith day wait result[i] day to get a warmer day. if it does not have a warmer day, result[i] should be 0.
 
 **Method 1 Brute Force:**
@@ -233,14 +231,14 @@ public int[] dailyTemperatures(int[] temperatures) {
 ##### Next Greater Element Series:
 
 **[Next Greater Element 1:](https://leetcode.com/problems/next-greater-element-i/)**\
-Problem Statement:\
+**Problem Statement:**\
 Given 2 arrays, array1 and array2. array1 is the subset of array2, we want to find the next greater element of each element in array1 that is in array2.
 
 Entity:\
 Input: int[] array1, int[] array2\
 Ouput: int[] result
 
-Assumption:\
+Assumption:
 
 1. both unsorted int[] array
 2. array1.length will not > array2.length
@@ -258,19 +256,19 @@ TC: O(n^2)&emsp; SC: O(1)
 What is inefficient in the Brute Force solution??
 
 1. We dont know the location of our array1 element in the array2(the corresponding index), that is why we need extra linear time for each array1 element to search for the location(index) at array2 before we really start searching up the next greater element. In order to optimize it, we can use a data structure that help us fast look up the location of value in index1 to index2.
-2. Even we find the location of each element in the array2, we still need the O(n) linear time to search for the next greater element in array2. Can we first use linear time to store the next greater element in array2, and then later we can use linear time to find array1 element?
+2. Even we find the location of each element in the array2, we still need the O(n) linear time to search for the next greater element in array2. **Can we first use linear time to store the next greater element in array2, and then later we can use linear time to find array1 element?**
 
 The answer yes, and that is the approach to optimize the solution.\
-We will need a HashMap<value, next greater element in array2>, because it helps us look up the next greater element in O(1) time complexity.
+We will need a HashMap< value, next greater element in array2 >, because it helps us look up the next greater element in O(1) time complexity.
 
 Details:\
 &emsp;initialize the hashmap and result array\
 &emsp;for each element in array2\
 &emsp;&emsp;find and store the next greater element in array2\
 &emsp;for each element in array1\
-&emsp;&emsp;if we find the value in the hashmap
-&emsp;&emsp;&emsp;lookup the next greater element
-&emsp;&emsp;else
+&emsp;&emsp;if we find the value in the hashmap\
+&emsp;&emsp;&emsp;lookup the next greater element\
+&emsp;&emsp;else\
 &emsp;&emsp;&emsp;put -1;
 
 TC: O(n)&emsp;SC: O(n)
@@ -303,14 +301,14 @@ public int[] nextGreaterElement(int[] array1, int[] array2) {
 ```
 
 **[Next Greater Element 2:](https://leetcode.com/problems/next-greater-element-ii/)**\
-Problem Statement:\
+**Problem Statement:**\
 Given a circular integer array array (i.e., the next element of nums[nums.length - 1] is nums[0]), return the next greater number for every element in array.
 
 Entity:\
 Input: int[] array\
 Ouput: int[] result
 
-Assumption:\
+Assumption:
 
 1. unsorted int[] array
 2. it is a circular array
@@ -403,5 +401,5 @@ public int[] nextGreaterElements(int[] array) {
 
 (No Next Greater Element 3, because it is unrelated to monostack topics)\
 **[Next Greater Element 4:](https://leetcode.com/problems/next-greater-element-iv/)**\
-Problem Statement:\
+**Problem Statement:**\
 Given an array, find the second largest Element for each element in the array.
