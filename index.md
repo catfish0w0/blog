@@ -40,5 +40,4 @@ img: ":garyAtCafe2.jpg"
 {%- comment -%} Please delete below and place your page content here {%- endcomment -%}
 Welcome to catfish0w0's study blog! This page is dedicated to documenting his coding journey, covering a wide range of topics, including **Data Structures and Algorithms**, **Book Reviews**, **Machine Learning**, and other subjects related to **Stocks** and **Technology**, among others. The primary language predominantly used in this blog is Java. We hope you enjoy your time here!
 
-<br>
-Please let me know if there's anything else I can assist you with!
+Feel free to reach out to me if there's anything else I can assist you with!
