@@ -171,6 +171,82 @@ page_data:
           print(i)
         ```
     - type: id_react
+      project_name: "Quiz Game"
+      project_excerpt: "a fully functional web-based tenzie game to test your luck index."
+      img: ":react-projects/quizCal/quizCalFilled.png"
+      img_title: "quizCal"
+      date: "2022-09-01"
+      post: |
+        #### What is this project about?
+
+        App: [Link](https://prod.d2fimk63dmdzuc.amplifyapp.com)\
+        Github: [Link](https://github.com/catfish0w0/quizCal)
+
+        #### Reason of doing this App
+
+        #### App Features
+
+        #### Design Process && Thought Process 
+
+        #### User Journey
+
+        #### Features to improve in the future.
+
+    - type: id_react
+      project_name: "Tenzi Game"
+      project_excerpt: "a fully functional web-based tenzie game to test your luck index."
+      img: ":react-projects/tenzi/tenzi-react.png"
+      img_title: "tenzi"
+      date: "2022-08-14"
+      post: |
+        #### What is this project about?
+        This project is the online web-based version of the dice rolling game, tenzi. User get ten dices to roll. Each time it rolls,
+        user dicided which number to hold and go for. Then, user re-roll other dices until all ten of the dices are the same numbers.
+        Deep down, it is a luck testing game!!
+
+        App: [Link](https://prod.d3422cj9r5dusu.amplifyapp.com)\
+        Github: [Link](https://github.com/catfish0w0/tenzieGame)
+
+        #### Reason of doing this App
+        1. this is a good practice project I built while I am still learning about React. It involves state management and effect 
+        management throughout the app.
+        2. tenzi is fun, I like playing tenzi with my friends in real life. :)
+        3. tenzi is a fair way to determine how lucky you are today. :)
+
+        #### App Features
+        1. generate 10 dices, and be able to click on them.
+        2. be able to hold some dices, and re-roll unhold dices.
+        3. can end the game, and play again.
+
+        #### Design Process && Thought Process
+        In designing my web-based online version of the Tenzi game using React, 
+        I focused on creating an intuitive and streamlined experience. 
+        The main component of the page is the game itself, which requires rendering ten dice on a single page.
+         To achieve this, I utilized an array of length 10 to store the dice values, allowing for dynamic rendering of the dice. 
+         Additionally, when re-rolling the dice, it was important to only re-roll the dice that were not being held. 
+         To facilitate this, Each dice object has a variable stating if the current dice is held or not, so we can 
+         distinguish and dynamically change the dice color while re-rendering the page. 
+         Once ten dice with the same number are held, the game checks for the win condition. 
+         The win condition requires two criteria: all ten dice must be held, and they must all show the same number. 
+         To determine if these criteria are met, I implemented a simple array traversal.
+        To distinguish between the effects of winning and actively playing the game, 
+        I also incorporated a state variable to track the game's completion status, ensuring a clear separation. 
+
+        #### User Journey
+        When user first enter the page withough clicking any dice.
+        ![](:react-projects/tenzi/tenzieStart.png){:data-align="center"}
+
+        When user hold some dices.
+        ![](:react-projects/tenzi/tenzieClicks.png){:data-align="center"}
+
+        When user finish the game.
+        ![](:react-projects/tenzi/tenzieWin.png){:data-align="center"}
+
+        #### Features to improve in the future.
+        1. implement restart game button while still playing the current game
+        2. check for how many counts needed for the game to win and display it once the user win the game.
+
+    - type: id_react
       project_name: "Note App"
       project_excerpt: "web-based notes taking app using local storage."
       img: ":react-projects/notes/notes-app-has-note.png"
@@ -184,12 +260,12 @@ page_data:
         App: [Link](https://prod.d2j11v9quij54i.amplifyapp.com)\
         Github: [Link](https://github.com/catfish0w0/window-note-app)
 
-        #### Reason of doing this App
+        #### Reasons for creating this app
         I built this app while I was studying React for the first time. I followed a course on Scrimba 
         so that I can start building small fun frontend React App. In addition, I learnt about how 
         to use library resources to build up this App.
 
-        #### App Features
+        #### App features
         1. Able to create a new Note App
         2. can create, delete and change Heading of the sub-notes.
         3. Utilizes localStorage of the browser, such that it reload the notes you put in before.
@@ -216,8 +292,13 @@ page_data:
         Since the user has not created any notes in local storage, 
         the following screen will show up when the user first enter the URL.
 
-        ![](:react-projects/notes/notes-app-no-notes.png){:data-align="center"}
+        ![](:react-projects/notes/note-app-no-notes.png){:data-align="center"}
 
         Later the user hit the create notes button, it will show up the side nav bar and the text editor on the screen.
 
         ![](:react-projects/notes/notes-app-has-note.png){:data-align="center"}
+
+        #### Features to improve in the future.
+        1. Add a database, so that it becomes real App with backend and database.
+        2. Modify the UI
+        3. Add Account Management Features.
