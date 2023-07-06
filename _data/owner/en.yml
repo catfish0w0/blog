@@ -69,10 +69,10 @@ comments:
   # - Get the corresponding items and fill in the items below.
   # For other settings, please check the _data/conf/posts.yml file.
   giscus:
-    repo: ""
-    repo-id: ""
-    category: ""
-    category-id: ""
+    repo: "catfish0w0/blog"
+    repo-id: "R_kgDOJz8Jsw"
+    category: "General"
+    category-id: "DIC_kwDOJz8Js84CXt8B"
 
 # if no id is provided, this feature will be disabled.
 # make sure your environment does not match with google.analytics.ignore in _data/conf/main.yml

@@ -267,7 +267,7 @@ What is inefficient in the Brute Force solution??
 2. Even we find the location of each element in the array2, we still need the O(n) linear time to search for the next greater element in array2. **Can we first use linear time to store the next greater element in array2, and then later we can use linear time to find array1 element?**
 
 The answer yes, and that is the approach to optimize the solution.\
-We will need a HashMap< value, next greater element in array2 >, because it helps us look up the next greater element in O(1) time complexity.
+We will need a HashMap <value, next greater element in array2> , because it helps us look up the next greater element in O(1) time complexity.
 
 Details:\
 &emsp;initialize the hashmap and result array\
@@ -361,7 +361,7 @@ public int[] nextGreaterElements(int[] array) {
 }
 ```
 
-**Method 2 No extending the length:**
+**Method 3 No extending the length:**
 
 What if the interviewer wants solution other than extending the array length??
 
@@ -371,13 +371,14 @@ Consider the sequence [1, 2, 3, 4, 3]. Instead of storing it directly, we store 
 
 By making this clever adjustment, we ensure that elements can interact in a way that gives us the desired results. It's like flipping the sequence to create a seamless connection between elements, just like a well-orchestrated dance routine!
 
+Details:
 [1, 2, 3, 4, 3]\
-&emsp;&emsp;&emsp;&ensp;i\
+&emsp;&emsp;&emsp;&emsp;i\
 case 0: if stack is empty, we put result[i] = -1, and put our current element back to the stack\
 case 1: if the stack top element < current, pop it out, because it is not our target.\
 case 2: if the stack top elemetn > target, store it in result[i] && i--.\
-&emsp;&emsp;and do we need to put it back to the stack??\
-&emsp;&emsp;the answer is yes, because it can be larger than the current one.
+&emsp;&emsp;&emsp;and do we need to put it back to the stack??\
+&emsp;&emsp;&emsp;the answer is yes, because it can be larger than the current one.
 
 TC: O(n)&emsp;SC:O(n)
 
@@ -411,3 +412,96 @@ public int[] nextGreaterElements(int[] array) {
 **[Next Greater Element 4:](https://leetcode.com/problems/next-greater-element-iv/)**\
 **Problem Statement:**\
 Given an array, find the second largest Element for each element in the array.
+
+Example: [3, 5, 7, 7, 9, 10, 5, 7]\
+return: [7, 7, 10, 10, -1, -1, -1, -1]
+
+Entity:\
+Input: int[] array\
+Output: int[] result
+
+Assumption:
+
+1. return -1, if it has no second largest elements.
+
+**Method 1 Brute Force:**
+
+for each element in the array\
+&emsp;linear scan for the second Largest Element;
+
+TC: O(n^2)&emsp; SC: O(1)
+
+**Method 2 MonoStack:**
+
+What is inefficient in the Brute Force solution??\
+linear scanning does a lot of extra work as we have encountered before.
+
+How to make it efficient?\
+The typical use case for a monoStack is to find the next greater element. However, in our current scenario, we need to find the second-largest elements, which are essentially the next-next greater elements that we've seen. To achieve this, we can try using two monoStacks. One Stack will hold every element we've encountered, while the other will hold elements that have already encountered one greater element. This approach seems reasonable.
+
+But, can we really solve the problem using only two monoStacks?\
+ The answer is no. Let's illustrate with an example: 7 5 9 3 6.
+Decreasing Stack 1: \
+Decreasing Stack 2: \
+The reason we can't solely rely on two stacks is that if we pop and offer elements in the stack just once, the order will be reversed! Unfortunately, there are cases like the one above where we must maintain the same order as we've encountered. Otherwise, elements like 5 won't "see" 6, and this would violate the meaning of our approach and monotonic decreasing stack. Therefore, we need an extra <span style="color:red">buffer</span> stack to help us maintained the original order.(Please see my other stack post, this is very similar to one of the use case Deque by Three Stacks).
+
+TC: O(n)&emsp;SC: O(n)
+
+Code:
+
+```Java
+public int[] nextGreaterElements(int[] array) {
+   Deque<Integer> monoStack1 = new LinkedList<>();
+   Deque<Integer> monoStack2 = new LinkedList<>();
+   Deque<Integer> bufferStack = new LinkedList<>();
+   int[] result = new int[array.length];
+   Arrays.fill(result, -1);
+
+   for (int i = 0; i < array.length; i++) {
+      // Why compare with decreasing stack 2 first??
+      // Because stack 2 are the element that first see the second largest elements; where we store the result
+      while (!monoStack2.isEmpty() && array[i]  > array[monoStack2.peekFirst()]) {
+         int index = monoStack2.pollFirst();
+         result[index] = array[i]; //current element is the second largest element in the array;
+      }
+
+      while (!monoStack1.isEmpty() && array[i] > array[monoStack1.peekFirst()]) {
+         // since the current element larger than the one in monoStack1, we
+         // first offer into buffer stack to avoid messing up the order.
+         bufferStack.offerFirst(monoStack1.pollFirst());
+      }
+      // if buffer stack has something, we offer it into our decreasing stack 2.
+      while (!bufferStack.isEmpty()) {
+         monoStack2.offerFirst(bufferStack.pollFirst());
+      }
+      // remember, offer current elemnt to the decreasing stack 1.
+      monoStack1.offerFirst(i);
+   }
+   return result;
+}
+```
+
+**[Online Stock Span:](https://leetcode.com/problems/online-stock-span/)**\
+**Problem Statement:**\
+We want to implement a class that can support the stock span API.\
+the span of the stock price is the number of consecutive days <= the given input price.
+
+Assumption:
+
+1. all stock price are integer.
+2. we are only focusing on 1 stock.
+3. no negative price(neglect shorting behavior)
+
+Based on the Assumption, we can easily model the price of the stock as a list of integer.\
+where **index** represent **the ith day**, and value represent the **stock price** itself.
+
+**Method 1 Brute Force Linear Scan:**\
+We can use an ArrayList to store every price that we have seen.\
+int span (int price)\
+&emsp;&ensp;add the price at the end of the arrayList\
+&emsp;&ensp;initialize counter = 0\
+&emsp;&ensp;traverse the arrayList from end to start to see how many consecutive days <= given input price.
+
+**Method 2 MonoStack:**\
+
+**[Shortest Unsorted Continuous Subarray:](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)**\
