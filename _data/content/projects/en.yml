@@ -27,7 +27,7 @@ page_data:
     - type: id_react
       project_name: "Tenzi Game"
       project_excerpt: "a fully functional web-based tenzie game to test your luck index."
-      img: ":tenzi-react/tenzi-react.png"
+      img: ":react-projects/tenzi-react.png"
       img_title: "tenzi"
       date: "2022-08-14"
       post: |
