@@ -502,6 +502,6 @@ int span (int price)\
 &emsp;&ensp;initialize counter = 0\
 &emsp;&ensp;traverse the arrayList from end to start to see how many consecutive days <= given input price.
 
-**Method 2 MonoStack:**\
+**Method 2 MonoStack:**
 
-**[Shortest Unsorted Continuous Subarray:](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)**\
+**[Shortest Unsorted Continuous Subarray:](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)**

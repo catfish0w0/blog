@@ -144,7 +144,7 @@ comments:
   # 1. "disqus"
   # 2. "giscus"
   # 3. ""
-  engine: ""
+  engine: "giscus"
   # make sure comments.disqus.shortname is set in _data/owner/[language].yml
   disqus:
     # login your disqus account, navigate to admin > settings > Community > Comment Count Link
