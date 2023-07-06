@@ -178,19 +178,59 @@ page_data:
       date: "2022-09-01"
       post: |
         #### What is this project about?
+        This project is a clone to the normal multiple choices exam that we dealt with throughout our high school and college life.
+        It is a single-page-application. Once the user hit the start button, it will automatically generate four questions from 
+        random topics, including history, entertainment, anime, sciences...etc. 
 
         App: [Link](https://prod.d2fimk63dmdzuc.amplifyapp.com)\
         Github: [Link](https://github.com/catfish0w0/quizCal)
 
         #### Reason of doing this App
+        1. Gain React practices through projects
+        2. want to implement a quiz app to test myself.
 
         #### App Features
+        1. Generate random questions
+        2. check for correctness and score after finishing the app
 
-        #### Design Process && Thought Process 
+        #### Design Process && Challenges && Thought Process 
+        In the development of the QuizCal project using React, the management of various states played a crucial role. 
+
+        Firstly, it was essential to keep track of whether the user had already started the quiz or not. 
+        This was easily achieved by using a state variable to dynamically render the page when the user clicks 
+        the 'Start Quiz' button.
+
+        Secondly, as the app fetched questions from the Open Trivia Database API, it was necessary to maintain 
+        a state to store the generated data array, ensuring the proper tracking of question data.
+
+        Thirdly, to track the user's score throughout the quiz, a state was used to store and update the score accordingly. 
+        Once the user completed the quiz, the app automatically compared the answers and triggered a re-render of the page 
+        to display the updated score.
+
+        During the implementation of the project, several challenges were encountered. Since the questions data was fetched 
+        from an external API, the received object format did not match the expected JSON structure and contained HTML entities. 
+        To convert it into a human-readable format, a library, [html-entities](https://www.npmjs.com/package/html-entities), 
+        was utilized to decode the entities into normal strings. Furthermore, the received object had multiple layers of data, and 
+        it does not come as user-friendly as it is for the developers. So extra extraction of the necessary information and remodeling
+        the object is requred to turn the object into the desired format for proper uses for the app.
 
         #### User Journey
+        When the user enter the page:
+        ![](:react-projects/quizCal/quizCalStart.png){:data-align="center"}
+
+        When the user click the start button:
+        ![](:react-projects/quizCal/quizCalNotFilled.png){:data-align="center"}
+
+        When the user filled answers:
+        ![](:react-projects/quizCal/quizCalFilled.png){:data-align="center"}
+
+        When the user finished the quiz:
+        ![](:react-projects/quizCal/quizCalFinished.png){:data-align="center"}
 
         #### Features to improve in the future.
+        1. record the time that user used to complete the quiz
+        2. dynamically ask the user for the number of questions and category they want
+        3. add a database and backend to make it a full-stack application
 
     - type: id_react
       project_name: "Tenzi Game"
@@ -218,7 +258,7 @@ page_data:
         2. be able to hold some dices, and re-roll unhold dices.
         3. can end the game, and play again.
 
-        #### Design Process && Thought Process
+        #### Design Process && Challenges && Thought Process
         In designing my web-based online version of the Tenzi game using React, 
         I focused on creating an intuitive and streamlined experience. 
         The main component of the page is the game itself, which requires rendering ten dice on a single page.
@@ -270,7 +310,7 @@ page_data:
         2. can create, delete and change Heading of the sub-notes.
         3. Utilizes localStorage of the browser, such that it reload the notes you put in before.
 
-        #### Design Process && Thought Process
+        #### Design Process && Challenges && Thought Process
         The Page will split into two sections, the left side would be the interactive side bar nav, and the right side
         would be the text editor for the notes. There are numerous way to achieve the same result. For example, 
         I can build a single page React component by only using React and pure CSS. But I did some research and 
