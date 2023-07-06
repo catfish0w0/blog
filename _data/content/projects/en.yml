@@ -5,10 +5,10 @@
 page_data:
   main:
     header: "Projects"
-    info: ""
-    text_color: "orange"
+    info: "Rome was not built in one day."
+    text_color: "white"
     # if you don't want to use background image, comment it. back_color will be activated.
-    img: ":projects-heading.jpg"
+    img: ":Rome.jpg"
     back_color: "lightblue"
 
   category:
