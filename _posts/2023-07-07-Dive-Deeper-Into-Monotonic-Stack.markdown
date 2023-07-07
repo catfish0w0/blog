@@ -50,7 +50,7 @@ date: 2023-07-07 16:43:06 +0900
 
 <!-- outline-end -->
 
-For a more comprehensive understanding of the definition and use cases of a monotonic stack, please refer to the initial post mentioned [here](./2023-07-02-Intro-To-Monotonic-Stack.markdown). This particular post will delve into various use cases of the monotonic stack in problem-solving on LeetCode problems.
+For a more comprehensive understanding of the definition and use cases of a monotonic stack, please refer to the initial post mentioned [here](./2023-07-02-Intro-To-Monotonic-Stack). This particular post will delve into various use cases of the monotonic stack in problem-solving on LeetCode problems.
 
 **[Online Stock Span:](https://leetcode.com/problems/online-stock-span/)**\
 **Problem Statement:**\
