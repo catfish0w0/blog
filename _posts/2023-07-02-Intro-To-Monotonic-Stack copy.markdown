@@ -44,9 +44,22 @@ date: 2023-07-02 00:51:06 +0900
 
 #### What is monotonic Stack??
 
-Monostack is a **Stack**. You are right, you did not hear me wrong. Monostack is basically just the data structure stack. It does not have any difference in implementation in code. The only thing that differs is the use of the Stack.
+A monotonic stack, also known as a monostack, is a data structure based on the **stack** concept. It shares the same implementation as a regular stack, differing only in its usage and behavior.
 
-Monostack is a stack that follows specific ordering. To understand it thoroughly, it consists of 4 different types of monostack: increasing stack, non decreasing stack, decreasing stack, non increasing stack.
+A monostack maintains a specific ordering of elements, and every it will keep everything consistant to avoid violation of the ordering. To gain a deeper understanding, here is an example of traversing an array with monostack. there are four types of monotonic stacks: increasing stack, non-decreasing stack, decreasing stack, and non-increasing stack.
+
+Example:\
+an array of [1, 7, 2, 3, 6, 2, 10]
+
+| index | value | Increasing MonoStack | Decreasing MonoStack | Non-Dec MonoStack  | Non-Inc MonoStack |
+| :---: | :---: | -------------------- | -------------------- | ------------------ | ----------------- |
+|   0   |   1   | [1]                  | [1]                  | [1]                | [1]               |
+|   1   |   7   | [1, 7]               | [7] kick 1           | [1, 7]             | [7]               |
+|   2   |   2   | [1, 2] kick 7        | [7, 2]               | [1, 2]             | [7, 2]            |
+|   3   |   3   | [1, 2, 3]            | [7, 3] kick 2        | [1, 2, 3]          | [7, 3]            |
+|   4   |   6   | [1, 2, 3, 6]         | [7, 6] kick 6        | [1, 2, 3, 6]       | [7, 6]            |
+|   5   |   2   | [1, 2] kick 2,3,6    | [7, 6, 2]            | [1, 2, 2] only dif | [7, 6, 2]         |
+|   6   |  10   | [1, 2, 10]           | [10] kick 7,6,2      | [1, 2, 2, 10]      | [10]              |
 
 ## When && Why do we have MonoStack??
 
