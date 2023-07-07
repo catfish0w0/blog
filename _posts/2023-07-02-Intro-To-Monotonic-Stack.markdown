@@ -9,7 +9,15 @@ author: Puff
 # multiple category is not supported
 category: data structure and algorithm
 # multiple tag entries are possible
-tags: [data structure, algorithm, advanced data structure, leetcode, Java]
+tags:
+  [
+    data structure,
+    algorithm,
+    advanced data structure,
+    monoStack,
+    leetcode,
+    Java,
+  ]
 # thumbnail image for post
 img: ":post_pic1.jpg"
 # disable comments on this page
@@ -493,28 +501,3 @@ public int[] nextGreaterElements(int[] array) {
    return result;
 }
 ```
-
-**[Online Stock Span:](https://leetcode.com/problems/online-stock-span/)**\
-**Problem Statement:**\
-We want to implement a class that can support the stock span API.\
-the span of the stock price is the number of consecutive days <= the given input price.
-
-Assumption:
-
-1. all stock price are integer.
-2. we are only focusing on 1 stock.
-3. no negative price(neglect shorting behavior)
-
-Based on the Assumption, we can easily model the price of the stock as a list of integer.\
-where **index** represent **the ith day**, and value represent the **stock price** itself.
-
-**Method 1 Brute Force Linear Scan:**\
-We can use an ArrayList to store every price that we have seen.\
-int span (int price)\
-&emsp;&ensp;add the price at the end of the arrayList\
-&emsp;&ensp;initialize counter = 0\
-&emsp;&ensp;traverse the arrayList from end to start to see how many consecutive days <= given input price.
-
-**Method 2 MonoStack:**
-
-**[Shortest Unsorted Continuous Subarray:](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)**
