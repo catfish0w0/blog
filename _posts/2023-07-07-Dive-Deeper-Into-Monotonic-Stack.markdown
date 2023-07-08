@@ -68,11 +68,54 @@ where **index** represent **the ith day**, and value represent the **stock price
 
 **Method 1 Brute Force Linear Scan:**\
 We can use an ArrayList to store every price that we have seen.\
-int span (int price)\
+int next (int price)\
 &emsp;&ensp;add the price at the end of the arrayList\
 &emsp;&ensp;initialize counter = 0\
 &emsp;&ensp;traverse the arrayList from end to start to see how many consecutive days <= given input price.
 
-**Method 2 MonoStack:**
+**Method 2 MonoStack:**\
+Where is the inefficient part in the above method??\
+For this particular problem, we only want the consecutive days that is lower than or equals to the given price. If the price keeps increasing, we want to efficiently see all the price coverage <= current price, so we need a data structure to assit us to keep updating the most recent elements. One useful data structure is to use monoStack.
+
+The monoStack only maintains previous stock price in decreasing order.\
+The monotonic stack only stores the previous stock prices in decreasing order. When we retrieve a new data point, we compare it to the top element of our stack (<span style="color:red">as it represents the smallest stock price</span>). Additionally, we need to track the consecutive days where the price was lower than or equal to the current price, so that we can get the span in O(1) time. Therefore, our stack not only stores the stock prices but also maintains the information about the consecutive days.
+
+Details:\
+maintain a decreasing monoStack.\
+int next(int price)\
+&emsp;&ensp; initialize count = 1 (current day)
+&emsp;&ensp; while compare the stack top and price >= stack top price
+&emsp;&ensp; counting the days
+&emsp;&ensp; offer new Stock data object into the stack.
+
+TC: amortized O(1)
+SC: O(n)
+
+Code:
+
+```Java
+static class Data {
+   int stockPrice;
+   int days;
+   public Data(int price, int days) {
+      stockPrice = price;
+      this.days = days;
+   }
+}
+Deque<Data> monoStack;
+public StockSpanner() {
+   monoStack = new LinkedList<>();
+}
+
+public int next(int price) {
+   int count = 1;
+   while (!monoStack.isEmpty() && price >= monoStack.peekFirst().stockPrice) {
+      Data priceData = monoStack.pollFirst();
+      count += priceData.days;
+   }
+   monoStack.offerFirst(new Data(price, count));
+   return count;
+}
+```
 
 **[Shortest Unsorted Continuous Subarray:](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)**
