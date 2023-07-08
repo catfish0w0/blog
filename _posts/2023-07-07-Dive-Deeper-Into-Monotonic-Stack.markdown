@@ -52,6 +52,8 @@ date: 2023-07-07 16:43:06 +0900
 
 For a more comprehensive understanding of the definition and use cases of a monotonic stack, please refer to the initial post mentioned [here](./2023-07-02-Intro-To-Monotonic-Stack). This particular post will delve into various use cases of the monotonic stack in problem-solving on LeetCode problems.
 
+<hr>
+
 **[Online Stock Span:](https://leetcode.com/problems/online-stock-span/)**\
 **Problem Statement:**\
 We want to implement a class that can support the stock span API.\
@@ -117,8 +119,10 @@ public int next(int price) {
 }
 ```
 
+<hr>
+
 **[Shortest Unsorted Continuous Subarray:](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)**\
-Problem Statement:\
+**Problem Statement:**\
 given an array, find the shortest subarray such that you sort the subarray, and the whole array will be sorted in non-decreasing order.
 
 entity:\
@@ -266,3 +270,5 @@ public int findUnsortedSubarray(int[] nums) {
    return end - start + 1;
 }
 ```
+
+<hr>
