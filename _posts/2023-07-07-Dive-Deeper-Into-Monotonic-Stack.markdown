@@ -88,8 +88,7 @@ int next(int price)\
 &emsp;&ensp; counting the days
 &emsp;&ensp; offer new Stock data object into the stack.
 
-TC: amortized O(1)
-SC: O(n)
+TC: amortized O(1)&emsp; SC: O(n)
 
 Code:
 
@@ -118,4 +117,152 @@ public int next(int price) {
 }
 ```
 
-**[Shortest Unsorted Continuous Subarray:](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)**
+**[Shortest Unsorted Continuous Subarray:](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)**\
+Problem Statement:\
+given an array, find the shortest subarray such that you sort the subarray, and the whole array will be sorted in non-decreasing order.
+
+entity:\
+array -> non decreasing order -> increasing order with duplicate.\
+return int length
+
+**Method 1 Brute Force:**\
+find all the subarary in the array\
+for each index starting at i\
+&emsp;&ensp;for each index ending at j\
+&emsp;&ensp;&emsp;&ensp;if array from 0 to i - 1 is sorted\
+&emsp;&ensp;&emsp;&ensp;if array from j + 1 to n is sorted\
+&emsp;&ensp;&emsp;&ensp;update globalmin\
+
+TC: O(n^3)&emsp;SC: O(1)
+
+Code:
+
+```Java
+public int findShortestLength(int[] array) {
+   int result = Integer.MAX_VALUE;
+   int n = array.length;
+   for (int i = 0; i < n; i++) {
+      for (int j = i + 1; j < n; j++) {
+         boolean isZeroToISorted = true;
+         for (int k = 0; k < i; k++) {
+            if (k > 0 && array[k] < array[k - 1]) {
+               isZeroToISorted = false;
+            }
+         }
+         boolean isJToNSorted = true;
+         for (int k = j + 1; k < n; k++) {
+            if (k < n && array[k] > array[k + 1]) {
+               isJToNSorted = false;
+            }
+         }
+         if (isZeroToISorted && isJToNSorted) {
+            result = Math.min(result, j - i + 1);
+         }
+      }
+   }
+}
+```
+
+**Method 2: finding left boundary and right boundary like selection sort**\
+compare every array[i] with every array[j], i < j < n;\
+&emsp;&ensp;if array[j] < array[i], mean i j not in right position\
+&emsp;&ensp;&emsp;selection is swapping, but not really swap for this question\
+&emsp;&ensp;&emsp;record the position of nums[i], i;\
+&emsp;&ensp;&emsp;and position of nums[j], j.\
+&emsp;&ensp;&emsp;we want to mark the leftmost i, Math.min(i, left)\
+&emsp;&ensp;&emsp;we want to mark the rightmost j, Math.max(j, right)
+
+TC: O(n^2)&emsp;SC: O(1)
+
+Code:
+
+```Java
+public int findUnsortedSubarray(int[] array) {
+   // Method 2 Selection sort
+   int left = array.length, right = 0;
+   for (int i = 0; i < array.length - 1; i++) {
+      for (int j = i + 1; j < array.length; j++) {
+         if (array[j] < array[i]) {
+            right = Math.max(right, j);
+            left = Math.min(left, i);
+         }
+      }
+   }
+   return right - left < 0 ? 0 : right - left + 1;
+}
+```
+
+what is inefficient in all the above methods?\
+they all required nested loops. which is O(n^2)\
+a lot of overlap calculation
+
+**Method 3: sorting**\
+sort the array\
+compare two array, what is not identical\
+TC: O(nlogn + n)&emsp;SC: O(1)
+
+**Method 4: monoStack to determine the range**\
+we can instead utilize the data structure to help us store the elements, and we determine the leftmost boundary and rightmost boundary by using increasing and decreasing stack. the meaning is to see whenever it violates the stack meaning, it will pop the element outside. and that we update the globalLeft and globalRight boundary.
+
+What is not efficient in the above problem?\
+the only thing we care is the value that i, and i + 1 not in sorted order.
+So instead of using a stack, we can use just a variable to detect it.
+
+TC: O(n)&emsp;SC: O(n)
+
+Code:
+
+```Java
+public int findUnsortedSubarray(int[] array) {
+   // Method 4
+   Deque <Integer> monoStack = new LinkedList<>();
+   int left = array.length, right = 0;
+   for (int i = 0; i < array.length; i++) {
+      while (!monoStack.isEmpty() && array[i] < array[monoStack.peekFirst()]){
+         left = Math.min(left, monoStack.pollFirst());
+      }
+      monoStack.offerFirst(i);
+   }
+   monoStack.clear();
+
+   for (int i = array.length - 1; i >= 0; i--) {
+      while (!monoStack.isEmpty() && array[i] > array[monoStack.peekFirst()])
+         right = Math.max(right, monoStack.pollFirst());
+      monoStack.offerFirst(i);
+   }
+   return right - left > 0 ? right - left + 1 : 0;
+}
+
+```
+
+**Method 5: no stack, only variable same idea.**\
+TC: O(n)&emsp;SC: O(1)\
+
+Code:
+
+```Java
+public int findUnsortedSubarray(int[] nums) {
+   int end = -1;
+   int max = nums[0];
+   for(int i = 1; i < nums.length; i++){
+      if(max > nums[i]){ // the left value is greater then current value
+         end = i; // mark that index with end
+      }
+      else{
+         max = nums[i];
+      }
+   }
+
+   int start = 0;
+   int min = nums[nums.length - 1];
+   for(int i = nums.length - 2; i >= 0; i--){
+      if(min < nums[i]){ // the right value is smaller then current value
+         start = i; // mark that index with start
+      }
+      else{
+         min = nums[i];
+      }
+   }
+   return end - start + 1;
+}
+```
