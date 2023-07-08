@@ -83,9 +83,9 @@ The monotonic stack only stores the previous stock prices in decreasing order. W
 Details:\
 maintain a decreasing monoStack.\
 int next(int price)\
-&emsp;&ensp; initialize count = 1 (current day)
-&emsp;&ensp; while compare the stack top and price >= stack top price
-&emsp;&ensp; counting the days
+&emsp;&ensp; initialize count = 1 (current day)\
+&emsp;&ensp; while compare the stack top and price >= stack top price\
+&emsp;&ensp; counting the days\
 &emsp;&ensp; offer new Stock data object into the stack.
 
 TC: amortized O(1)&emsp; SC: O(n)
