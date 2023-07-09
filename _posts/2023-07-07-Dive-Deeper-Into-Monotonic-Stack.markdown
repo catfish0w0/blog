@@ -240,7 +240,7 @@ public int findUnsortedSubarray(int[] array) {
 ```
 
 **Method 5: no stack, only variable same idea.**\
-TC: O(n)&emsp;SC: O(1)\
+TC: O(n)&emsp;SC: O(1)
 
 Code:
 

@@ -171,6 +171,8 @@ public int[] firstLargerElementFromLeft(int[] array) {
 }
 ```
 
+<hr>
+
 **Basic Question 2: Find the distance of each element with the next first right side greater element in the array.**
 
 Most of the time, the usecase is not that simple. In most interview questions or leecodes, we are using the relationship between the next first greater element or finding the distance in between.
@@ -211,6 +213,8 @@ public int[] distanceBetweenNextGreaterElement(int[] array) {
    return result;
 }
 ```
+
+<hr>
 
 **[Daily Temperature:](https://leetcode.com/problems/daily-temperatures/)**\
 **Problem Statement:**\
@@ -256,6 +260,8 @@ public int[] dailyTemperatures(int[] temperatures) {
    return result;
 }
 ```
+
+<hr>
 
 ##### Next Greater Element Series:
 
@@ -329,6 +335,8 @@ public int[] nextGreaterElement(int[] array1, int[] array2) {
 }
 ```
 
+<hr>
+
 **[Next Greater Element 2:](https://leetcode.com/problems/next-greater-element-ii/)**\
 **Problem Statement:**\
 Given a circular integer array array (i.e., the next element of nums[nums.length - 1] is nums[0]), return the next greater number for every element in array.
@@ -382,6 +390,8 @@ public int[] nextGreaterElements(int[] array) {
 }
 ```
 
+<hr>
+
 **Method 3 No extending the length:**
 
 What if the interviewer wants solution other than extending the array length??
@@ -428,6 +438,8 @@ public int[] nextGreaterElements(int[] array) {
    return result;
 }
 ```
+
+<hr>
 
 (No Next Greater Element 3, because it is unrelated to monostack topics)\
 **[Next Greater Element 4:](https://leetcode.com/problems/next-greater-element-iv/)**\
@@ -501,3 +513,5 @@ public int[] nextGreaterElements(int[] array) {
    return result;
 }
 ```
+
+<hr>
