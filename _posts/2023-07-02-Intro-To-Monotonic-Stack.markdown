@@ -19,7 +19,7 @@ tags:
     Java,
   ]
 # thumbnail image for post
-img: ":post_pic1.jpg"
+img: ":plate.jpg"
 # disable comments on this page
 #comments_disable: true
 

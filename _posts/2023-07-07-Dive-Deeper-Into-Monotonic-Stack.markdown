@@ -19,7 +19,7 @@ tags:
     Java,
   ]
 # thumbnail image for post
-img: ":post_pic1.jpg"
+img: ":plates.jpg"
 # disable comments on this page
 #comments_disable: true
 
@@ -357,6 +357,8 @@ Everytime, we search to find the minimum bar from left to right, after that we l
 
 return min(area, subproblem 1, subproblem 2)
 
+Code:
+
 ```Java
 public int height(int[] array) {
    int n = array.length;
@@ -380,16 +382,127 @@ private int findMinHeight(int[] array, int left, int right) {
 }
 ```
 
-**Method 3: MonoStack:**\
+**Method 4: MonoStack:**\
 What is inefficient in the above approaches??
 A lot of repetition wasted on finding the subarray or searching the minimum bar throughtout the array or <span style="color:red">finding the left and right boundary</span> in the array.
 
-We can then optimized approach by seeing the functionality of Increasing monoStack.
+we are actually finding the next smaller element of the current element, the next smaller element is then the right boundary of the current element. The left boundary is then the stack top + 1, because in meaning, the stack only stores elements in ascending order.\
 Example: heights = [2,1,5,6,2,3]
 
-| index | value | Increasing MonoStack | Notes                                                      |
-| :---: | :---: | -------------------- | ---------------------------------------------------------- |
+| index | value | Increasing MonoStack | Notes                                                                              |
+| :---: | :---: | -------------------- | ---------------------------------------------------------------------------------- |
 |   0   |   2   | [2]                  |
-|   1   |   1   | [1]                  | <span style="color:red"> right boundary of 2 is 1. </span> |
-|   2   |   5   | [5] poped out [2, 1] |
-|   3   |
+|   1   |   1   | [1]                  | <span style="color:red"> right boundary of 2 is 1. calcaulte the area of 1</span>  |
+|   2   |   5   | [1, 5]               |
+|   3   |   6   | [1, 5, 6]            |                                                                                    |
+|   4   |   2   | [1, 2]               | 2 poped 6, left b 6 is 5, right b 6 is 2, 2 poped 5. left b 5 is 1, right b 5 is 2 |
+|   5   |   3   | [1, 2, 3]            |
+|   6   |  inf  |                      | since stack has it, all pop out, and calulcate the area                            |
+
+TC: O(n)&emsp;SC:O(1)
+
+Code:
+
+```Java
+public int largestHeight(int[] array) {
+
+   int result = 0;
+   Deque<Integer> monoStack = new LinkedList<>();
+
+   for (int i = 0; i <= array.length; i++) {
+      // decreasing monoStack, only pop when the incoming element > top
+      while (!monoStack.isEmpty() && array[i] > array[monoStack.peekFirst()]) {
+         int height = array[monoStack.pollFirst()];
+         //        if empty, that means the current height element is the global smallest
+         int leftBoundary = monoStack.isEmpty() ? 0 : monoStack.peekFirst() + 1;
+         result = Math.max(result, height * (i - left))
+
+      }
+      monoStack.offerFirst(i);
+   }
+   return result;
+}
+```
+
+<hr>
+
+**[Maximal Rectangle:](https://leetcode.com/problems/maximal-rectangle/)**\
+**Problem Statement:**\
+given a 2D binary matrix, wants to find the largest rectangle of 1, return its area.
+
+Entity:\
+Input: int[][] matrix;\
+Output: int area;
+
+Assumption:
+
+1. its 01 matrix
+2. The matrix length > 0, matrix[0].length > 0
+
+Example:
+["1","0","1","0","0"]\
+["1","0","1","1","1"]\
+["1","1","1","1","1"]\
+["1","0","0","1","0"]\
+return 6
+
+**Method 1 Brute Force:**\
+for each left i
+&emsp;for each left j
+&emsp;&emsp;for each right i
+&emsp;&emsp;&emsp;for each right j
+&emsp;&emsp;&emsp;&emsp;for each left i to left j
+&emsp;&emsp;&emsp;&emsp;&emsp;for each right i to right j
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if all 1s
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Result = Math.max(result);
+
+**Method 2: MonoStack:**\
+Since it is a binary matrix, our idea can compress the whole 2D matrix from row to row, such that it becomes a 1D height array, so that we can simply apply the last problem solution into the current problem.
+
+Example:\
+["1","0","1","0","0"]\
+["1","0","1","1","1"]\
+["1","1","1","1","1"]\
+["1","0","0","1","0"]\
+
+1D array: [4, 1, 3, 3, 2]\
+TC: O(n^2 (preprocessing) + n (traverse to find the things)) &emsp; SC: O(1)
+
+Code:
+
+```Java
+public int largest(int[][] matrix) {
+
+   int[][] heights = new int[matrix.length][matrix[0].length];
+   buildHeightMatrix(matrix, heights);
+
+   int max = 0;
+   for (int[] heightArray : heights) {
+      max = Math.max(max, largestRectangleInHistogram(heightArray));
+   }
+   return max;
+}
+private void buildHeightMatrix(int[][] matrix, int[][] height) {
+   for(int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[0].length;j++) {
+         if (matrix[i][j] == 1) {
+            height[i][j] = i > 0? height[i - 1][j] + 1: 1;
+         }
+      }
+   }
+}
+private int largestRectangleInHistogram(int[] array) {
+   int result =0;
+   Deque<Integer> stack = new LinkedList<Integer>();
+   for (int i = 0; i <= array.length; i++) {
+      int cur = i == array.length ? 0 : array[i];
+      while (!stack.isEmpty() && array[stack.peekFirst()] >= cur) {
+         int height = array[stack.pollFirst()];
+         int left = stack.isEmpty() ? 0 : stack.peekFirst() + 1;
+         result = Math.max(result, height * (i - left));
+      }
+      stack.offerFirst(i);
+   }
+   return result;
+}
+```
