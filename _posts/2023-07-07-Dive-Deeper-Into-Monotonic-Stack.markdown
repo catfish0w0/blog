@@ -272,3 +272,124 @@ public int findUnsortedSubarray(int[] nums) {
 ```
 
 <hr>
+
+**[Largest Rectangle in Histogram:](https://leetcode.com/problems/largest-rectangle-in-histogram/)**\
+**Problem Statement:**\
+Given an array, array[i] means the height of the bar, we want to find the 1 largest rectangle.
+
+Assumption:
+
+1. array[i] has no negative number
+
+**Method 1 Brute Force:**\
+We can try finding all possible rectangles in the given array.
+
+for each left boundary in the array:
+&emsp;for each right boundary in the array:
+&emsp;&emsp;find the minimum height bar \* length
+
+TC: O(n^3)&emsp;SC:O(1)
+
+Code:
+
+```Java
+public int height(int[] array) {
+   int n = array.length;
+   int result = 0;
+
+   for (int i = 0; i < n; i++) {
+      for (int j = i + 1; j < n; j++) {
+         int minimumHeight = Integer.MAX_VALUE;
+         for (int k = i; k <= j; k++) { //calculate the height
+            minimumHeight = Math.min(minimumHeight, array[k]);
+         }
+         result = Math.max(result, minimumHeight * (j - i + 1));
+      }
+   }
+   return result;
+}
+```
+
+<hr>
+
+**Method 2: Optimized Brute Force:**\
+We can optimize the above approach by seeing the fact that we dont need to find every possible subarray. What we need is just treating each height bar as the minimumHeight bar and see how far it can reach to its left and right sides.
+
+TC: O(n^2)&emsp;SC:O(1)
+
+Code:
+
+```Java
+public int height(int[] array) {
+   int n = array.length;
+   int result = 0;
+
+   for (int i = 0; i < n; i++) {
+      int leftIndex = i;
+      int rightIndex = i;
+
+      while (leftIndex > 0 && array[leftIndex] >= array[i]) {
+         leftIndex--;
+      }
+      while (rightIndex < n - 1 && array[rightIndex] >= array[i]) {
+         rightIndex++;
+      }
+      result = Math.max(result, array[i] * (rightIndex - leftIndex + 1));
+   }
+   return result;
+}
+```
+
+**Method 3: Divided and Conquer:**\
+we can see this problem by checking that the array height can be divided into the last array element, and then we are finding the minimum bar throughout the array \* the boundary from left to right.
+
+Recursion Definition: find the minimum rectangle area with left and right boundary.
+
+Base Case:
+if (left > right) return 0
+if (left == right) return array[left]
+
+Subproblem:
+recursion(left, i - 1), recursion(i + 1, right); i is the minimum bar.
+
+Recursive definition:
+Everytime, we search to find the minimum bar from left to right, after that we look for more to divided and conquer
+
+return min(area, subproblem 1, subproblem 2)
+
+```Java
+public int height(int[] array) {
+   int n = array.length;
+   return findMinHeight(array, 0, n - 1);
+}
+private int findMinHeight(int[] array, int left, int right) {
+   if (left > right) {
+      return 0;
+   }
+   if (left == right) {
+      return array[left];
+   }
+
+   // find minimum bar
+   int minimum = Integer.MAX_VALUE;
+   for (int i = left; i <= right; i++) {
+      minimum = Math.min(minimum, array[i]);
+   }
+
+   return Math.min(minimum * (right - left + 1), Math.min(findMinHeight(array, left, i - 1), findMinHeight(array, i + 1, right)));
+}
+```
+
+**Method 3: MonoStack:**\
+What is inefficient in the above approaches??
+A lot of repetition wasted on finding the subarray or searching the minimum bar throughtout the array or <span style="color:red">finding the left and right boundary</span> in the array.
+
+We can then optimized approach by seeing the functionality of Increasing monoStack.
+Example: heights = [2,1,5,6,2,3]
+
+| index | value | Increasing MonoStack | Notes                                                      |
+| :---: | :---: | -------------------- | ---------------------------------------------------------- |
+|   0   |   2   | [2]                  |
+|   1   |   1   | [1]                  | <span style="color:red"> right boundary of 2 is 1. </span> |
+|   2   |   5   | [5] poped out [2, 1] |
+|   3   |
