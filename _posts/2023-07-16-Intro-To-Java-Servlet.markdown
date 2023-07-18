@@ -71,7 +71,7 @@ Remember to click the servlet button afterward.
 
 ![](:servlet/servlet_click.PNG){:data-align="center"}
 
-Just like we have mentioned, to make the servlet runnable, we need a servlet container. In this article, we are using Tomcat as the container. To embed Tomcat, **add the Tomcat dependency into our** <span style="color:red">**pom.xml**</span> file. And later, we can just invoke it in our ApplicationLauncher class.
+Just like we have mentioned, to make the servlet runnable, we need a servlet container. In this article, we are using Tomcat as the container. To embed Tomcat, **add the Tomcat dependency into our** <span style="color:red">**pom.xml**</span> file. And later, we can just invoke it in our <span style="color:red">**ApplicationLauncher**</span> class.
 
 using embed Tomcat(Tomcat 10.1.8 have embed version)
 
@@ -82,3 +82,115 @@ using embed Tomcat(Tomcat 10.1.8 have embed version)
    <version>10.1.8</version>
 </dependency>
 ```
+
+We are ready to create our first GameServlet. Delete the Hello Servlet, Create a file GameServelet inside the Intellij directory(or you can just change name and refractor it).
+
+![](:servlet/delete.PNG){:data-align="center"}
+
+Include the following code.
+
+```
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class GameServlet extends HttpServlet {
+
+   @Override
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+       response.setContentType("text/html; charset=UTF-8");
+       response.getWriter().print(
+               "<html>\n" +
+                       "<body>\n" +
+                       "<h1>Hello World</h1>\n" +
+                       "</body>\n" +
+                       "</html>"
+       );
+   }
+}
+
+```
+
+Let's take a look on the code step by step.
+
+```
+response.setContentType("text/html; charset=UTF-8");
+```
+
+In the first line of the coding block, we are setting the response content type to be text/html, so that once we send back the response, the browser can understand that you are sending back text format. If you want to send other format like JSON, you can change "text/html" to “application/json”.
+
+```
+response.getWriter().print(
+   "<html>\n" +
+      "<body>\n" +
+         "<h1>Hello World</h1>\n" +
+      "</body>\n" +
+   "</html>"
+);
+```
+
+In most cases, static html is just String, so here we just use String concatenation to render it.
+
+<hr>
+Our Servlet is good, but we are still not able to start running our page. The reason behind is that we have not yet configured and started our servlet container, Tomcat.
+
+Create a class <span style="color:red">**ApplicationLauncher**</span>, and include the following code
+
+```
+import com.game.GameServlet;
+import org.apache.catalina.Context;
+import org.apache.catalina.LifecycleException;
+import org.apache.catalina.Wrapper;
+import org.apache.catalina.startup.Tomcat;
+
+public class ApplicationLauncher {
+
+   public static void main(String[] args) throws LifecycleException {
+
+       Tomcat tomcat = new Tomcat();
+       tomcat.setPort(8080);
+       tomcat.getConnector();
+
+       Context ctx = tomcat.addContext("", null);
+       Wrapper servlet = Tomcat.addServlet(ctx, "gameServlet", new GameServlet());
+       servlet.setLoadOnStartup(1);
+       servlet.addMapping("/*");
+
+       tomcat.start();
+   }
+}
+```
+
+Let's break this down again.
+
+```
+Tomcat tomcat = new Tomcat();
+tomcat.setPort(8080);
+tomcat.getConnector();
+```
+
+We have included the Tomcat dependency previously. Right now, we are just creating the Tomcat instance, we set the port to be 8080(normally is 8080 as the backend), so after you start running the backend, you can get to the localhost8080 in the browser.\
+We need to run connector.
+
+```
+Context ctx = tomcat.addContext("", null);
+Wrapper servlet = Tomcat.addServlet(ctx, "gameServlet", new GameServlet());
+```
+
+You need to add your Servlet to Tomcat. The second parameter, the servlet name, does not really matter, as long as it does not clash with another registered servlet.
+
+```
+servlet.setLoadOnStartup(1);
+servlet.addMapping("/*");
+```
+
+You are telling Tomcat that your Servlet should react to any request that starts with "/", i.e. any incoming request.
+
+```
+tomcat.start();
+```
+
+Lastly, you need to start the tomcat.
+
+Now you should be able to run in your Intellij, and go to [http://localhost:8080/](http://localhost:8080/) and see Hello World!.
