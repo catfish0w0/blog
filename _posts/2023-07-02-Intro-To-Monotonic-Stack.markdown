@@ -125,7 +125,7 @@ Assumption:
 2. unsorted
 
 Example: 1, 7, 2, 3, 6, 2, 10\
-return [ 7 10 -1 2 2 -1 -1 //left side first smaller element, use decreasing stack from left to right\
+return [ 7 10 -1 2 2 -1 -1 //left side first smaller element, use decreasing stack from left to right
 
 **Method 1 Brute Force:**
 
@@ -218,20 +218,22 @@ public int[] distanceBetweenNextGreaterElement(int[] array) {
 #### More Practice Questions
 
 I have included all the problem links and solution links below.\
-Here are some basic questions.
-|Problem Number| Problem | Solution |
-|:---:| :---: | :---: |
-|1| [Daily Temperature](https://leetcode.com/problems/daily-temperatures/)| [Solution](https://docs.google.com/document/d/1DXHJKdnaE7C69u7kko8H9SFAMWWwh_PDT7EoAK-n8hE/edit?usp=sharing)|
-|2| [Next Greater Element 1](https://leetcode.com/problems/next-greater-element-i/) | [Solution](https://docs.google.com/document/d/1z2zafEKWKmZMKgyNBgVQDRakjf7A9bIJBgFEcy5dDFA/edit?usp=sharing) |
-|3| [Next Greater Element 2](https://leetcode.com/problems/next-greater-element-ii/) | [Solution](https://docs.google.com/document/d/1YVORE08cpUbG6aOFAVyl4RHWPcQT9BDKlDO5vyM595Y/edit?usp=sharing) |
-|4| [Next Greater Element 4](https://leetcode.com/problems/next-greater-element-iv/) | [Solution](https://docs.google.com/document/d/1pjTw3r6tAGVCjsjw3wtbwDNt_t_eJHsD1S29OIvsTqI/edit?usp=sharing) |
+Here are some basic questions.\
 
-Dive Deeper to Monotonic Stack
-|Problem Number| Problem | Solution |
-|:--:| :---: | :---: |
-|5| [Online Stock Span](https://leetcode.com/problems/online-stock-span/) | [Solution](https://docs.google.com/document/d/1ZP1vh_PqEnUOD4LteSoVPva2Uvth8bdUdDAOOST6BvM/edit?usp=sharing) |
-|6| [Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | [Solution](https://docs.google.com/document/d/1NfLHiIG-V3IJKC196NTV57uKpwDr1BlZ1LvR2bMmOqY/edit?usp=sharing) |
-|7| [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/) | [Solution](https://docs.google.com/document/d/10_bI7vbCZiKnYm6XcuLchmmpgVh92Yqf1nqkHCK-UVM/edit?usp=sharing) |
-|8| [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/) | [Solution](https://docs.google.com/document/d/1HoG7YtxGxaZ-a0gmEIE_iAOxA3E7fEmZv83x2_93dIg/edit?usp=sharing) |
+| Problem Number |                                     Problem                                      |                                                   Solution                                                   |
+| :------------: | :------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
+|       1        |      [Daily Temperature](https://leetcode.com/problems/daily-temperatures/)      | [Solution](https://docs.google.com/document/d/1DXHJKdnaE7C69u7kko8H9SFAMWWwh_PDT7EoAK-n8hE/edit?usp=sharing) |
+|       2        | [Next Greater Element 1](https://leetcode.com/problems/next-greater-element-i/)  | [Solution](https://docs.google.com/document/d/1z2zafEKWKmZMKgyNBgVQDRakjf7A9bIJBgFEcy5dDFA/edit?usp=sharing) |
+|       3        | [Next Greater Element 2](https://leetcode.com/problems/next-greater-element-ii/) | [Solution](https://docs.google.com/document/d/1YVORE08cpUbG6aOFAVyl4RHWPcQT9BDKlDO5vyM595Y/edit?usp=sharing) |
+|       4        | [Next Greater Element 4](https://leetcode.com/problems/next-greater-element-iv/) | [Solution](https://docs.google.com/document/d/1pjTw3r6tAGVCjsjw3wtbwDNt_t_eJHsD1S29OIvsTqI/edit?usp=sharing) |
+
+Dive Deeper to Monotonic Stack\
+
+| Problem Number |                                                    Problem                                                    |                                                   Solution                                                   |
+| :------------: | :-----------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
+|       5        |                     [Online Stock Span](https://leetcode.com/problems/online-stock-span/)                     | [Solution](https://docs.google.com/document/d/1ZP1vh_PqEnUOD4LteSoVPva2Uvth8bdUdDAOOST6BvM/edit?usp=sharing) |
+|       6        | [Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | [Solution](https://docs.google.com/document/d/1NfLHiIG-V3IJKC196NTV57uKpwDr1BlZ1LvR2bMmOqY/edit?usp=sharing) |
+|       7        |        [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)        | [Solution](https://docs.google.com/document/d/10_bI7vbCZiKnYm6XcuLchmmpgVh92Yqf1nqkHCK-UVM/edit?usp=sharing) |
+|       8        |                     [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)                     | [Solution](https://docs.google.com/document/d/1HoG7YtxGxaZ-a0gmEIE_iAOxA3E7fEmZv83x2_93dIg/edit?usp=sharing) |
 
 <hr>
