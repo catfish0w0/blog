@@ -214,7 +214,7 @@ Add the following dependency in to the <span style="color:red">**pom.xml**</span
 </dependency>
 ```
 
-Change the doGet Method in our GameServlet into following code.
+Change the doGet Method in our <span style="color:red">**GameServlet**</span> into following code.
 
 ```
 @Override
@@ -236,7 +236,8 @@ Re-start the program, and open up your localhost8080, you should be seeing somet
 
 ![](:servlet/JSON_look.PNG){:data-align="center"}
 
-Not Bad, At least we see our hard-coded JSON on the website now.
+<hr>
+Not Bad, At least we did see our hard-coded JSON on the website now.
 
 However, **manually parsing JSON** back to the browser is not efficient, and error-prone. It doesn’t impose type safety, you can put in anything for any field. A better way to communicate in JSON is to **have a model entity class, and use a library to perform the parsing**. One of the most popular choices in the Java ecosystem to do JSON conversions is called **Jackson** (Another popular one is Gson from Google). Let’s see how the above steps can be simplified with Jackson.
 
@@ -250,7 +251,7 @@ First, add the dependency into your <span style="color:red">**pom.xml**</span> f
 </dependency>
 ```
 
-Let's create a new Game class, so that it could start referrencing for our future JSON Object.
+Let's create a new <span style="color:red">**Game**</span> class, so that it could start referrencing for our future JSON Object.
 
 ```
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -347,7 +348,7 @@ Let's break this down a little bit
 
 Jackson lets you annotate your fields or getters with the @JsonProperty annotation. Its value defines what the name of the field is going to be in the resulting JSON string. So once the backend server build the Game Object, Jackson will be able to parse the attributes inside the Game object into a JSON object.
 
-Let's create a Game service class. Once the servlet receives the request, we invoke the Service to help us create a Game JSON Object, and return it back.
+Let's create a <span style="color:red">**GameService**</span> class. Once the servlet receives the request, we invoke the Service to help us create a Game JSON Object, and return it back.
 
 ```Java
 import java.util.List;
@@ -415,7 +416,7 @@ Let's break this down a little bit.
    private ObjectMapper objectMapper = new ObjectMapper();
 ```
 
-We create a gameService instance in the GameServlet class, since GameService depends on the Servlet to trigger. Once we receive the HTTP reuqest from frontend, we will call the **create** method in GameService to create the Game object.
+We create a GameService instance in the GameServlet class, since GameService depends on the Servlet to trigger. Once we receive the HTTP reuqest from frontend, we will call the **create** method in GameService to create the Game object.
 
 ObjectMapper is the class provided by Jackson that used to serialize and deserialize any Object.
 
