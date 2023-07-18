@@ -60,9 +60,25 @@ Okay, I have done enough talking, let's jump right into the code.
 
 <hr>
 #### Implementation
+Our Goal: To make the server able to receive HTTP request, and send back JSON Object as response.
+
 Let's create a new Project java EE. I am using Intellij as my code editor.\
 Here is the basic project set up.
+
 ![](:servlet/start_project.PNG){:data-align="center"}
 
 Remember to click the servlet button afterward.
+
 ![](:servlet/servlet_click.PNG){:data-align="center"}
+
+Just like we have mentioned, to make the servlet runnable, we need a servlet container. In this article, we are using Tomcat as the container. To embed Tomcat, **add the Tomcat dependency into our** <span style="color:red">**pom.xml**</span> file. And later, we can just invoke it in our ApplicationLauncher class.
+
+using embed Tomcat(Tomcat 10.1.8 have embed version)
+
+```
+<dependency>
+   <groupId>org.apache.tomcat.embed</groupId>
+   <artifactId>tomcat-embed-core</artifactId>
+   <version>10.1.8</version>
+</dependency>
+```
