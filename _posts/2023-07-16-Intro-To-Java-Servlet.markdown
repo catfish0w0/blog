@@ -130,10 +130,11 @@ response.getWriter().print(
 );
 ```
 
-In most cases, static html is just String, so here we just use String concatenation to render it.
+In most cases, static html is just String, so here using String concatenation is good enough to render it.
 
 <hr>
-Our Servlet is good, but we are still not able to start running our page. The reason behind is that we have not yet configured and started our servlet container, Tomcat.
+
+Our Servlet is good, but we are still not able to start running our page. The reason behind is that **we have not yet configured and started our servlet container, Tomcat**.
 
 Create a class <span style="color:red">**ApplicationLauncher**</span>, and include the following code
 
@@ -145,7 +146,6 @@ import org.apache.catalina.Wrapper;
 import org.apache.catalina.startup.Tomcat;
 
 public class ApplicationLauncher {
-
    public static void main(String[] args) throws LifecycleException {
 
        Tomcat tomcat = new Tomcat();
@@ -194,3 +194,239 @@ tomcat.start();
 Lastly, you need to start the tomcat.
 
 Now you should be able to run in your Intellij, and go to [http://localhost:8080/](http://localhost:8080/) and see Hello World!.
+
+<hr>
+
+Great, we just did connecting our Servlet to the Tomcat, now let’s add some flavor to our Servlet. Our goal is to make this backend server able to communicate JSON with our Frontend.
+
+Add the following dependency in to the <span style="color:red">**pom.xml**</span> file.
+
+```
+<dependency>
+   <groupId>org.json</groupId>
+   <artifactId>json</artifactId>
+   <version>20211205</version>
+</dependency>
+<dependency>
+   <groupId>commons-io</groupId>
+   <artifactId>commons-io</artifactId>
+   <version>2.11.0</version>
+</dependency>
+```
+
+Change the doGet Method in our GameServlet into following code.
+
+```
+@Override
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+   response.setContentType("application/json");
+   JSONObject game = new JSONObject();
+   game.put("name", "World of Warcraft");
+   game.put("developer", "Blizzard Entertainment");
+   game.put("release_time", "Feb 11, 2005");
+   game.put("website", "https://www.worldofwarcraft.com");
+   game.put("price", 49.99);
+
+   // Write game information to response body
+   response.getWriter().print(game);
+}
+```
+
+Re-start the program, and open up your localhost8080, you should be seeing something as the following.
+
+![](:servlet/JSON_look.PNG){:data-align="center"}
+
+Not Bad, At least we see our hard-coded JSON on the website now.
+
+However, **manually parsing JSON** back to the browser is not efficient, and error-prone. It doesn’t impose type safety, you can put in anything for any field. A better way to communicate in JSON is to **have a model entity class, and use a library to perform the parsing**. One of the most popular choices in the Java ecosystem to do JSON conversions is called **Jackson** (Another popular one is Gson from Google). Let’s see how the above steps can be simplified with Jackson.
+
+First, add the dependency into your <span style="color:red">**pom.xml**</span> file.
+
+```
+<dependency>
+   <groupId>com.fasterxml.jackson.core</groupId>
+   <artifactId>jackson-databind</artifactId>
+   <version>2.15.0</version>
+</dependency>
+```
+
+Let's create a new Game class, so that it could start referrencing for our future JSON Object.
+
+```
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Game {
+   @JsonProperty("name")
+   public String name;
+
+   @JsonProperty("developer")
+   public String developer;
+
+   @JsonProperty("release_time")
+   public String releaseTime;
+
+   @JsonProperty("website")
+   public String website;
+
+   @JsonProperty("price")
+   public double price;
+
+   public String getName() {
+       return name;
+   }
+
+   public String getDeveloper() {
+       return developer;
+   }
+
+   public String getReleaseTime() {
+       return releaseTime;
+   }
+
+   public String getWebsite() {
+       return website;
+   }
+
+   public double getPrice() {
+       return price;
+   }
+
+   public Game(Builder builder) {
+       this.name = builder.name;
+       this.developer = builder.developer;
+       this.releaseTime = builder.releaseTime;
+       this.website = builder.website;
+       this.price = builder.price;
+   }
+
+   public static class Builder {
+       private String name;
+       private String developer;
+       private String releaseTime;
+       private String website;
+       private double price;
+
+       public Builder setName(String name) {
+           this.name = name;
+           return this;
+       }
+
+       public Builder setDeveloper(String developer) {
+           this.developer = developer;
+           return this;
+       }
+
+       public Builder setReleaseTime(String releaseTime) {
+           this.releaseTime = releaseTime;
+           return this;
+       }
+
+       public Builder setWebsite(String website) {
+           this.website = website;
+           return this;
+       }
+
+       public Builder setPrice(double price) {
+           this.price = price;
+           return this;
+       }
+
+       public Game build() {
+           return new Game(this);
+       }
+   }
+}
+```
+
+Let's break this down a little bit
+
+```
+   @JsonProperty("name")
+   public String name;
+```
+
+Jackson lets you annotate your fields or getters with the @JsonProperty annotation. Its value defines what the name of the field is going to be in the resulting JSON string. So once the backend server build the Game Object, Jackson will be able to parse the attributes inside the Game object into a JSON object.
+
+Let's create a Game service class. Once the servlet receives the request, we invoke the Service to help us create a Game JSON Object, and return it back.
+
+```Java
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class GameService {
+
+   List<Game> games = new CopyOnWriteArrayList<>(); //
+
+   public List<Game> findAll() {
+       return games;
+   }
+
+   public Game create(String name, String developer, String releaseTime, String website, Double price) {
+       Game.Builder builder = new Game.Builder();
+       builder.setName(name);
+       builder.setDeveloper(developer);
+       builder.setReleaseTime(releaseTime);
+       builder.setWebsite(website);
+       builder.setPrice(price);
+
+       Game game = builder.build();
+       games.add(game);
+       return game;
+   }
+}
+```
+
+change our Servlet to the following.
+
+```Java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+
+public class GameServlet extends HttpServlet {
+
+   private GameService gameService = new GameService();
+   private ObjectMapper objectMapper = new ObjectMapper();
+   @Override
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+       // the parameter has to match with our JSON object.
+       String name = request.getParameter("name");
+       String developer = request.getParameter("developer");
+       String releaseTime = request.getParameter("release_time");
+       String website = request.getParameter("website");
+       Double price = Double.valueOf(request.getParameter("price"));
+
+       Game game = gameService.create(name, developer, releaseTime, website, price);
+
+       response.setContentType("application/json; charset=UTF-8");
+       String json = objectMapper.writeValueAsString(game);
+       response.getWriter().print(json);
+   }
+}
+```
+
+Let's break this down a little bit.
+
+```
+   private GameService gameService = new GameService();
+   private ObjectMapper objectMapper = new ObjectMapper();
+```
+
+We create a gameService instance in the GameServlet class, since GameService depends on the Servlet to trigger. Once we receive the HTTP reuqest from frontend, we will call the **create** method in GameService to create the Game object.
+
+ObjectMapper is the class provided by Jackson that used to serialize and deserialize any Object.
+
+```
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+   ...
+}
+```
+
+We change our HTTTP doGet Method into doPost Method, because we are simulating that we receives request from the frontend to add this Game into our database.
+
+If you see something as followed, that means you success~
+
+![](:servlet/success.PNG){:data-align="center"}
