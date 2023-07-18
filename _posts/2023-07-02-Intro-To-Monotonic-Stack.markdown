@@ -19,7 +19,7 @@ tags:
     Java,
   ]
 # thumbnail image for post
-img: ":plates.jpg"
+img: ":monoStack/plates.jpg"
 # disable comments on this page
 #comments_disable: true
 
@@ -114,7 +114,7 @@ Just change to this !stack.isEmpty() && array[i] < stack.
 
 ##### Practice Questions:
 
-**Basic Question 1: Find the next greater element in the array.**
+**Basic Question 1: Find the next greater element in the array.**\
 Entity:\
 Input: int[] array\
 Output: int[] outputNextGreaterArray
@@ -218,7 +218,7 @@ public int[] distanceBetweenNextGreaterElement(int[] array) {
 #### More Practice Questions
 
 I have included all the problem links and solution links below.\
-Here are some basic questions.\
+Here are some basic questions.
 
 | Problem Number |                                     Problem                                      |                                                   Solution                                                   |
 | :------------: | :------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
@@ -227,7 +227,7 @@ Here are some basic questions.\
 |       3        | [Next Greater Element 2](https://leetcode.com/problems/next-greater-element-ii/) | [Solution](https://docs.google.com/document/d/1YVORE08cpUbG6aOFAVyl4RHWPcQT9BDKlDO5vyM595Y/edit?usp=sharing) |
 |       4        | [Next Greater Element 4](https://leetcode.com/problems/next-greater-element-iv/) | [Solution](https://docs.google.com/document/d/1pjTw3r6tAGVCjsjw3wtbwDNt_t_eJHsD1S29OIvsTqI/edit?usp=sharing) |
 
-Dive Deeper to Monotonic Stack\
+Dive Deeper to Monotonic Stack
 
 | Problem Number |                                                    Problem                                                    |                                                   Solution                                                   |
 | :------------: | :-----------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
@@ -235,5 +235,3 @@ Dive Deeper to Monotonic Stack\
 |       6        | [Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/) | [Solution](https://docs.google.com/document/d/1NfLHiIG-V3IJKC196NTV57uKpwDr1BlZ1LvR2bMmOqY/edit?usp=sharing) |
 |       7        |        [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)        | [Solution](https://docs.google.com/document/d/10_bI7vbCZiKnYm6XcuLchmmpgVh92Yqf1nqkHCK-UVM/edit?usp=sharing) |
 |       8        |                     [Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)                     | [Solution](https://docs.google.com/document/d/1HoG7YtxGxaZ-a0gmEIE_iAOxA3E7fEmZv83x2_93dIg/edit?usp=sharing) |
-
-<hr>
