@@ -60,3 +60,9 @@ Okay, I have done enough talking, let's jump right into the code.
 
 <hr>
 #### Implementation
+Let's create a new Project java EE. I am using Intellij as my code editor.\
+Here is the basic project set up.
+![](:servlet/start_project.PNG){:data-align="center"}
+
+Remember to click the servlet button afterward.
+![](:servlet/servlet_click.PNG){:data-align="center"}
