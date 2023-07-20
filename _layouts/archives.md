@@ -15,7 +15,7 @@ layout: default
   <div class="archives">
     <iframe
         scrolling="no" 
-        style=" width: 100%; min-height: 1500px; overflow: hidden; border: none;"
+        style=" width: 100%; min-height: 4065px; overflow: hidden; border: none;"
         src="https://prod.dy07wostgx6nr.amplifyapp.com/">
     </iframe>
 <!--     
