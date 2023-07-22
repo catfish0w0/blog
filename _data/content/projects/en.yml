@@ -170,6 +170,39 @@ page_data:
         for i in range(5, 10):
           print(i)
         ```
+
+    - type: id_react
+      project_name: "Badminton Double Tournament Generator"
+      project_excerpt: "a fully functional web-based tournament matches generator"
+      img: ":react-projects/quizCal/quizCalFilled.png"
+      img_title: "quizCal"
+      date: "2023-07-22"
+      post: |
+        #### What is this project about?
+        This project aims to facilitate the generation of badminton double matches based on user-inputted player names. 
+        Users can provide a list of players, and upon completing the input, they can click "Generate Teams." 
+        The app will then split the players into two full groups based on the total number of teams. 
+        These teams will compete against each other in a group-stage competition, and the top two double pairs will proceed 
+        to the semifinal stage of the tournament.
+
+        App: [Link](https://prod.d2fimk63dmdzuc.amplifyapp.com)\
+        Github: [Link](https://github.com/catfish0w0/quizCal)
+
+        #### Reason of doing this App
+        1. Enhanced Player Interaction: In typical scenarios, players tend to team up with their closest friends, limiting diverse interactions.
+        This app encourages advanced-level/intermediate-level players to compete against each other, 
+        fostering an exciting and challenging badminton tournament experience.
+        2. This app is fun to implement.
+
+        #### App Features
+        1. Adding Double Teams: Users can add double teams by entering the names of the players who will be playing together.
+        2. Random Team Generation: For individuals who do not have a partner, the app provides a feature to randomly generate double teams, ensuring everyone can participate.
+        3. Balanced Skill-Level Teams: The app considers the "Tier" attribute assigned to each player to generate double teams in a balanced manner. This ensures that the skill levels are evenly distributed among the teams, making the matches fair and competitive.
+        4. Group Split for Larger Teams: In cases where the team size exceeds 5, the app automatically divides the teams into two groups. Users have the option to switch between the groups by clicking on the respective boxes.
+        5. Random Group-Stage Matches: The app randomly generates group-stage matches, allowing each team to play against one another in an unpredictable sequence. This adds excitement and variety to the tournament.
+
+        #### Design Process && Challenges && Thought Process
+
     - type: id_react
       project_name: "Quiz Game"
       project_excerpt: "a fully functional web-based tenzie game to test your luck index."
