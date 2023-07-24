@@ -46,6 +46,8 @@ date: 2023-07-24 12:34:06 +0900
 
 This will be the first post of the Data Structure and Java Basic Series. In this series I will be This is the inaugural post of the <span style="color:red">**Data Structure and Java Basic Series**</span>. Throughout this series, I will cover various topics, including the fundamentals of Java programming, the practical Java utils library, and eventually, delve into data structures in Java, among other subjects. For this specific post, the primary focus will be on the concept of how Java passes variables in functions.
 
+<br>
+
 #### Java Fundamental Concepts
 
 Before delving into the concept of variable passing, let's explore some fundamental concepts in Java. Unlike languages such as JavaScript and Golang, Java operates on two key principles:
@@ -53,16 +55,20 @@ Before delving into the concept of variable passing, let's explore some fundamen
 1. **No program without a class**: At least one class is required to execute any Java program.
 2. **No object without a class**: Creating an object using a class to define its **attributes** and **method/function**.
 
+<br>
+
 #### Variables in Java
 
 In light of this, Java relies heavily on two types of variables: **primitive types** and **object types**.
 
-**Primitive Types**: These include basic data types like byte, short, integers, long, floating-point numbers, double, characters, and booleans. They are directly supported by the hardware and have limited size and behavior.\
-**Object Types**: These refer to variables that can hold references to objects in memory. Objects are instances of classes and allow developers to define more complex data structures and behavior.
+<span style="color:red">**Primitive Types**</span>: These include basic data types like byte, short, integers, long, floating-point numbers, double, characters, and booleans. They are directly supported by the hardware and have limited size and behavior.\
+<span style="color:red">**Object Types**</span>: These refer to variables that can hold references to objects in memory. Objects are instances of classes and allow developers to define more complex data structures and behavior.
+
+<br>
 
 #### How does Java copy variables and allocate memory??
 
-In Java, variables are stored in two spaces in the CPU: the Stack and the Heap. When you declare a primitive data type in Java, a memory location in the stack is assigned to store the primitive data type. This is referred to as deep copying. For instance:
+In Java, variables are stored in two spaces in the CPU: the **Stack** and the **Heap**. When you declare a primitive data type in Java, a memory location in the stack is assigned to store the primitive data type. This is referred to as <span style="color:red">**deep copying**</span>. For instance:
 
 ```Java
 int a = 3; // stored in the stack
@@ -91,7 +97,7 @@ System.out.println(a); // Output: Main$NewObject@7b23ec81
 System.out.println(b); // Output: Main$NewObject@7b23ec81
 ```
 
-Java treats the two types of variables differently. The object's attributes are stored in the heap, but the main function runs in the stack. Java creates a reference that points to the object in the heap, and when you want to access the data in that object, you need to dereference the object. So, when you use the assignment operator b = a, Java copies only the reference of that variable, and this is called shallow copying.
+Java treats the two types of variables differently. The object's attributes are stored in the heap, but the main function runs in the stack. Java creates a reference that points to the object in the heap, and when you want to access the data in that object, you need to dereference the object. So, when you use the assignment operator b = a, Java copies only the reference of that variable, and this is called <span style="color:red">**shallow copying**</span>.
 
 ```Java
 NewObject a = new NewObject(3) ; // a is in the stack, but the actual object is in the heap.
@@ -128,7 +134,7 @@ Java's variable assignment and copying in memory work similarly to how it passes
 
 Here are some examples to help you grasp the concept:
 
-Example 1:
+###### Example 1:
 
 ```Java
 public static void main(String[] args) {
@@ -146,7 +152,7 @@ private void changeValue1(NewObject obj) {
 
 The final output is not 10 because Java passes the reference and assigns it to the function, not the original object. In this case, we are changing value to the copy of the original instance.
 
-Example 2:
+###### Example 2:
 
 ```Java
 public static void main(String[] args) {
@@ -162,7 +168,7 @@ private void changeValue2(NewObject obj) {
 ![](:java_basic/how_java_pass_variable/thirdMemory.png){:data-align="center"}
 In this example, we directly dereference the value of the object and assign a new value to the object in the heap. Therefore, all other variables that share the same address will reflect the change in value.
 
-Example 3 and 4:
+###### Example 3 and 4:
 
 ```Java
 public static void main(String[] args) {
@@ -183,9 +189,11 @@ private NewObject changeValue3(NewObject obj) {
 
 In this changevalue function, we create a new instance and return the reference of that instance. In example 3, we did not catch the return value, so we did not have reference of it, the value stay the same. In example 4, we did assign the returned reference to our originalObj instance, so the value would be 10!
 
-In summary, Java is always **"pass by value"**.
-&emsp;For primitive type variable, it **deepcopy** the value.
+In summary, Java is always **"pass by value"**.\
+&emsp;For primitive type variable, it **deepcopy** the value.\
 &emsp;For object type variable, it **shallowcopy** the value.
+
+###### Final Quiz
 
 Here is a question from previous Amazon OA. Hope you can get it right!.
 
@@ -228,5 +236,5 @@ What variables are located in thew heap?
 What variables are located in the stack?\
 b, x1, a1,x3
 
-What variables are located in the heap??
+What variables are located in the heap??\
 x2, a2, x
