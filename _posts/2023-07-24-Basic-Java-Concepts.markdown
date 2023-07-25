@@ -44,7 +44,7 @@ date: 2023-07-24 12:34:06 +0900
 
 #### Introduction
 
-This will be the first post of the Data Structure and Java Basic Series. In this series I will be This is the inaugural post of the <span style="color:red">**Data Structure and Java Basic Series**</span>. Throughout this series, I will cover various topics, including the fundamentals of Java programming, the practical Java utils library, and eventually, delve into data structures in Java, among other subjects. For this specific post, the primary focus will be on the concept of how Java passes variables in functions.
+This is the inaugural post of the <span style="color:red">**Data Structure and Java Basic Series**</span>. Throughout this series, I will cover various topics, including the fundamentals of Java programming, the practical Java utils library, and eventually, delve into data structures in Java, among other subjects. For this specific post, the primary focus will be on the concept of how Java passes variables in functions.
 
 <br>
 
