@@ -47,24 +47,25 @@ date: 2023-07-26 10:42:06 +0900
 Welcome to the second post of the Data Structure and Java Basic Series. In this installment, our primary focus will be on arrays in Java, as well as the **Arrays library** and the **Random library** that Java provides. If you have any confusion related to fundamental Java concepts or want to revisit the first post, which covers _how Java copies and passes variables in functions_, you can find it [here](https://www.catfish0w0.com/posts/2023-07-24-Basic-Java-Concepts).
 
 <br>
-
 #### What is an array??
 
 An array is not only the most basic but also a special data structure in Java. Think of an array as an Object Type variable that stores data in a contiguous memory location. This arrangement allows arrays to exhibit extremely efficient functionality, also enabling them to logically implement various data structures. From linear data structures like lists, stacks, and queues to nonlinear data structures like Trie and adjacent lists, arrays are incredibly versatile.
 
 One notable feature of Java is the use of static arrays. Unlike some other languages such as Python, which only have dynamic arrays (known as lists), Java supports both static and dynamic arrays. Static arrays have a fixed size defined during their creation, while dynamic arrays can grow or shrink as needed.
 
+<br>
 #### Why should we learn array / What is so special about array?
 
 One intriguing aspect is that arrays are not explicitly defined in Java's source code. Unlike other data structures with defined classes or libraries, arrays are a **native construct** directly integrated into the language. When creating an instance of an array, the syntax differs slightly from other data structures, emphasizing its unique nature. At the same time, array **allows direct access** to elements, which provide **constant Time Complexity O(1)** for lookup and random access based on given index. It has no overhead and is widely supported by most languages.
 
+<br>
 ###### Key Point 1: How do you create an array
 
 In Java arrays, two main components are essential: the <span style="color:red">type</span> and the <span style="color:red">length</span>. When creating an array, it is imperative to specify its length; you cannot create an array without providing this crucial information
 
 ```java
 public void static main(String[] args) {
-	int[] array = new int[array.length]
+    int[] array = new int[array.length]
     ElementType[] array = new ElementType[5];// Method 1 Output: {null, null, null, null, null}
     int[] array = new int[]{1, 2, 3, 4, 5};  // Method 2 Output: {1, 2, 3, 4, 5}
     int[] array = {1, 2, 3, 4, 5};           // Method 3 not recommended, because of readability. Output: {1, 2, 3, 4, 5}
@@ -72,6 +73,7 @@ public void static main(String[] args) {
 
 ```
 
+<br>
 ###### Key Point 2: How do you access array elements / traverse an array?
 
 In Java, you can access array elements using their index and the array's length. Let's consider an example array: {0, 0, 0, 0, 0}.
@@ -104,5 +106,5 @@ During interviews, it's essential not to assume that all matrices are of the for
 Exmaple Matrix:\
 | type | look | Traversal | Comments |
 | :---: | :--: | --------- | -------- |
-| sorted|1, 2, 3 \ 4, 5, 6\ 7, 8, 9 | 1, 2, 3, 4, 5, 6, 7, 8, 9 | traverse from left to right, top to bot,\ form sorted sequence |
-| Young | 1, 4, 7\ 2, 6, 8 \ 3, 9, 12 | | Sorted from left to right in each row\ sorted from top to bot in each col |
+| sorted|1, 2, 3<br /> 4, 5, 6<br /> 7, 8, 9 | 1, 2, 3, 4, 5, 6, 7, 8, 9 | traverse from left to right, top to bot<br /> form sorted sequence |
+| Young | 1, 4, 7<br /> 2, 6, 8<br /> 3, 9, 12 | | Sorted from left to right in each row<br /> sorted from top to bot in each col |
