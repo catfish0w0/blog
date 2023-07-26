@@ -11,7 +11,7 @@ category: Java Basic
 # multiple tag entries are possible
 tags: [Java]
 # thumbnail image for post
-img: ":java_basic/how_java_pass_variable/core_java_programming.jpg"
+img: ":java_basic/how_java_pass_variable/array.jpg"
 # disable comments on this page
 #comments_disable: true
 
@@ -44,7 +44,7 @@ date: 2023-07-26 10:42:06 +0900
 
 #### Arrays in Java: Exploring the Data Structure and Java Libraries
 
-Welcome to the second post of the Data Structure and Java Basic Series. In this installment, our primary focus will be on arrays in Java, as well as the **Arrays library** and the **Random library** that Java provides. If you have any confusion related to fundamental Java concepts or want to revisit the first post, which covers _how Java copies and passes variables in functions_, you can find it [here](https://www.catfish0w0.com/posts/2023-07-24-Basic-Java-Concepts).
+Welcome to the second post of the Data Structure and Java Basic Series. In this blog, our primary focus will be on arrays in Java, as well as the **Arrays library** and the **Random library** that Java provides. If you have any confusion related to fundamental Java concepts or want to revisit the first post, which covers _how Java copies and passes variables in functions_, you can find it [here](https://www.catfish0w0.com/posts/2023-07-24-Basic-Java-Concepts).
 
 <br>
 #### What is an array??
