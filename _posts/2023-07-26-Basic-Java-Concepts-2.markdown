@@ -112,6 +112,7 @@ Exmaple Matrix:
 
 <br>
 ###### Key Point 1: How do you create a matrix
+
 ```java
 public static void main(String[] args) {
     int[][] matrix = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
@@ -119,7 +120,7 @@ public static void main(String[] args) {
 }
 ```
 
-###### Key Point 1: How do you traverse a matrix
+###### Key Point 2: How do you traverse a matrix
 
 ```java
 public static void main(String[] args) {
@@ -132,3 +133,20 @@ public static void main(String[] args) {
     }
 }
 ```
+
+In memory: matrix is located like this.
+![](:java_basic/array/array2.png){:data-align="center"}
+
+In summary: array in Java has its advantages and restriction\
+Advantages:
+
+1. Contant Time Complexity int lookup and random access operation
+
+Restriction:
+
+1. Static Typing
+1. Cannot change in Size, add in size or delete elements require O(n) time complexity to copy the array.
+
+#### Arrays Library: Exploring Java's Array Functionality
+
+We have now covered the very basic concept of array,
