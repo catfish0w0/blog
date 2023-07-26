@@ -110,27 +110,27 @@ Exmaple Matrix:
 | sorted | 1, 2, 3<br /> 4, 5, 6<br /> 7, 8, 9  | 1, 2, 3, 4, 5, 6, 7, 8, 9 | traverse from left to right, top to bot<br /> form sorted sequence             |
 | Young  | 1, 4, 7<br /> 2, 6, 8<br /> 3, 9, 12 |                           | Sorted from left to right in each row<br /> sorted from top to bot in each col |
 
-###### Key Point 1: How do you create a matrix
+###### Key Point 1: How do you create a matrix and traverse a matrix
 
 ```java
 public static void main(String[] args) {
-    int[][] matrix = {{1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12}};
+    int[][] matrix = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};// number of row, number of col
+
     System.out.println(“Original Matrix: “ + Arrays.deepToString(matrix));
-}
-```
 
-###### Key Point 2: How do you traverse a matrix
 
-```java
-public static void main(String[] args) {
-    int[][] matrix = {{1, 2, 3, 4},{5, 6, 7, 8},{9, 10, 11, 12}};
-    for (int i = 0; i < matrix.length; i++>) {
-        for (int j = 0; j < matrix[i].length; j++>) {
+    // traversal
+    for (int i = 0; i < matrix.length; i++) {
+        for (int j = 0; j < matrix[i].length; j++) {
             System.out.print(array[i][j] + " ");
         }
         System.out.println();
     }
 }
+```
+
+```java
+
 ```
 
 In memory: matrix is located like this.
