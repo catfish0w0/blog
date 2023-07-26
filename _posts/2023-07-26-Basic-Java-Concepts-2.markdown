@@ -147,3 +147,9 @@ Restriction:
 #### Arrays Library: Exploring Java's Array Functionality
 
 Having covered the fundamental concepts of arrays, let's now delve into how Java empowers developers with array functionality. Java provides a built-in class called Arrays within the Java utils library, offering a plethora of useful APIs for array manipulation. Understanding these methods and their underlying logic is crucial, especially when preparing for technical interviews. For more detailed information, you can refer to the [original Java Doc](<https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#equals(java.lang.Object%5B%5D,java.lang.Object%5B%5D)>). Let's explore the rich functionality that Java's Arrays library has to offer!
+
+#### API Summary
+
+###### toString() method
+
+Function Signature: `public static String toString(Object[] a)`
