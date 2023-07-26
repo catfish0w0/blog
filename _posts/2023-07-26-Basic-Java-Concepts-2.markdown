@@ -104,5 +104,5 @@ During interviews, it's essential not to assume that all matrices are of the for
 Exmaple Matrix:\
 | type | look | Traversal | Comments |
 | :---: | :--: | --------- | -------- |
-| sorted|{{1, 2, 3}\ {4, 5, 6}\ {7, 8, 9}} | {1, 2, 3, 4, 5, 6, 7, 8, 9} | traverse from left to right, top to bot,\ form sorted sequence |
-| Young | {{1, 4, 7}\ {2, 6, 8} \ {3, 9, 12}} | | Sorted from left to right in each row\ sorted from top to bot in each col |
+| sorted|1, 2, 3 \ 4, 5, 6\ 7, 8, 9 | 1, 2, 3, 4, 5, 6, 7, 8, 9 | traverse from left to right, top to bot,\ form sorted sequence |
+| Young | 1, 4, 7\ 2, 6, 8 \ 3, 9, 12 | | Sorted from left to right in each row\ sorted from top to bot in each col |
