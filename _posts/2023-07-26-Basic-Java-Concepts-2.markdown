@@ -103,8 +103,32 @@ A matrix is a two-dimensional array with rows and columns (n \* m matrix). In Ja
 **Important Note to understand**\
 During interviews, it's essential not to assume that all matrices are of the form n \* m. Different matrices can have varying dimensions. For example:
 
-Exmaple Matrix:\
-| type | look | Traversal | Comments |
-| :---: | :--: | --------- | -------- |
-| sorted|1, 2, 3<br /> 4, 5, 6<br /> 7, 8, 9 | 1, 2, 3, 4, 5, 6, 7, 8, 9 | traverse from left to right, top to bot<br /> form sorted sequence |
-| Young | 1, 4, 7<br /> 2, 6, 8<br /> 3, 9, 12 | | Sorted from left to right in each row<br /> sorted from top to bot in each col |
+Exmaple Matrix:
+
+|  type  |                 look                 | Traversal                 | Comments                                                                       |
+| :----: | :----------------------------------: | ------------------------- | ------------------------------------------------------------------------------ |
+| sorted | 1, 2, 3<br /> 4, 5, 6<br /> 7, 8, 9  | 1, 2, 3, 4, 5, 6, 7, 8, 9 | traverse from left to right, top to bot<br /> form sorted sequence             |
+| Young  | 1, 4, 7<br /> 2, 6, 8<br /> 3, 9, 12 |                           | Sorted from left to right in each row<br /> sorted from top to bot in each col |
+
+<br>
+###### Key Point 1: How do you create a matrix
+```java
+public static void main(String[] args) {
+    int[][] matrix = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+    System.out.println(“Original Matrix: “ + Arrays.deepToString(matrix));
+}
+```
+
+###### Key Point 1: How do you traverse a matrix
+
+```java
+public static void main(String[] args) {
+    int[][] matrix = new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
+    for (int i = 0; i < matrix.length; i++>) {
+        for (int j = 0; j < matrix[i].length; j++>) {
+            System.out.print(array[i][j] + " ");
+        }
+        System.out.println();
+    }
+}
+```
