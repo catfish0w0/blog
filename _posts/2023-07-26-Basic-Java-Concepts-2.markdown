@@ -110,7 +110,6 @@ Exmaple Matrix:
 | sorted | 1, 2, 3<br /> 4, 5, 6<br /> 7, 8, 9  | 1, 2, 3, 4, 5, 6, 7, 8, 9 | traverse from left to right, top to bot<br /> form sorted sequence             |
 | Young  | 1, 4, 7<br /> 2, 6, 8<br /> 3, 9, 12 |                           | Sorted from left to right in each row<br /> sorted from top to bot in each col |
 
-<br>
 ###### Key Point 1: How do you create a matrix
 
 ```java
