@@ -153,3 +153,32 @@ Having covered the fundamental concepts of arrays, let's now delve into how Java
 ###### toString() method
 
 Function Signature: `public static String toString(Object[] a)`
+
+The toString() API is specifically designed to provide a string representation of the elements within the array. For user-defined classes, Java will naturally print the memory location of the instance by default. However, if you desire Java to display the field values instead, you can override the toString() method within the class.
+
+Example:
+
+```java
+public static void main(String[] args) {
+    String[] array = {“Gary”, “Tom”, “Bob};
+    System.out.println(Arrays.toString(array));  //Output: [Gary, Tom Bob]
+
+    NewObject[] array = new NewObject[3];
+    array[0] = new NewObject(1);
+    array[1] = new NewObject(2);
+    array[2] = new NewObject(3);
+
+    System.out.println(Arrays.toString(array));  //Output: [1, 2, 3];
+
+    static class NewObject {
+        int x;
+        NewObject(int x) {
+            this.x = x;
+        }
+        //overriding the toString() method
+        public String toString(){
+            return Integer.toString(x);
+        }
+    }
+}
+```
