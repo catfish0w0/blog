@@ -193,7 +193,11 @@ Example Code:
 
 ```java
 public static void main(String[] args) {
-    int[][] matrix = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int[][] matrix = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
 
     System.out.println(Arrays.toString(matrix));      //Output: [[I@15aeb7ab, [I@7b23ec81, [I@6acbcfc0]
     System.out.println(Arrays.deepToString(matrix));  //Output: [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
