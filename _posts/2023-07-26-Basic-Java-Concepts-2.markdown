@@ -1,7 +1,7 @@
 ---
 # multilingual page pair id, this must pair with translations of this page. (This name must be unique)
 lng_pair: basc_java_2
-title: Basic Data Structure and Concept of Java language
+title: Arrays in Java:Exploring the Data Structure and Java Libraries
 
 # post specific
 # if not specified, .name will be used from _data/owner/[language].yml
@@ -41,8 +41,6 @@ date: 2023-07-26 10:42:06 +0900
 <!-- outline-start -->
 
 <!-- outline-end -->
-
-#### Arrays in Java: Exploring the Data Structure and Java Libraries
 
 Welcome to the second post of the Data Structure and Java Basic Series. In this blog, our primary focus will be on arrays in Java, as well as the **Arrays library** and the **Random library** that Java provides. If you have any confusion related to fundamental Java concepts or want to revisit the first post, which covers _how Java copies and passes variables in functions_, you can find it [here](https://www.catfish0w0.com/posts/2023-07-24-Basic-Java-Concepts).
 
