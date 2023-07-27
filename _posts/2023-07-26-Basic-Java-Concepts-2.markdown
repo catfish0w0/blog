@@ -404,6 +404,6 @@ Does not recommend to use. As a software engineer, you should implement your own
 
 #### Practice Questions
 
-| Problem Number |                        Problem                        | Solution |
-| :------------: | :---------------------------------------------------: | :------: |
-|       1        | [High Five](https://leetcode.com/problems/high-five/) |          |
+| Problem Number |                        Problem                        |                                               Solution                                                |
+| :------------: | :---------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
+|       1        | [High Five](https://leetcode.com/problems/high-five/) | ![](https://docs.google.com/document/d/1UFcQUbRZRQLSstLyUknyV64j2rGflt3JZzaD8GRhdKI/edit?usp=sharing) |
