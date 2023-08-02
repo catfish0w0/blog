@@ -11,7 +11,7 @@ category: Java Basic
 # multiple tag entries are possible
 tags: [Java]
 # thumbnail image for post
-img: ":java_basic/how_java_pass_variable/array.jpg"
+img: ":java_basic/how_java_pass_variable/array/array.jpg"
 # disable comments on this page
 #comments_disable: true
 
@@ -144,13 +144,14 @@ Restriction:
 
 #### Arrays Library: Exploring Java's Array Functionality
 
-Having covered the fundamental concepts of arrays, let's now delve into how Java empowers developers with array functionality. Java provides a built-in class called Arrays within the Java utils library, offering a plethora of useful APIs for array manipulation. Understanding these methods and their underlying logic is crucial, especially when preparing for technical interviews. For more detailed information, you can refer to the [original Java Doc](<https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html#equals(java.lang.Object%5B%5D,java.lang.Object%5B%5D)>). Let's explore the rich functionality that Java's Arrays library has to offer!
+Having covered the fundamental concepts of arrays, let's now delve into how Java empowers developers with array functionality. Java provides a built-in class called Arrays within the Java utils library, offering a plethora of useful APIs for array manipulation. Understanding these methods and their underlying logic is crucial, especially when preparing for technical interviews. For more detailed information, you can refer to the [original Java Doc](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Arrays.html). Let's explore the rich functionality that Java's Arrays library has to offer!
 
 #### API Summary
 
 ###### API 1: toString() method
 
-**Function Signature**: `public static String toString(Object[] a)`
+**Function Signature**:\
+`public static String toString(Object[] a)`
 
 The toString() API is specifically designed to provide a string representation of the elements within the array. For user-defined classes, Java will naturally print the memory location of the instance by default. However, if you desire Java to display the field values instead, you can override the toString() method within the class.
 
@@ -183,7 +184,8 @@ public static void main(String[] args) {
 
 ###### API 2: deepToString() method
 
-**Function Signature**: `public static String deepToString(Object[] a)`
+**Function Signature**:\
+`public static String deepToString(Object[] a)`
 
 The deepToString method returns a string representation of the "deep contents" of the specified array. If the array contains other arrays as elements, the string representation will encompass their contents and any nested arrays within them, continuing **recursively**.
 
@@ -220,9 +222,10 @@ public static String deepToString(Object[] a) {
 
 ###### API 3: sort() method
 
-**Function Signature**: `public static void sort(Object[] a)`
-`public static void sort(Object[] a, int fromIndex, int toIndex) // sort specific range`
-`public static <T> void sort(T[] a, Comparator<? super T> c) // sort with given comparator`
+**Function Signature**:\
+`public static void sort(Object[] a)`\
+`public static void sort(Object[] a, int fromIndex, int toIndex) // sort specific range`\
+`public static <T> void sort(T[] a, Comparator<? super T> c) // sort with given comparator`\
 `public static <T> void sort(T[] a, int fromIndex, int toIndex, Comparator<? super T> c) // sort specific range with given comparator.`
 
 This API allows you to sort the specified array of objects into ascending order based on the natural ordering of its elements. However, a prerequisite for using this method is that the type of the array must implement the Comparable interface.
@@ -231,8 +234,8 @@ The term "natural ordering" refers to the default ordering of elements based on 
 
 Java's Arrays.sort employs different sorting strategies depending on the array length:
 
-If the array length is short, it uses dualQuickSort, a quicksort variation optimized for smaller arrays.\
-For longer arrays, it employs TimSort, which proves to be more efficient for larger datasets.\
+If the array length is short, it uses **dualQuickSort**, a quicksort variation optimized for smaller arrays.\
+For longer arrays, it employs **TimSort**, which proves to be more efficient for larger datasets.\
 By leveraging these sorting strategies, Java's Arrays.sort can efficiently handle arrays of varying lengths and deliver optimal sorting performance for a wide range of use cases.
 
 Example Code:
@@ -358,7 +361,8 @@ public static void main(String[] args) {
 
 ###### API 6: fill, fill with Range
 
-**Function Signature**: `public static void fill(Object[] a, Object val)`
+**Function Signature**:\
+`public static void fill(Object[] a, Object val)`\
 `public static void fill(Object[] a, int fromIndex, int toIndex, Object val)`
 
 This API would assigns the specified Object reference to each element of the specified array of Objects. Be aware, if you are filling in a range, the toIndex is exclusive, that means it will fill elements until the index == toIndex. [fromIndex, toIndex)
@@ -377,7 +381,8 @@ public static void main(String[] args) {
 
 ###### API 7: copyOf
 
-**Function Signature**: `public static <T> T[] copyOf(T[] original, int newLength)`
+**Function Signature**:\
+`public static <T> T[] copyOf(T[] original, int newLength)`
 
 This API copies the specified array, truncating or padding with nulls (if necessary) so the copy has the specified length. The underlying logic is to utilize the System.arraycopy method.
 
@@ -395,8 +400,9 @@ public static void main(String[] args) {
 
 ###### API 8: equals and deepEquals
 
-**Function Signature**: `public static boolean equals(Object[] a, Object[] a2)`
-`public static boolean deepEquals(Object[] a1, Object[] a2)`
+**Function Signature**:\
+`public static boolean equals(Object[] a, Object[] a2)`\
+`public static boolean deepEquals(Object[] a1, Object[] a2)`\
 Equals method returns true if the two specified arrays of Objects are equal to one another.
 The underlying logic for deepEquals is similar to deepToString(), using recursion to deep digging into the array parenthesis.
 

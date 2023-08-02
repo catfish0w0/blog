@@ -77,12 +77,39 @@ public static void main(String[] args) {
 }
 /*
 Result:
-Here is using one random object:
-3 0 3 0 6 6 7 8 1 4
-Here is using another random object:
-3 0 3 0 6 6 7 8 1 4
+    Here is using one random object:
+    3 0 3 0 6 6 7 8 1 4
+    Here is using another random object:
+    3 0 3 0 6 6 7 8 1 4
 */
 ```
+
+In many interview and coding challenges, it will most likely ask to generate random numbers within a specified range [a, b]. Here's a simple approach to create both a random integer and a random double within this range using the random generator method in Java:
+
+```java
+public static void main(String[] args) {
+    int a = 1; // Replace 'a' with the desired lower bound of the range
+    int b = 10; // Replace 'b' with the desired upper bound of the range
+
+    // Generate a new pseudo-random generator
+    Random random = new Random();
+
+    // Generate a random integer in the range [a, b]
+    int randomInt = random.nextInt(b - a + 1) + a; // Produces a random number from [a, b]
+
+    // Generate a random double in the range [a, b)
+    double randomDouble = Math.random() * (b - a) + a; // Produces a random number from [a, b)
+
+    System.out.println("Random Integer: " + randomInt);
+    System.out.println("Random Double: " + randomDouble);
+}
+```
+
+#### Intro to randomness and probability
+
+Imagine the task of just generating a random element in an array, how would you represent it - quite easy, right? Since arrays allow random access, we can simply generate a random index between 0 and array.length and retrieve the element at that index.
+
+However, the challenge arises when we want to generate an array with all the same elements in the array but in a random order.
 
 With this understanding of Java's random number generation, we can now proceed to explore the reservoir sampling algorithm, a clever technique to randomly select elements from a data stream with equal probability.
 
@@ -91,3 +118,5 @@ With this understanding of Java's random number generation, we can now proceed t
 | Problem Number |                        Problem                        |                                               Solution                                                |
 | :------------: | :---------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
 |       1        | [High Five](https://leetcode.com/problems/high-five/) | ![](https://docs.google.com/document/d/1UFcQUbRZRQLSstLyUknyV64j2rGflt3JZzaD8GRhdKI/edit?usp=sharing) |
+
+Some of the questions are not from leetcode, so I create a google doc with the problem describtion and some examples.
