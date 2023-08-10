@@ -140,9 +140,11 @@ private void swap(int[] array, int i, int j) {
 
 #### Intro to Reservoir Sampling
 
-The above approach allows us to open new way to dealt with randomess problem. It still has several limitation. First of all, it can only dealt with fixed size sample. Secondly, it cannot run in offline manner, we have to get full sample size before finding randomess within elements. In reality, this is rather inefficient and memory-consuming. Therefore, people invented another simple yet elegant algorithm to solve probability problems, reservoir sampling.
+Although the above approach can assist us in solving problems related to randomness, it still comes with several limitations. First and foremost, it can only handle a fixed-size sample. Additionally, it's incapable of running in an offline manner; we must accumulate the entire sample size before uncovering randomness within the elements. In reality, this proves to be inefficient and memory-intensive. Consequently, the reservoir sampling algorithm was developed to help with this problem.
 
-The problem becomes as follow: Consider an unlimited flow of data elements. How do you sample one element from this flow, such that at any point during the processing of the flow, you can return a random element from the n elements read so far. Implement two methods for a sampling class: read(int value) - read one number from the flow, sample() return a sample that we have seen so far.
+The underlying problem is as follows: Picture an unending stream of data elements. How can we effectively select a single element from this ongoing stream in a way that, at any moment during the stream's processing, we're able to retrieve a random element from the 'n' elements encountered so far? To address this, we're tasked with implementing two methods within a sampling class: **read(int value) – which reads a number from the stream** – and **sample() – which returns a sample seen so far**.
+
+The algorithm to solve the problem is as follows: With each incoming element, our objective is to keep track of the current sample's size. Whenever a new element arrives, we determine if it's the one to be selected – with a probability of 1/n. This ensures that whether we're considering the new sample size or the old one, the selection probability for any element remains consistent. The mathematics behind this process are as follows.
 
 | data         | size | propability to select new element | probability for previous selected element to stay |
 | ------------ | ---- | :-------------------------------: | :-----------------------------------------------: |
@@ -151,10 +153,98 @@ The problem becomes as follow: Consider an unlimited flow of data elements. How 
 | [1, 2, 3]    | 3    |                1/3                |        1/2 multuply 2/3(not select) = 1/3         |
 | [1, 2, 3, 4] | 4    |                1/4                |        1/2 multuply 2/3 multuply 3/4 = 1/4        |
 
-#### Practice Questions
+Code:
 
-| Problem Number |                        Problem                        |                                               Solution                                                |
-| :------------: | :---------------------------------------------------: | :---------------------------------------------------------------------------------------------------: |
-|       1        | [High Five](https://leetcode.com/problems/high-five/) | ![](https://docs.google.com/document/d/1UFcQUbRZRQLSstLyUknyV64j2rGflt3JZzaD8GRhdKI/edit?usp=sharing) |
+```java
+public class Sampling {
+  Random random;
+  Integer count;
+  Integer reservoir;
+  public Sampling() {
+    random = new Random();
+    count = 0;
+    reservoir = null;
+  }
 
-Some of the questions are not from leetcode, so I create a google doc with the problem describtion and some examples.
+  public void read(int value) {
+    count++;
+    if (random.nextInt(count) == 0) {
+      reservoir = value;
+    }
+  }
+
+  public Integer sample() {
+    return reservoir;
+  }
+}
+```
+
+Now, let's take this problem to the next level: what if we need to sample 'k' elements from the stream?
+
+###### Method 1 Brute Force
+
+One approach involves storing all the elements in an ArrayList and then selecting k random samples from it.
+
+###### Method 2 Sorting
+
+Another strategy entails assigning a random tag to each element before storage. Once stored, we sort the array based on these random tags and select the first 'k' elements. However, these two methods are still neither offline nor ideal solutions.
+
+###### Method 3 Heap
+
+We can transform the above approach into a top 'k' problem, maintaining a min-heap of size 'k' to store the k largest elements. This way, we can retrieve 'k' random elements at any given moment.
+
+###### Method 4 Reservoir Sampling
+
+Going beyond maintaining a single reservoir element, we can keep a List of reservoir elements. As we read new elements, we add them to the list if the sample size is less than 'k'. However, when the sample size reaches or exceed 'k', we just need to select a number from the size and determine if we put in to the reservoir containers.
+
+TC: O(n)&emsp;SC: O(1)
+
+Code:
+
+```java
+public class Solution {
+  private final int k;
+  List<Integer> reservoir;
+  Integer count;
+  Random random;
+
+  public Solution(int k) {
+    // Complete the constructor if necessary.
+    this.k = k;
+    reservoir = new ArrayList<>();
+    count = 0;
+    random = new Random();
+  }
+
+  public void read(int value) {
+    int size = reservoir.size();
+    count++;
+    if (size < k) {
+      reservoir.add(value);
+      return;
+    }
+    // get a random number from 0 to current size of the sample that we have seen.
+    int probToAdd = random.nextInt(count + 1);
+    // then if the probability < k, that means it is selected.
+    if (probToAdd < k) {
+      // randomly pick an index from the reseervoir, to swap. * 1/k * k/totalElement;
+      int index = random.nextInt(size);
+      reservoir.set(index, value);
+    }
+  }
+
+  public List<Integer> sample() {
+    return reservoir;
+  }
+}
+```
+
+#### More Practice Questions
+
+| Problem Number |                                                         Problem                                                         | Solution |
+| :------------: | :---------------------------------------------------------------------------------------------------------------------: | :------: |
+|       1        |                    [Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/)                    |  ![]()   |
+|       2        |                          [Random Pick Index](https://leetcode.com/problems/random-pick-index/)                          |  ![]()   |
+|       3        |                    [Random Pick with Weight](https://leetcode.com/problems/random-pick-with-weight/)                    |  ![]()   |
+|       4        | [Random Point in Non-overlapping Rectangles](https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/) |  ![]()   |
+|       3        |                         [Random Flip Matrix](https://leetcode.com/problems/random-flip-matrix/)                         |  ![]()   |
