@@ -107,11 +107,48 @@ public static void main(String[] args) {
 
 #### Intro to randomness and probability
 
-Imagine the task of just generating a random element in an array, how would you represent it - quite easy, right? Since arrays allow random access, we can simply generate a random index between 0 and array.length and retrieve the element at that index.
+Consider the seemingly straightforward task of generating a random element from an array. It appears rather simple, doesn't it? By generating a random index within the range of 0 to array.length - 1, we can subsequently retrieve the element corresponding to that index.
 
-However, the challenge arises when we want to generate an array with all the same elements in the array but in a random order.
+However, a challenge emerges when the goal is to generate an array with elements arranged in a random order, ensuring that **each element is equally likely to appear at any position within the array**, also known as perfect shuffling.
 
-With this understanding of Java's random number generation, we can now proceed to explore the reservoir sampling algorithm, a clever technique to randomly select elements from a data stream with equal probability.
+One approach to solving this involves a rather brute-force(DFS Backtracking) method, explores all possible solutions by **generating all permutations** of the array. Once these permutations are generated, a single solution can be randomly selected from among them. Essentially, this question boils down to finding a single path within all permutations.
+
+TC: O(n!)&emsp;SC: O(1)
+
+A more efficient approach then comes into play after grasping the concepts above. If our aim is to find only one randomly selected path within the recursion tree, we can streamline the process by focusing on two key aspects. First, it's important to **randomly select an index for swapping** in each iteration/recursion. Second, to **ensure that previously swapped elements are not swapped again**.
+
+To model this approach, we traverse the array in reverse order. During each iteration, we randomly select an element from the range of 0 to the current index i and swap it with the last element in the array. The index i then acts as a boundary, defining the scope within which elements are considered for swapping.
+
+TC: O(n)&emsp;SC: O(1)
+
+Code:
+
+```java
+public void shuffle(int[] array) {
+    Random random = new Random();
+    for (int i = array.length; i >= 1; i--) {
+      int index = random.nextInt(i);
+      swap(array, i - 1, index);
+    }
+}
+private void swap(int[] array, int i, int j) {
+    int temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+}
+```
+
+#### Intro to Reservoir Sampling
+
+The above approach allows us to open new way to dealt with randomess problem. It still has several limitation. First of all, it can only dealt with fixed size sample. Secondly, it cannot run in offline manner, we have to get full sample size before finding randomess within elements. In reality, this is rather inefficient and memory-consuming. Therefore, people invented another simple yet elegant algorithm to solve probability problems, reservoir sampling.
+
+The problem becomes as follow: Consider an unlimited flow of data elements. How do you sample one element from this flow, such that at any point during the processing of the flow, you can return a random element from the n elements read so far. Implement two methods for a sampling class: read(int value) - read one number from the flow, sample() return a sample that we have seen so far.
+
+| data | size | propability to select new element | probability for previous selected element to stay |
+| -- | -- | :-------------------------------" | :-----------------------------------------------: |
+| [1] | 1 | 1/1 | N/A |
+| [1, 2] | 2 | 1/2 | 1/2 |
+| [1, 2, 3] | 3 | 1/3 | 1/2 multuply 2/3(not select) = 1/3 |
 
 #### Practice Questions
 
