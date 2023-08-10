@@ -248,3 +248,8 @@ public class Solution {
 |       3        |                    [Random Pick with Weight](https://leetcode.com/problems/random-pick-with-weight/)                    |  ![]()   |
 |       4        | [Random Point in Non-overlapping Rectangles](https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/) |  ![]()   |
 |       3        |                         [Random Flip Matrix](https://leetcode.com/problems/random-flip-matrix/)                         |  ![]()   |
+
+#### Referrence to study:
+
+1. ![reservoir sampling proof](https://florian.github.io/reservoir-sampling/)
+2. ![Picking Fairly From a List of Unknown Size With Reservoir Sampling](https://blog.demofox.org/2022/03/01/picking-fairly-from-a-list-of-unknown-size-with-reservoir-sampling/)
