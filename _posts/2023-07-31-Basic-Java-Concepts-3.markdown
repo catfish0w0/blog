@@ -241,15 +241,15 @@ public class Solution {
 
 #### More Practice Questions
 
-| Problem Number |                                                         Problem                                                         | Solution |
-| :------------: | :---------------------------------------------------------------------------------------------------------------------: | :------: |
-|       1        |                    [Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/)                    |  ![]()   |
-|       2        |                          [Random Pick Index](https://leetcode.com/problems/random-pick-index/)                          |  ![]()   |
-|       3        |                    [Random Pick with Weight](https://leetcode.com/problems/random-pick-with-weight/)                    |  ![]()   |
-|       4        | [Random Point in Non-overlapping Rectangles](https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/) |  ![]()   |
-|       3        |                         [Random Flip Matrix](https://leetcode.com/problems/random-flip-matrix/)                         |  ![]()   |
+| Problem Number |                                                         Problem                                                         |                                                   Solution                                                   |
+| :------------: | :---------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
+|       1        |                    [Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/)                    | [Solution](https://docs.google.com/document/d/1rFpaSNF-jXRU5zTsASiuLksfvMSpSasnqABn4n4NZJQ/edit?usp=sharing) |
+|       2        |                          [Random Pick Index](https://leetcode.com/problems/random-pick-index/)                          | [Solution](https://docs.google.com/document/d/18rR5ErSKk1GmLQVU1sCUOCK51CjyOPXBDXIAby3YQPY/edit?usp=sharing) |
+|       3        |                    [Random Pick with Weight](https://leetcode.com/problems/random-pick-with-weight/)                    |                                                 [Solution]()                                                 |
+|       4        | [Random Point in Non-overlapping Rectangles](https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/) | [Solution](https://docs.google.com/document/d/1z8nqk7FvFRiKoKyfU7UJzn-g3jpFNEbrqMYXaOAmhwE/edit?usp=sharing) |
+|       3        |                         [Random Flip Matrix](https://leetcode.com/problems/random-flip-matrix/)                         |                                                 [Solution]()                                                 |
 
 #### Referrence to study:
 
-1. ![reservoir sampling proof](https://florian.github.io/reservoir-sampling/)
-2. ![Picking Fairly From a List of Unknown Size With Reservoir Sampling](https://blog.demofox.org/2022/03/01/picking-fairly-from-a-list-of-unknown-size-with-reservoir-sampling/)
+1. [reservoir sampling proof](https://florian.github.io/reservoir-sampling/)
+2. [Picking Fairly From a List of Unknown Size With Reservoir Sampling](https://blog.demofox.org/2022/03/01/picking-fairly-from-a-list-of-unknown-size-with-reservoir-sampling/)
