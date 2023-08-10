@@ -11,7 +11,7 @@ category: Java Basic
 # multiple tag entries are possible
 tags: [Java]
 # thumbnail image for post
-img: ":java_basic/how_java_pass_variable/array/array.jpg"
+img: ":java_basic/array/array.jpg"
 # disable comments on this page
 #comments_disable: true
 
