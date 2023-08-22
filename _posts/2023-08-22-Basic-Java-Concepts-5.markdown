@@ -60,11 +60,11 @@ This leads to some unique properties that String has.
 #### How to create a String Object in Java
 
 1. Directly define:
-   `String a = “abc”`
+   String a = “abc”
 2. new String keyword:
-   `String a = new String(“aaa”)`
+   String a = new String(“aaa”)
 3. intern() method
-   `String s2 = a.intern()`
+   String s2 = a.intern()
 
 #### What API do we need to know about String?
 
