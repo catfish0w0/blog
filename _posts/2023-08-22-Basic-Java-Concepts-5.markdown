@@ -44,7 +44,7 @@ date: 2023-08-22 17:14:06 +0900
 
 #### What is String??
 
-String is a special Object class that is implemented by Java. Unlike other data structures like arrayList, HashMap…etc, you do not need to import String from java.utils, because String is specifically implemented inside the java.lang package. If you look at the source code, you will see that in Java 11, inside the String class, there is a public final byte[] as a field.
+String is a **special Object** class that is implemented by Java. Unlike other data structures like arrayList, HashMap…etc, you do not need to import String from java.utils, because String is specifically implemented inside the java.lang package. If you look at the source code, you will see that in Java 11, inside the String class, there is a public final byte[] as a field.
 
 ```java
 public final class String implements java.io.Serializable, Comparable<String>, CharSequence
@@ -53,18 +53,18 @@ private final byte[] value[];
 
 This leads to some unique properties that String has.
 
-1. String is immutable, immutable means you cannot change any character internally, for example: “abc” + “d” -> will lead to open a new memory space for a new String
+1. String is immutable, immutable means you **cannot change characters internally**, for example: “abc” + “d” -> will lead to open a new memory space for a new String
 2. Can lead to index out of bound exception, if you access index over its length
 3. Can lead to null pointer exception, if you access a method in a null object.
 
 #### How to create a String Object in Java
 
 1. **Directly define method:**
-   String a = "abc"
+   `String a = "abc"`
 2. **new String keyword:**
-   String a = new String("aaa")
+   `String a = new String("aaa")`
 3. **intern() method:**
-   String s2 = a.intern()
+   `String s2 = a.intern()`
 
 #### What API do we need to know about String?
 
