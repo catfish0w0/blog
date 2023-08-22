@@ -1,6 +1,6 @@
 ---
 # multilingual page pair id, this must pair with translations of this page. (This name must be unique)
-lng_pair: basc_java_3
+lng_pair: basc_java_4
 title: A Review of Linked List and Implementation in Java
 
 # post specific
