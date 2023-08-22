@@ -11,7 +11,7 @@ category: Java Basic
 # multiple tag entries are possible
 tags: [Java]
 # thumbnail image for post
-img: ":java_basic/string/StringMeme.png"
+img: ":java_basic/string/StringMeme2.png"
 # disable comments on this page
 #comments_disable: true
 
