@@ -66,6 +66,29 @@ This leads to some unique properties that String has.
 3. intern() method
    `String s2 = a.intern()`
 
+#### What API do we need to know about String?
+
+|                  String API                   | Comment or things need to be aware of |
+| :-------------------------------------------: | :-----------------------------------: |
+|            char charAt(int index)             |                                       |
+|           int compareTo(String s2)            |                                       |
+|      int compareToIgnoreCase(String s2)       |                                       |
+|           String concat(String s2)            |                                       |
+|           boolean equals(String s2)           |                                       |
+|      boolean equalsIgnoreCase(String s2)      |                                       |
+|      replace(char oldChar, char newChar)      |           non-static method           |
+| replace(CharSequence oldS, CharSequence newS) |           non-static method           |
+|              int indexOf(char c)              |                                       |
+|            int indexOf(String s1)             |                                       |
+|                 int length()                  |                                       |
+|       String substring(int beginIndex)        |                                       |
+| String substring(int beginIndex, int length)  |                                       |
+|             char[] toCharArray()              |                                       |
+|             String toLowerCase()              |                                       |
+|             String toUpperCase()              |                                       |
+|                 String trim()                 |                                       |
+|         String repeat(int repeatTime)         |                                       |
+
 #### More Practice Questions
 
 | Problem Number | Problem | Solution |
