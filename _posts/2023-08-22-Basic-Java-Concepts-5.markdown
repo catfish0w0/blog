@@ -125,12 +125,83 @@ Just like creating an Object: `StringBuilder sb = new StringBuilder()`
 | substring(int startIndex, int length)                |                                                                                                      |
 | toString()                                           |                                                                                                      |
 
-#### More Practice Questions
+#### String Processing Interviewing Questions
 
-| Problem Number | Problem | Solution |
-| :------------: | :-----: | :------: |
-|       1        |         |          |
-|       2        |         |          |
-|       3        |         |          |
-|       4        |         |          |
-|       3        |         |          |
+As the old saying: when you see a question that is String Processing type question, you will know it is a String Processing type question. One good thing about String Processing type of question is that it is very easy to identify. Usually this type of algorithmic question is not hard in Logic, but ,most of the timee, the question itself is very annoying to cover all cases, and the code can get very long and reluctant as well. If the question itself is asking to implement the above mentioned String APIs, you probably will not able to implement it using StringBuilder(the interviewer will ask you to do it in-place). Here is the summary of this type of question.
+
+1. ask for clairification first, which character can be in the input String, which characters dont, this is very important, can save you a lot of times from nasty edge cases.
+2. if the problem itself involve integers, ask for signs character.
+3. Discuss different synario case by case, list them out visually.
+4. most of the time, it will utilize two-pointer techniques. left side of slow pointer is what i want to keep for the result, while fast pointer is used to traverse the rest of the String.
+
+#### Practice Question by topics
+
+String Removal:
+
+| Problem Number |                                                          Problem                                                          | Solution |
+| :------------: | :-----------------------------------------------------------------------------------------------------------------------: | :------: |
+|       1        |                                           remove certain character from String                                            |          |
+|       2        |                                                       Remove Spaces                                                       |          |
+|       3        |    [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)    |          |
+|       4        | [Remove All Adjacent Duplicates in String II](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/) |          |
+|       5        |                             [Remove Comments](https://leetcode.com/problems/remove-comments/)                             |          |
+|       6        |       [Remove All Occurrences of a Substring](https://leetcode.com/problems/remove-all-occurrences-of-a-substring/)       |          |
+|       7        |                [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string)                 |          |
+
+String Reversal:
+
+| Problem Number |                                         Problem                                         | Solution |
+| :------------: | :-------------------------------------------------------------------------------------: | :------: |
+|       1        |             [Reverse String](https://leetcode.com/problems/reverse-string/)             |          |
+|       2        |          [Reverse String II](https://leetcode.com/problems/reverse-string-ii/)          |          |
+|       3        | [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/) |          |
+|       4        |  [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)  |          |
+
+String Palindrome Series:
+
+| Problem Number |                                  Problem                                  | Solution |
+| :------------: | :-----------------------------------------------------------------------: | :------: |
+|       1        |    [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)    |          |
+|       2        | [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/) |          |
+|       3        |   [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)   |          |
+
+String to Integer, Integer to String Series:
+
+| Problem Number |                                                 Problem                                                 | Solution |
+| :------------: | :-----------------------------------------------------------------------------------------------------: | :------: |
+|       1        |                   [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)                   |          |
+|       2        |                   [Roman to Integer](https://leetcode.com/problems/roman-to-integer/)                   |          |
+|       3        |           [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)           |          |
+|       4        |          [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/)          |          |
+|       5        | [Cells in a Range on an Excel Sheet](https://leetcode.com/problems/cells-in-a-range-on-an-excel-sheet/) |          |
+|       6        |            [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)            |          |
+
+String to Math Operation:
+
+| Problem Number |                              Problem                               | Solution |
+| :------------: | :----------------------------------------------------------------: | :------: |
+|       1        |      [Add String](https://leetcode.com/problems/add-strings/)      |          |
+|       2        |                   Add String with negative input                   |          |
+|       3        | [Multiply String](https://leetcode.com/problems/multiply-strings/) |          |
+
+String Replace, Modify String Series:
+
+| Problem Number |                                                                       Problem                                                                       | Solution |
+| :------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: | :------: |
+|       1        | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/) |          |
+|       2        |                           [Rearrange Spaces Between Words](https://leetcode.com/problems/rearrange-spaces-between-words/)                           |          |
+|       3        |                                                                   String Replace                                                                    |          |
+|       4        |                                                                   Compress String                                                                   |          |
+|       5        |                                                                 Decompress String I                                                                 |          |
+|       6        |                                                                Decompress String II                                                                 |          |
+|       7        |                                       [Text Justification](https://leetcode.com/problems/text-justification/)                                       |
+
+Split String
+
+| Problem Number |                                                     Problem                                                     | Solution |
+| :------------: | :-------------------------------------------------------------------------------------------------------------: | :------: |
+|       1        |             [Split Strings by Separator](https://leetcode.com/problems/split-strings-by-separator/)             |          |
+|       2        | [Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/) |          |
+|       3        |    [ Split a String in Balanced Strings](https://leetcode.com/problems/split-a-string-in-balanced-strings/)     |          |
+|       4        |  [Number of Good Ways to Split a String](https://leetcode.com/problems/number-of-good-ways-to-split-a-string/)  |          |
+|       5        |      [ Number of Ways to Split a String](https://leetcode.com/problems/number-of-ways-to-split-a-string/)       |          |
