@@ -68,26 +68,29 @@ This leads to some unique properties that String has.
 
 #### What API do we need to know about String?
 
-| String API                                    | Comment or things need to be aware of |
-| --------------------------------------------- | :-----------------------------------: |
-| char charAt(int index)                        |                                       |
-| int compareTo(String s2)                      |                                       |
-| int compareToIgnoreCase(String s2)            |                                       |
-| String concat(String s2)                      |                                       |
-| boolean equals(String s2)                     |                                       |
-| boolean equalsIgnoreCase(String s2)           |                                       |
-| replace(char oldChar, char newChar)           |           non-static method           |
-| replace(CharSequence oldS, CharSequence newS) |           non-static method           |
-| int indexOf(char c)                           |                                       |
-| int indexOf(String s1)                        |                                       |
-| int length()                                  |                                       |
-| String substring(int beginIndex)              |                                       |
-| String substring(int beginIndex, int length)  |                                       |
-| char[] toCharArray()                          |                                       |
-| String toLowerCase()                          |                                       |
-| String toUpperCase()                          |                                       |
-| String trim()                                 |                                       |
-| String repeat(int repeatTime)                 |                                       |
+| String API               |               Comment or things need to be aware of                |
+| ------------------------ | :----------------------------------------------------------------: |
+| char charAt(int index)   |                                                                    |
+| int compareTo(String s2) | This API compare String based on their lexicographically order, \  |
+
+Capital character is greater than non-capital character.\
+ABC.compareTo(abc) would return -1, meaning ABC is smaller than abc |
+| int compareToIgnoreCase(String s2) | same API as above just without cases |
+| String concat(String s2) | same as adding String "+" |
+| boolean equals(String s2) | |
+| boolean equalsIgnoreCase(String s2) | |
+| replace(char oldChar, char newChar) | non-static method |
+| replace(CharSequence oldS, CharSequence newS) | non-static method |
+| int indexOf(char c) | |
+| int indexOf(String s1) | |
+| int length() | |
+| String substring(int beginIndex) | |
+| String substring(int beginIndex, int length) | |
+| char[] toCharArray() | |
+| String toLowerCase() | |
+| String toUpperCase() | |
+| String trim() | |
+| String repeat(int repeatTime) | it concat the same String for repeatTime times |
 
 #### More Practice Questions
 

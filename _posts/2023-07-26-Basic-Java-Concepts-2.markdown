@@ -1,7 +1,7 @@
 ---
 # multilingual page pair id, this must pair with translations of this page. (This name must be unique)
 lng_pair: basc_java_2
-title: A Review of Arrays in Java
+title: Pocket Guide to Java Arrays class
 
 # post specific
 # if not specified, .name will be used from _data/owner/[language].yml
