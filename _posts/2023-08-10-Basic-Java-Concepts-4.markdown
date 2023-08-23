@@ -1,7 +1,7 @@
 ---
 # multilingual page pair id, this must pair with translations of this page. (This name must be unique)
 lng_pair: basc_java_4
-title: A Review of Linked List and Implementation in Java
+title: Understanding Linked List and Implementation in Java
 
 # post specific
 # if not specified, .name will be used from _data/owner/[language].yml

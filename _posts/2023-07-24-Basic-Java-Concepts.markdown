@@ -1,7 +1,7 @@
 ---
 # multilingual page pair id, this must pair with translations of this page. (This name must be unique)
 lng_pair: basc_java_1
-title: Understanding Fundamental Concept of Java
+title: Understanding Fundamental Concept of Java Programming Language
 
 # post specific
 # if not specified, .name will be used from _data/owner/[language].yml
