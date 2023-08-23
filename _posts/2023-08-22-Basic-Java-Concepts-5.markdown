@@ -91,6 +91,40 @@ The following table is a quick guide that include all APIs you should know about
 | String trim()                                 |                                                                                                                                                                                                 |
 | String repeat(int repeatTime)                 |                                                                         it concat the same String for repeatTime times                                                                          |
 
+#### What is StringBuilder()?
+
+StringBuilder is a class that Java implemented to allow user to "dynamically modify" the String. Again, StringBuilder is in Java.lang package, so you can use it without importing it.
+
+#### How to create StringBuilder in Java?
+
+Just like creating an Object: `StringBuilder sb = new StringBuilder()`
+
+#### What API do we need to know about StringBuilder?
+
+| StringBuilder API                                    |                                Comment or things need to be aware of                                 |
+| ---------------------------------------------------- | :--------------------------------------------------------------------------------------------------: |
+| append(char ch)                                      |                                                                                                      |
+| append(char[] charArray)                             |                                                                                                      |
+| append(char[] charArray, int startIndex, int length) |                                                                                                      |
+| append(CharSequence s)                               |                           if append null, it will append “null” inside sb                            |
+| append(CharSequence s, int start, int length)        |                                                                                                      |
+| append(String s)                                     |                                                                                                      |
+| int capacity()                                       |                        Yes just like an ArrayList, StringBuilder has capacity                        |
+| char charAt(int index)                               |                             if it exceeds length, it can throw exception                             |
+| delete(int startIndex, int length)                   |                                                                                                      |
+| deleteCharAt(int index)                              |                                                                                                      |
+| int indexOf(String str)                              |                                                                                                      |
+| int indexOf(String str, int fromIndex)               |                                                                                                      |
+| insert(int index, String s)                          |            it put the String into the StringBuilder, and push the rest of the String back            |
+| int lastIndexOf(String)                              |                   lastIndexOf return the first index of the rightmost occurrence.                    |
+| replace(int startIndex, int length, String str)      |                                                                                                      |
+| reverse()                                            |                                                                                                      |
+| setCharAt(int index, char ch)                        |                                                                                                      |
+| setLength(int newLength)                             | Be aware of the exact length, if set too much length, it will appear a lot of empty useless charcode |
+| subString(int startIndex)                            |                                                                                                      |
+| substring(int startIndex, int length)                |                                                                                                      |
+| toString()                                           |                                                                                                      |
+
 #### More Practice Questions
 
 | Problem Number | Problem | Solution |
