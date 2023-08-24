@@ -557,10 +557,54 @@ public CircularLinkedList class {
 
 #### More Practice Questions
 
-| Problem Number | Problem | Solution |
-| :------------: | :-----: | :------: |
-|       1        |         |          |
-|       2        |         |          |
-|       3        |         |          |
-|       4        |         |          |
-|       3        |         |          |
+Linked List normal operation:
+
+| Problem Number |                                          Problem                                          | Solution |
+| :------------: | :---------------------------------------------------------------------------------------: | :------: |
+|       1        |       [Insert In Sorted Linked List](https://app.laicode.io/app/problem/39?plan=3)        |          |
+|       2        |      [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)      |          |
+|       3        | [Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/) |          |
+|       4        |   [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)   |          |
+|       5        |           [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)           |          |
+
+Linked List Removal
+
+| Problem Number |                                                      Problem                                                      | Solution |
+| :------------: | :---------------------------------------------------------------------------------------------------------------: | :------: |
+|       1        |            [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)            |          |
+|       2        | [Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/) |          |
+|       3        |        [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)        |          |
+
+Linked List Reverse
+
+| Problem Number |                                     Problem                                     | Solution |
+| :------------: | :-----------------------------------------------------------------------------: | :------: |
+|       1        |    [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)    |          |
+|       2        | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) |          |
+|       3        |    [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)    |          |
+
+Linked List Math Operation
+
+| Problem Number |                                                              Problem                                                              | Solution |
+| :------------: | :-------------------------------------------------------------------------------------------------------------------------------: | :------: |
+|       1        |                                 [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)                                 |          |
+|       2        |                              [Add Two Numbers II](https://leetcode.com/problems/add-two-numbers-ii/)                              |          |
+|       3        |                            [Plus One Linked List](https://leetcode.com/problems/plus-one-linked-list/)                            |          |
+|       4        | [Add Two Polynomials Represented as Linked Lists](https://leetcode.com/problems/add-two-polynomials-represented-as-linked-lists/) |          |
+
+Linked List Combinations:
+
+| Problem Number |                                     Problem                                     | Solution |
+| :------------: | :-----------------------------------------------------------------------------: | :------: |
+|       1        | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) |          |
+|       2        |         [Partition List](https://leetcode.com/problems/partition-list/)         |          |
+|       3        |          [ Reorder List](https://leetcode.com/problems/reorder-list/)           |          |
+
+Linked List Sorting:
+
+| Problem Number |                                     Problem                                      | Solution |
+| :------------: | :------------------------------------------------------------------------------: | :------: |
+|       1        |           [ Merge Sort List](https://leetcode.com/problems/sort-list/)           |          |
+|       2        | [Insertion Sort Linked List](https://leetcode.com/problems/insertion-sort-list/) |          |
+|       3        |                            Selection Sort Linked List                            |          |
+|       3        |                              Quick Sort Linked List                              |          |

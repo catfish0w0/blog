@@ -127,7 +127,7 @@ Just like creating an Object: `StringBuilder sb = new StringBuilder()`
 
 #### String Processing Interviewing Questions
 
-As the old saying: when you see a question that is String Processing type question, you will know it is a String Processing type question. One good thing about String Processing type of question is that it is very easy to identify. Usually this type of algorithmic question is not hard in Logic, but ,most of the timee, the question itself is very annoying to cover all cases, and the code can get very long and reluctant as well. If the question itself is asking to implement the above mentioned String APIs, you probably will not able to implement it using StringBuilder(the interviewer will ask you to do it in-place). Here is the summary of this type of question.
+As the old saying: when you see a question that is String Processing type of question, you will know it is a String Processing type of question. One good thing about String Processing type of question is that it is very easy to identify. Usually this type of algorithmic question is not hard in Logic, but ,most of the time, the question itself is very annoying to cover all cases, and the code can get very long and reluctant as well. If the question itself is asking to implement the above mentioned String APIs, you probably will not able to implement it using StringBuilder(the interviewer will ask you to do it in-place). Here is the summary of this type of question.
 
 1. ask for clairification first, which character can be in the input String, which characters dont, this is very important, can save you a lot of times from nasty edge cases.
 2. if the problem itself involve integers, ask for signs character.
@@ -180,9 +180,10 @@ String to Math Operation:
 
 | Problem Number |                              Problem                               | Solution |
 | :------------: | :----------------------------------------------------------------: | :------: |
-|       1        |      [Add String](https://leetcode.com/problems/add-strings/)      |          |
-|       2        |                   Add String with negative input                   |          |
-|       3        | [Multiply String](https://leetcode.com/problems/multiply-strings/) |          |
+|       1        |      [Add Binary](https://leetcode.com/problems/add-binary/)       |          |
+|       2        |      [Add String](https://leetcode.com/problems/add-strings/)      |          |
+|       3        |                   Add String with negative input                   |          |
+|       4        | [Multiply String](https://leetcode.com/problems/multiply-strings/) |          |
 
 String Replace, Modify String Series:
 
