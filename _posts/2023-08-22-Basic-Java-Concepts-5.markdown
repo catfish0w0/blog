@@ -138,15 +138,15 @@ As the old saying: when you see a question that is String Processing type of que
 
 String Removal:
 
-| Problem Number |                                                          Problem                                                          | Solution |
-| :------------: | :-----------------------------------------------------------------------------------------------------------------------: | :------: |
-|       1        |                                           remove certain character from String                                            |          |
-|       2        |                                                       Remove Spaces                                                       |          |
-|       3        |    [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)    |          |
-|       4        | [Remove All Adjacent Duplicates in String II](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/) |          |
-|       5        |                             [Remove Comments](https://leetcode.com/problems/remove-comments/)                             |          |
-|       6        |       [Remove All Occurrences of a Substring](https://leetcode.com/problems/remove-all-occurrences-of-a-substring/)       |          |
-|       7        |                [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string)                 |          |
+| Problem Number |                                                          Problem                                                          |                                                   Solution                                                   |
+| :------------: | :-----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
+|       1        |                                           remove certain character from String                                            |       [Solution](https://docs.google.com/document/d/1KYK7p_PuNpbinc8rhhlTf4_yCiKRfiWwsxmxiXswcLM/edit)       |
+|       2        |                                                       Remove Spaces                                                       |       [Solution](https://docs.google.com/document/d/1XjeSvM5DcQMk5G5xPAzb4FkncKR0TOZnF7HpJJztkv0/edit)       |
+|       3        |    [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)    | [Solution](https://docs.google.com/document/d/1ftOIzvcnRfbOKzqgk38aD2pKzOBQpZlgSxx_IaBb91g/edit?usp=sharing) |
+|       4        | [Remove All Adjacent Duplicates in String II](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/) |                                                                                                              |
+|       5        |                             [Remove Comments](https://leetcode.com/problems/remove-comments/)                             |                                                                                                              |
+|       6        |       [Remove All Occurrences of a Substring](https://leetcode.com/problems/remove-all-occurrences-of-a-substring/)       |                                                                                                              |
+|       7        |                [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string)                 |                                                                                                              |
 
 String Reversal:
 
