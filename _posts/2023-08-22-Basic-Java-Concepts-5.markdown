@@ -143,10 +143,10 @@ String Removal:
 |       1        |                                           remove certain character from String                                            |       [Solution](https://docs.google.com/document/d/1KYK7p_PuNpbinc8rhhlTf4_yCiKRfiWwsxmxiXswcLM/edit)       |
 |       2        |                                                       Remove Spaces                                                       |       [Solution](https://docs.google.com/document/d/1XjeSvM5DcQMk5G5xPAzb4FkncKR0TOZnF7HpJJztkv0/edit)       |
 |       3        |    [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)    | [Solution](https://docs.google.com/document/d/1ftOIzvcnRfbOKzqgk38aD2pKzOBQpZlgSxx_IaBb91g/edit?usp=sharing) |
-|       4        | [Remove All Adjacent Duplicates in String II](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/) |                                                                                                              |
-|       5        |                             [Remove Comments](https://leetcode.com/problems/remove-comments/)                             |                                                                                                              |
-|       6        |       [Remove All Occurrences of a Substring](https://leetcode.com/problems/remove-all-occurrences-of-a-substring/)       |                                                                                                              |
-|       7        |                [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string)                 |                                                                                                              |
+|       4        | [Remove All Adjacent Duplicates in String II](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/) | [Solution](https://docs.google.com/document/d/1EwaGkltzcTyexY_6P0nk05h-ppvLuoVQCdGcdttA1pc/edit?usp=sharing) |
+|       5        |                             [Remove Comments](https://leetcode.com/problems/remove-comments/)                             | [Solution](https://docs.google.com/document/d/1UImWNs2jK8vZzQDLnaS58bRtOEVLpdyiPTfChqTy_S4/edit?usp=sharing) |
+|       6        |       [Remove All Occurrences of a Substring](https://leetcode.com/problems/remove-all-occurrences-of-a-substring/)       | [Solution](https://docs.google.com/document/d/1-L20r3D3IfmRbK56MTNH_GKWk8fWBzRP0C65T7B2lEo/edit?usp=sharing) |
+|       7        |                [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string)                 | [Solution](https://docs.google.com/document/d/1JH096x6EfUMb0PsZfJDwhCGDEZTpk9ocnkn-jvZYHC0/edit?usp=sharing) |
 
 String Reversal:
 
