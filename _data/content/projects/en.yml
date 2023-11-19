@@ -170,6 +170,52 @@ page_data:
         for i in range(5, 10):
           print(i)
         ```
+    - type: id_full_stack
+      project_name: "ChatGPT Travel Planner"
+      project_excerpt: "fullstack web application using ChatGPT API, Google Map API and TripAdvisor API"
+      img: ":fullstack-projects/ChatGPTPlanner/home_page.png"
+      img_title: "home_page"
+      date: "2023-11-17"
+      post: |
+        Demo Video: [Link]()
+
+        #### Project Scope & Overview Tech Stack:
+        This project is actually a group project with 10 engineers in the team. 5 for the frontend, 5 for the backend, and I am one of the 2 backend tech leads in this project. For the frontend, we used React Js, for the backend we used Golang. We also used some open sourced libraries such as mux for request router and dispatcher, gorm for object relational tool, and jwt middleware for token based authentication. For the database, we used MySQL from Amazon RDS.
+
+        #### What is this project about?
+        The ChatGPT Travel Planner is a full stack web application. In high level-sense, it is a travel planner app using ChatGPT API for tourist spot recommendation, and some self-defined algorithm for travel planning. It integrates with ChatGPT API, Google Map API, and Trip Advisor API. Basically for the user journey, the user will need to sign up/ login to the website, and then the user gets to input travel city, start date, end date. After that, it will receive recommendations from ChatGPT, such as top 10 popular spots based on the user interest. And then users can select the places that they want to visit, and we run our algorithms to make travel plans for them. 
+
+        #### Motivation behind this app:
+        1.  Want to use ChatGPT functionality to build an application. ChatGPT was a really popular topic earlier this year. we just want to build an app using it
+        2.  ChatGPT itself can actually build Travel Plan as well. So at the same time, we just want to compare and challenge chatGPT with our own app to see its accuracy and see how far it can go.
+
+        #### App Features
+        1.  User get to login/signup to the website
+        2.  Use String template to query ChatGPT for the destination city for attraction site recommendation
+        3.  Once got the response from ChatGPT, extract String from the response, and query TripAdvisor API for site details, and return site with site detail to the frontend.
+        4.  Once the user select any sites, save it to the DB, and once the user click generate plans
+        5.  Run Google Map API and Graph Search Algorithm to generate concrete travel plan for the user.
+        6.  The user can later select My vacation plan to review previous plan details.
+
+        #### User Critical Journey
+        User get to the home page
+          ![](:fullstack-projects/ChatGPTPlanner/home_page.PNG){:data-align="center"}
+        User Signup/Login their account
+          ![](:fullstack-projects/ChatGPTPlanner/login.PNG){:data-align="center"}
+          ![](:fullstack-projects/ChatGPTPlanner/create_account.PNG){:data-align="center"}
+        Enter their desired City Destination, Start Date, End Date
+          ![](:fullstack-projects/ChatGPTPlanner/generate_site.png){:data-align="center"}
+        Click on the site they are interested
+          ![](:fullstack-projects/ChatGPTPlanner/click_site.PNG){:data-align="center"}
+        View the vacation plan
+          ![](:fullstack-projects/ChatGPTPlanner/vacation_plan.PNG){:data-align="center"}
+        View the detail inside each day  View Transit
+          ![](:fullstack-projects/ChatGPTPlanner/Transit.png){:data-align="center"}
+        View Street
+          ![](:fullstack-projects/ChatGPTPlanner/see_street.PNG){:data-align="center"}
+
+        #### ER Diagram
+          ![](:fullstack-projects/ChatGPTPlanner/ERDiagram.png){:data-align="center"}
 
     - type: id_react
       project_name: "Badminton Double Tournament Generator"
