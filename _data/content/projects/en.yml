@@ -173,7 +173,7 @@ page_data:
     - type: id_full_stack
       project_name: "ChatGPT Travel Planner"
       project_excerpt: "fullstack web application using ChatGPT API, Google Map API and TripAdvisor API"
-      img: ":fullstack-projects/ChatGPTPlanner/home_page.png"
+      img: ":fullstack-projects/ChatGPTPlanner/home_page.PNG"
       img_title: "home_page"
       date: "2023-11-17"
       post: |
@@ -198,20 +198,20 @@ page_data:
         6.  The user can later select My vacation plan to review previous plan details.
 
         #### User Critical Journey
-        User get to the home page
+        **User get to the home page**
           ![](:fullstack-projects/ChatGPTPlanner/home_page.PNG){:data-align="center"}
-        User Signup/Login their account
+        **User Signup/Login their account**
           ![](:fullstack-projects/ChatGPTPlanner/login.PNG){:data-align="center"}
           ![](:fullstack-projects/ChatGPTPlanner/create_account.PNG){:data-align="center"}
-        Enter their desired City Destination, Start Date, End Date
+        **Enter their desired City Destination, Start Date, End Date**
           ![](:fullstack-projects/ChatGPTPlanner/generate_site.png){:data-align="center"}
-        Click on the site they are interested
+        **Click on the site they are interested**
           ![](:fullstack-projects/ChatGPTPlanner/click_site.PNG){:data-align="center"}
-        View the vacation plan
+        **View the vacation plan**
           ![](:fullstack-projects/ChatGPTPlanner/vacation_plan.PNG){:data-align="center"}
-        View the detail inside each day  View Transit
+        **View the detail inside each day  View Transit**
           ![](:fullstack-projects/ChatGPTPlanner/Transit.png){:data-align="center"}
-        View Street
+        **View Street**
           ![](:fullstack-projects/ChatGPTPlanner/see_street.PNG){:data-align="center"}
 
         #### ER Diagram
