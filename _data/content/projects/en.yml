@@ -177,7 +177,7 @@ page_data:
       img_title: "home_page"
       date: "2023-11-17"
       post: |
-        Demo Video: [Link]()
+        Demo Video: [Link](https://www.youtube.com/watch?v=feiTAMlMq3k&ab_channel=DechenZeng)
 
         #### Project Scope & Overview Tech Stack:
         This project is actually a group project with 10 engineers in the team. 5 for the frontend, 5 for the backend, and I am one of the 2 backend tech leads in this project. For the frontend, we used React Js, for the backend we used Golang. We also used some open sourced libraries such as mux for request router and dispatcher, gorm for object relational tool, and jwt middleware for token based authentication. For the database, we used MySQL from Amazon RDS.
